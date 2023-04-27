@@ -1,4 +1,4 @@
-#define FreeSpace 0xb2a610
+#define FreeSpace 0xEFB2E0
 #define FreeSpaceEnd 0xC00000
 #define FreeSpaceBLRange 0x1c1ec0
 
