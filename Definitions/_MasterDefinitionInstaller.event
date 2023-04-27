@@ -1,16 +1,16 @@
-#include Custom Definitions.event
+#include "CustomDefinitions.event"
 
 //Pik Library
-#include "Pik Library/PListDefinitions.event"
-#include "Pik Library/TilesetDefinitions.event"
-#include "Pik Library/ClassAnimation Definitions.event"
+#include "PikDefinitions/PListDefinitions.event"
+#include "PikDefinitions/TilesetDefinitions.event"
+#include "PikDefinitions/ClassAnimationDefinitions.event"
 
 
 #include "CharacterDefinitions.event"
 
 #include "ClassDefinitions.event"
 
-#include "MugDefinitions.event"
+#include "PortraitDefinitions.event"
 
 #include "ItemDefinitions.event"
 

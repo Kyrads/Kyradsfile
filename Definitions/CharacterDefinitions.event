@@ -1,6 +1,6 @@
 // Characters
 
-Lord 0x1
+#define Lord 0x1
 
 // NPCs
 

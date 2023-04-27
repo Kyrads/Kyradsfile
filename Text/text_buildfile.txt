@@ -1,4 +1,4 @@
-#inlcude "StaticText.txt"
+#include "StaticText.txt"
 
 #include "SkillSystem/SkillSystemTextInstaller.txt"
 
