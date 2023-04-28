@@ -8,7 +8,7 @@
   #endif
 #endif
 
-#define AnimTableEntry(index) "ORG ClassAnimTable + ((index-1) * 0x20)"
+#define AnimTableEntry(index) "ORG ClassAnimTable + ((index) * 0x20)"
 
 #define SwordAnim(Animation) "BYTE 0x00 0x01 ; SHORT Animation"
 #define LanceAnim(Animation) "BYTE 0x01 0x01 ; SHORT Animation"
@@ -26,8 +26,8 @@
 
 
 //Lord Animations
-#define LordLanceAnim 0x1
-#define LordUnarmedAnim 0x2
+#define LordLanceAnim 0x3
+#define LordUnarmedAnim 0x4
 
 ALIGN 4
 LordAnims:
