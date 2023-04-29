@@ -1,4 +1,0 @@
-List of Used Animation Slots:
-
-Lord
-0x1

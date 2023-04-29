@@ -1,5 +1,0 @@
-
-{
-	#include "Anims/Lord/LanceInstaller.event"
-	#include "Anims/Lord/UnarmedInstaller.event"
-}

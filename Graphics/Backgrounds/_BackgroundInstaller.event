@@ -1,0 +1,23 @@
+//Background Installer
+
+#define ConvoBackgroundTable $95DD1C
+#define SetConvoBackground(Index, ImagePointer, TSAPointer, PalettePointer) "Push; ORG ConvoBackgroundTable + (Index * 0xC); POIN ImagePointer TSAPointer PalettePointer; POP"
+
+
+//Example
+
+//#define ExampleBackground 0x00
+//SetConvoBackground(ExampleBackground, ExampleBackgroundImage, ExampleBackgroundTSA, ExampleBackgroundPal)
+
+
+// ALIGN 4
+// ExampleBackgroundImage:
+// #incbin "DMP/ExampleBackgroundImage.dmp"
+
+// ALIGN 4
+// ExampleBackgroundTSA:
+// #incbin "DMP/ExampleBackgroundTSA.dmp"
+
+// ALIGN 4
+// ExampleBackgroundPal:
+// #incbin "DMP/ExampleBackgroundPal.dmp"

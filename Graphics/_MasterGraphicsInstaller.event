@@ -1,6 +1,13 @@
 #include "Animations/AnimationDefinitions.event"
-#include "Animations/_MasterAnimationInstaller.event"
+#include "Animations/_AnimationInstaller.event"
 
+#include "Backgrounds/_BackgroundInstaller.event"
+
+#include "BattleFrame/_BattleFrameInstaller.event"
+
+#include "ClassCards/_ClassCardInstaller.event"
+
+#include "Palettes/Clear/ClearOldPalettes.event"
 
 PUSH
 ORG $5A2DDC
