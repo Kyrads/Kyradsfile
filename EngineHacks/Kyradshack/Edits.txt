@@ -1,0 +1,537 @@
+//Change Normal mode penalty into a bonus
+//PUSH
+//ORG 0x0180FA
+//BYTE 0xFF 0xF7 0x63 0xFF
+
+// HP bar animation
+/* PUSH
+ORG 0x9A50AE
+BYTE 0x1E
+
+ORG 0x9A50BE
+BYTE 0x0F
+
+ORG 0x9A50CE
+BYTE 0x5
+POP */
+
+
+// Widens the song name display in Sound Room
+PUSH
+ORG 0x0B0110
+BYTE 0x20
+ORG 0x0B0134
+BYTE 0x05
+POP
+
+
+// Change the Affin text ID in the weapon stats to say 'Wepn'
+PUSH
+ORG 0x1EA3C
+SHORT WeaponText
+POP
+
+// Target allies or enemies (IER thing? TODO: figure this out. 90% sure this is berserk routine)
+//PUSH
+//ORG 0x261B2
+//SHORT 0x0
+//POP
+
+// make vanilla "gold" item slots not automatically convert to gold when obtained
+// by moving this effect to an item you can never obtain anyway (such as Agneya here)
+    PUSH
+        ORG $115AA
+        BYTE 0xEA
+        ORG $115AE
+        BYTE 0xEA
+        ORG $115B6
+        BYTE 0xEA
+        ORG $115B2
+        BYTE 0xEA
+        ORG $324DA
+        BYTE 0xEA
+        ORG $324D2
+        BYTE 0xEA
+        ORG $324CE
+        BYTE 0xEA
+        ORG $324D6
+        BYTE 0xEA
+    POP
+	
+// speed for battle map anim rounds 
+// just from the proc MapAnimBattle 9A49FC
+// vanilla is 30 30 30 10 30
+/*PUSH
+ORG $9A4A06 
+BYTE 30
+ORG $9A4A16 
+BYTE 30 
+ORG $9A4A26 
+BYTE 30 
+ORG $9A4A36
+BYTE 10
+ORG $9A4A46
+BYTE 30  
+POP
+*/
+
+
+//15 frame faster Flux animation
+PUSH
+ORG 0x05EF50
+BYTE 0x02	//StartEfxMistyrainOBJ
+ORG 0x05EF5C
+BYTE 0x3A	//MoveBattleCameraOnto
+ORG 0x05EF72
+BYTE 0x3B	//StartEfxMistyrainOBJ2
+ORG 0x05EF84
+BYTE 0x4E	//StartEfxMistyrainBG_2
+ORG 0x05EFAA
+BYTE 0x62	//Delete6C [r4, #0x64]
+ORG 0x05EFBA
+BYTE 0x6E	//StartSpellBG_FLASH ThisMakesTheHPInSpellAnimGoAway
+ORG 0x05EFEA
+BYTE 0x8F	//Break6CLoop	Clean up
+
+//Delay in frames after the AI's displayed targetting cursor
+//PUSH 
+//ORG $39EAE 
+//BYTE 0x24 // 45 is Vanilla default, 16 for the popup with no anim, 24 is the full anim once
+//POP 
+
+//Poison Damage (default 1)
+PUSH
+ORG 0x025a3e
+BYTE 0xA //10 damage
+ORG 0x025A36
+BYTE 0x0 //0 blur
+POP
+
+//Fix R text crash on the save screen (by removing the button press check)
+//by Snek
+PUSH
+ORG $A8A22
+SHORT 0xE025
+POP
+
+//Monster Weapon display fix
+// by Brendor
+/*
+PUSH
+ORG $16e20
+BYTE 0x30 0xB5 0x0B 0x28 0x04 0xD0 0x09 0x49 0x80 0x00 0x08 0x18 0x00 0x68 0x06 0xE0 0x80 0x20 0x80 0x00 0x6B 0x30 0x02 0xE0 0x80 0x00 0x68 0x44 0x00 0x68 0xF3 0xF7 0xFF 0xF9 0xC0 0x46
+ORG $892f2
+BYTE 6
+ORG $1e7fc
+BYTE 0xC
+POP
+*/
+
+//Fix coordinate loading in WARP codes when not loading from slot B
+//by hypergammaspaces
+PUSH
+ORG $10C18
+SHORT $7891 $78D2 $0608
+POP
+
+//Lyon Status Staff Avoid
+PUSH
+ORG 0x02CD44
+BYTE 0x0 //Character
+ORG 0x02CD48
+BYTE 0x0 //Character
+POP
+
+//Staff Base Hit Rate (default 30)
+/*PUSH
+ORG 0x002cd30
+BYTE 30 //30 base hit
+POP*/
+
+// Fix the Game Over freeze
+ALIGN 4
+GameOverStart:
+ASMC 0x800D391
+NoFade
+ENDB
+#undef CauseGameOverIfLordDies
+#define CauseGameOverIfLordDies "AFEV 0 GameOverStart 0x65"
+
+/*
+// Support menu
+//by Gamma
+PUSH
+ORG $A208C //Always display remaining max no. of convos on support screen
+SHORT $2500 $E008
+
+ORG $A36C4
+BYTE 0x03 0x20 //Always say that there are three conversations.
+POP
+
+// Green glowy if maxed support count
+//by Gamma
+PUSH
+    ORG $876AC
+    BL($281C8) //Get total support count
+    SHORT $4682 //mov r10, r0
+    SHORT $0041 //lsl r1, r0, #0x1
+    SHORT $180B //add r3, r1, r0
+    SHORT $68E0 //ldr r0, [r4, #0xC]
+    BL($28264) //Get unlocked support count
+    SHORT $2100 //mov r1, #0x0
+    SHORT $4689 //mov r9, r1
+    SHORT $4298 //cmp r0, r3
+    SHORT $DB00 //blt $876C6
+    SHORT $2104 //mov r1, #0x4
+    SHORT $9103 //str r1, [sp, #0xC]
+    SHORT $2000 //mov r0, #0x0
+    SHORT $4550 //cmp r0, r10
+    SHORT $DA50 //bge $87770
+POP */
+
+// StanH magic sword wexp
+//ALIGN 4
+//CheckWexpWeaponTypeHook:
+    //WORD 0x19ED2550 0x24287828 0x5C2619E4 0xD0012E00 0x47184B01 0x47184B01 0x802C133 0x802C113
+
+// Remove Kill Bonus for WEXP (Causes a crash currently)
+/*PUSH
+//by Alusq
+ORG $2c142
+BYTE 0x01 0x29 0x0 0xDC 
+POP*/
+
+//Prevents Archer palette from being overwritten
+//by 7743
+PUSH
+ORG 0x599B6
+BYTE 0x14 0xE0
+POP
+
+//Prevent Healer Mistarget
+//by Magrika is now Canon
+PUSH
+ORG 0x3FC9D
+BYTE 0xD2
+ORG 0x3FE77
+BYTE 0xD2
+POP
+
+//Press R to speed up movement speed
+//Pikmin1211
+PUSH
+ORG 0x794EE
+SHORT 0
+ORG 0x794F4
+SHORT 0x7941
+POP
+
+//Prevent Freeze from Unit State 0x33
+//by 7743
+PUSH
+	ORG $1027C
+	BYTE 0x00 0x20 0x02 
+POP
+
+//Fix Large Level up screens
+//by Tequila
+PUSH
+ORG 0x73758
+BYTE 0x00 0x3C 0x00 0x06
+ORG 0x73D2C
+BYTE 0x1C 0x22 0x12 0x02
+ORG 0x73722
+BYTE 0xF0 0x22
+POP
+
+//Removes delay at start of battle
+//by 7743
+ORG 0x9A352A
+BYTE 0x00
+ORG 0x9A3542
+BYTE 0x00
+ORG 0x9A356A
+BYTE 0x00
+ORG 0x9A360A
+BYTE 0x00
+ORG 0x9A362A
+BYTE 0x00
+POP
+
+//Allows MNC2 To jump to any chapter ID
+//by Kirb
+PUSH
+ORG 0xBD070
+SHORT 0xE0B8
+//Fixes the world map chapter ID being loaded instead of the actual chapter ID.
+ORG 0x897B2
+SHORT 0 0
+//Fixes the game considering some chapters postgame.
+ORG 0x897C4
+SHORT 0x200E 0x5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
+POP
+
+// Unlock Supply/Gold from Ephraim's stupid dumb chapter
+PUSH
+ORG 0x37B95
+BYTE 0xE0
+
+ORG 0x024DF2
+BYTE 0x00 0x00
+
+ORG 0x3327B
+BYTE 0xE0
+
+ORG 0x3164C
+BYTE 0xE0 0x04
+POP
+
+//Nerfed EXP
+
+//Defeat EXP
+PUSH
+ORG 0x02C462
+BYTE 15
+ORG 0x02C480
+BYTE 15
+
+//Base Value EXP
+ORG 0x002c37c
+BYTE 20
+
+//Thief Bonus EXP
+ORG 0x2C3EE
+BYTE 20
+
+//Boss Bonus EXP
+ORG 0x2C3FA
+BYTE 25
+
+//Revenant Bonus EXP
+ORG 0x2C402
+BYTE 0
+
+//Promoted Bonus EXP
+ORG 0x002C35E
+BYTE 20
+POP
+
+//Devil Axe Backfire Chance (Changes it to 30 - Luck, Base 31)
+PUSH
+ORG 0x02B6A4
+BYTE 0x1E
+POP
+
+//Nerfed Thief Vision
+PUSH
+ORG $178C2
+BYTE 0x03
+POP
+
+/*
+//Remove arrow wiggling advancing RN
+//by Colorz
+PUSH
+ORG 0x1A774
+    SHORT 0x2000 0
+POP
+*/
+
+//Remove Link Arena
+//by Aera
+PUSH
+ORG $AB90E
+	BYTE 0x00 0x00 0x00 0x20
+POP
+
+//Allows swapping of forced characters
+//by AuraWolf
+PUSH
+  ORG 0x33750
+    BYTE 0x00 0x20 0x00 0x00
+  ORG 0x9543E
+    BYTE 0x00 0x20 0x00 0x00
+POP
+
+PUSH
+//Remove Creature Campaign
+//by Aera
+ORG $AB944
+	BYTE 0x00 0x00 0x00 0x20
+POP
+
+//Skip to Hard (Difficulty Selection Skip)
+//by StanH
+{
+PUSH; ORG 0xA20164
+    POIN (prFixedDifficulty+1)
+POP
+
+prFixedDifficulty:
+    SHORT (0x2200 | 2) // Difficulty: 0 for easy, 1 for normal, 2 for hard
+    SHORT 0x2300
+    SHORT 0x212A
+    SHORT 0x5442
+    SHORT 0x213D
+    SHORT 0x5443
+    SHORT 0x4770
+    ALIGN 4
+}
+
+//Vulnerary Heal Amount
+PUSH
+ORG 0x2FEC6
+BYTE 0x0F //15
+POP
+
+//Thracia rescue trading
+//by MinN
+PUSH
+ORG 0x229A8
+SHORT 0x1C00
+
+ORG 0x22A10
+SHORT 0x1C00
+POP
+
+//Thracia item trading
+//by Aera
+PUSH
+ORG 0x022f50
+BYTE 0xc0
+BYTE 0x46
+ORG 0x02D772
+BYTE 0x1B
+ORG 0x09E3B8
+BYTE 0x1C
+ORG 0x09E8F2
+BYTE 0x1C
+POP
+
+//Prevent character event freezes
+//by 7743
+PUSH
+ORG $F25C
+BYTE 0x00 0x20
+ORG $102D4
+BYTE 0x00 0x20
+ORG $10804
+BYTE 0x00 0x20
+POP
+
+//Epic BLUE TEXT
+//Thanks Warpath
+/* PUSH
+ORG 0x59EF10
+BYTE 0xFB
+BYTE 0x7F
+BYTE 0xC4
+BYTE 0x28
+BYTE 0x11
+BYTE 0x5B
+BYTE 0xB4
+BYTE 0x6F
+BYTE 0xE3
+BYTE 0x2C
+BYTE 0x8E
+POP */
+
+//Portrait Height Fix
+//by Sme
+PUSH
+ORG 0x5C3C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POIN 0x5C9C
+POP
+
+//Fast Healing
+//by 7743
+/*PUSH
+ORG 0x07BCE2
+BYTE 0x20
+BYTE 0x34
+BYTE 0x24
+BYTE 0x04
+BYTE 0x24
+BYTE 0x0c
+BYTE 0x00
+BYTE 0x00
+BYTE 0x00
+BYTE 0x00
+BYTE 0x8c
+BYTE 0x42
+BYTE 0x09
+BYTE 0xda
+POP*/
+
+//Skip very beginning world map
+//by Tequila
+PUSH
+ORG $A39768
+EVBIT_MODIFY 0x1
+SKIPWN
+ENDA
+POP
+
+//Removes EXP Gain from Class 0x53
+PUSH
+ORG 0x02C3FE
+BYTE 0x0
+POP
+
+//Epic Light Snow Behind GUI
+//By Zane
+PUSH
+ORG 0x030366
+BYTE 0xE0
+//BYTE 0xC0 //Over map sprites
+//Epic Blizzard Behind GUI
+ORG 0x03066D
+BYTE 0x1C
+//BYTE 0x18 //Over map sprites
+POP
+
+//Light Snow But Less
+//by StanH
+PUSH
+    ORG $030332
+        BYTE $0F // 16 particles ($0F+1) instead of 32
+POP
+
+// Prep Shop
+PUSH
+  ORG 0x99E64
+    POIN PrepScreenShop
+POP
+
+ALIGN 4
+PrepScreenShop:
+SHLI Sword Vulnerary 0
+
+//Preps Armoury Store Price Inflation Fix
+//by Aera
+PUSH
+ORG 0x0B5237
+BYTE 0xE0
+POP

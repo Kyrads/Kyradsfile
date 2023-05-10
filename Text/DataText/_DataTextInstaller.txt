@@ -5,3 +5,6 @@
 #include "ItemText.txt"
 
 #include "SongText.txt"
+
+## WeaponText
+Wepn[X]

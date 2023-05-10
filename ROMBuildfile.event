@@ -17,9 +17,11 @@
 
     //Graphics
     #include "Graphics/_MasterGraphicsInstaller.event"
+    MESSAGE Used graphics space ends at currentOffset
 
     //Engine Hacks
     #include "EngineHacks/_MasterHackInstaller.event"
+    #include "EngineHacks/Kyradshack/_MasterASMInstaller.event"
     MESSAGE Used hax space ends at currentOffset
 
 	#ifdef USE_TEST_MAP
