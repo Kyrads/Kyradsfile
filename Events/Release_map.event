@@ -65,6 +65,7 @@ UNIT
 
 EnemyUnits:
 UNIT ONeill Fighter ONeill Level(1,Enemy,False) [12,1] 0b 0x0 0x0 0x0 [SteelAxe, HandAxe] NeverMoveAI
+UNIT 0xDD Knight_A ONeill Level(1,Enemy,False)[15,13] 0b 0x0 0x0 0x0 [Sword] NeverMoveAI
 UNIT
 
 Traps1:
