@@ -23,3 +23,5 @@
 #include "TilesetDefinitions.event"
 
 #include "EventMacros.event"
+
+#include "MapSpriteDefinitions.event"

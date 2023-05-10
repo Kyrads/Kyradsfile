@@ -1,0 +1,7 @@
+ALIGN 4
+KnightLanceStand:
+#incbin "DMP/KnightLanceStand.dmp"
+
+ALIGN 4
+KnightLanceWalk:
+#incbin "DMP/KnightLanceWalk.dmp"

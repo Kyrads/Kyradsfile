@@ -1,0 +1,7 @@
+
+#define ItemIconSlot(slot) "ORG 0x5926F4+(0x80*slot)"
+
+PUSH
+ItemIconSlot(0x0) 
+#incbin "DMP/Sword(Kyrads).dmp"
+POP

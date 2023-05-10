@@ -1,0 +1,5 @@
+// Player Classes
+
+//redefining knights
+#define Knight_A 0x9
+#define Knight_B 0xa
