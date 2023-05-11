@@ -24,6 +24,12 @@
 //7743
 	#include "FastBattleAnimation/Install.event"
 
+//Pikmin1211
+	#include "MagBy3/Installer.event"
+
+//HyperGammaSpaces
+	#include "FillAIRangeMapFix/FillAIDangerMap.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"
