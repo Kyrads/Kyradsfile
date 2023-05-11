@@ -551,3 +551,12 @@ WeaponTriangleEntry(Anima,Light,10,2)
 WeaponTriangleEntry(Light,Dark,10,2)
 WeaponTriangleEntry(Dark,Anima,10,2)
 POP
+
+/*
+//Don't draw portrait on item select menu if unit is generic
+//HyperGammaSpaces
+PUSH
+ORG 0x022BE8
+BYTE 0x08 0x68 0xC0 0x88 0x00 0x28
+POP
+*/
