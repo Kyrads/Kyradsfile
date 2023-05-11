@@ -12,6 +12,9 @@
 //Tequila
 	#include "FE8-Convoy_Partition_and_Item_Combining/Fe8-Convoy_Stuff_EA.event" //soley using this for convoy combine & 200 convoy
 
+//Tequilla, Zahlman, Stan, Black Mage, Eliwan, Awful Emblem Team
+	#include "FE8-Text_Engine_Rework/_FE8-Text_Engine_Rework_EA.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"
