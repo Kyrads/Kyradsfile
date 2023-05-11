@@ -54,13 +54,14 @@ CustomGameSpeedHook:
 	ldrh r0, [r0, #4] @ Pressed Keys
 
 	mov r1, #1 @ A Button
+	lsl r1, #8
 
 	@ Test A Button
 	tst r0, r1
 	beq CGS.skipCheckAPress
 
 	@ Increment speed
-	add r2, #1
+	add r2, #2
 
 CGS.skipCheckAPress:
 	@ r0 = Check Slow Walking?

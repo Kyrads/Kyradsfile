@@ -13,11 +13,11 @@
 
 	#define GameSpeedNormalValue       5
 	#define GameSpeedNormalCheckSlow   True
-	#define GameSpeedNormalCheckAPress False
+	#define GameSpeedNormalCheckAPress True
 
 	#define GameSpeedFastValue         6
 	#define GameSpeedFastCheckSlow     True
-	#define GameSpeedFastCheckAPress   False
+	#define GameSpeedFastCheckAPress   True
 #endif // CustomGameSpeedConfig
 
 {
