@@ -3,4 +3,15 @@
 //Ganzap
 	#include "ThreeHousesBraveEffect/braveasminstall.event"
 
+//Huichelaar
+	#include "FE8U_MinimugPalette-2/MinimugPalette.event"
+
+//StanH
+	#include "CustomGameSpeed/CustomGameSpeed.event"
+
+//Tequila
+	#include "FE8-Convoy_Partition_and_Item_Combining/Fe8-Convoy_Stuff_EA.event" //soley using this for convoy combine & 200 convoy
+
+
+//A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"

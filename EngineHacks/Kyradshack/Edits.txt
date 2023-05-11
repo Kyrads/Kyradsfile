@@ -217,14 +217,14 @@ ORG 0x3FE77
 BYTE 0xD2
 POP
 
-//Press R to speed up movement speed
+//Press R to speed up movement speed (Disabled due to conflict with CustomGameSpeed)
 //Pikmin1211
-PUSH
+/*PUSH
 ORG 0x794EE
 SHORT 0
 ORG 0x794F4
 SHORT 0x7941
-POP
+POP*/
 
 //Prevent Freeze from Unit State 0x33
 //by 7743
@@ -534,4 +534,13 @@ SHLI Sword Vulnerary 0
 PUSH
 ORG 0x0B5237
 BYTE 0xE0
+POP
+
+//Changes the item ids that play sacred weapon music from Sieglinde and Siegmund to 0xFF (no item)
+//7743 (I think, ask loog)
+PUSH 
+ORG $58B12
+BYTE 0xFF
+ORG $58B16
+BYTE 0xFF
 POP
