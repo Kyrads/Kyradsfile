@@ -544,3 +544,16 @@ BYTE 0xFF
 ORG $58B16
 BYTE 0xFF
 POP
+
+//Weapon Triangle
+//Pikmin1211
+#define WeaponTriangleEntry(AdvWpn,DisWpn,Hit,Atk) "BYTE AdvWpn DisWpn Hit Atk DisWpn AdvWpn (0-Hit) (0-Atk)" 
+PUSH
+ORG 0x59BA90
+WeaponTriangleEntry(Lances,Swords,10,2)
+WeaponTriangleEntry(Axes,Lances,10,2)
+WeaponTriangleEntry(Swords,Axes,10,2)
+WeaponTriangleEntry(Anima,Light,10,2)
+WeaponTriangleEntry(Light,Dark,10,2)
+WeaponTriangleEntry(Dark,Anima,10,2)
+POP
