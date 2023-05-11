@@ -15,6 +15,9 @@
 //Tequilla, Zahlman, Stan, Black Mage, Eliwan, Awful Emblem Team
 	#include "FE8-Text_Engine_Rework/_FE8-Text_Engine_Rework_EA.event"
 
+//Pikmin1211
+	#include "PreventRescue/Installer.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"
