@@ -378,12 +378,6 @@ prFixedDifficulty:
     ALIGN 4
 }
 
-//Vulnerary Heal Amount
-PUSH
-ORG 0x2FEC6
-BYTE 0x0F //15
-POP
-
 //Thracia rescue trading
 //by MinN
 PUSH
