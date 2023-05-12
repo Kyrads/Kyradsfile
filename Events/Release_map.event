@@ -66,7 +66,11 @@ UNIT
 
 EnemyUnits:
 UNIT ONeill Fighter ONeill Level(1,Enemy,False) [12,1] 0b 0x0 0x0 0x0 [SteelAxe, HandAxe] NeverMoveAI
-UNIT 0xDD Knight_A ONeill Level(1,Enemy,False)[15,13] 0b 0x0 0x0 0x0 [Sword] NeverMoveAI
+UNIT 0xDD Knight_A ONeill Level(1,Enemy,False)[15,13] 0b 0x0 0x0 0x0 [IronLance] NeverMoveAI
+UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [IronLance] GroupOneAI //These AI don't work atm, doesn't recognise the def
+UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [IronLance] GroupOneAI
+UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[3,19] 0b 0x0 0x0 0x0 [IronLance] GroupOneAI
+UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[4,19] 0b 0x0 0x0 0x0 [IronLance] GroupOneAI
 UNIT
 
 Traps1:
@@ -78,6 +82,7 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
+ENUT 0xAB
 LOAD1 0x1 EnemyUnits
 ENUN
 LOAD1 0x0 Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens

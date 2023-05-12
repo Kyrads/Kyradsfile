@@ -39,6 +39,9 @@
 //Vesly
 	#include "GenericPortraitFixes/Installer.event"
 
+//Vesly
+	#include "DebugPlaceUnits/Installer.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"
