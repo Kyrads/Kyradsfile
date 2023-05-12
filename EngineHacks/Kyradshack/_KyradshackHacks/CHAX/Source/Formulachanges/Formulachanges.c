@@ -3,7 +3,7 @@
 void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* defender) {
     short attack;
 
-    attacker->battleAttack = GetItemMight(attacker->weapon) + attacker->wTriangleDmgBonus;
+    attacker->battleAttack = GetItemMight(attacker->weapon);
     attack = attacker->battleAttack;
 
     if (IsUnitEffectiveAgainst(&attacker->unit, &defender->unit) == TRUE)
@@ -32,23 +32,11 @@ void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* def
         } // switch (GetItemIndex(attacker->weapon))
     }
 
+    attack += attacker->wTriangleDmgBonus;
+
     attacker->battleAttack = attack;
     attacker->battleAttack += attacker->unit.pow;
 
     if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE)
         attacker->battleAttack = 0;
-}
-
-void ComputeBattleUnitSpeed(struct BattleUnit* bu) {
-    int effWt = GetItemWeight(bu->weaponBefore);
-
-    effWt -= bu->unit.conBonus;
-
-    if (effWt < 0)
-        effWt = 0;
-
-    bu->battleSpeed = bu->unit.spd - effWt;
-
-    if (bu->battleSpeed < 0)
-        bu->battleSpeed = 0;
 }

@@ -7,7 +7,7 @@ clib_Include := $(CLib)/include
 
 # Lyn
 LYN := $(realpath .)/../../../../EventAssembler/Tools/lyn
-LYN_REFERENCE := $(realpath .)/definitions.s
+LYN_REFERENCE := $(realpath .)/definitions.o
 
 # DevKit
 include $(DEVKITARM)/base_tools
@@ -20,6 +20,8 @@ INCFLAGS := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
 ARCH := -mcpu=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS := $(ARCH) $(INCFLAGS) -Wall -O2 -mtune=arm7tdmi -ffreestanding -fomit-frame-pointer -mlong-calls
 ASFLAGS := $(ARCH) $(INCFLAGS)
+
+.PRECIOUS: %.o;
 
 # OBJ to event rule
 $(src_Event)%.lyn.event: $(src)%.o $(LYN_REFERENCE)

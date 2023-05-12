@@ -42,6 +42,12 @@
 //Vesly
 	#include "DebugPlaceUnits/Installer.event"
 
+//Vesly
+	#include "IconDisplay/Installer.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.txt"
+
+//CHAX
+	#include "_KyradshackHacks/CHAX/_MasterCHAXInstaller.event"
