@@ -1,2 +1,47 @@
 # 0x0354 SwordName^
 Sword[X]
+
+# 0x02BF LordName^
+Lord[X]
+
+# 0x02C1 CavalierName^
+Cavalier[X]
+
+# 0x02C3 KnightName^
+Knight[X]
+
+# 0x02C5 ThiefName^
+Thief[X]
+
+# 0x02ED SoldierName^
+Soldier[X]
+
+# 0x02D7 Dummy1^
+Dummy[X]
+
+# 0x0323 Dummy2^
+Dummy[X]
+
+# 0x04EC DexStat
+Dex[.][X]
+
+# 0x04EE LuckStat
+Lck[.][X]
+
+# 0x04F6
+Mov[.][X]
+
+# 0x0548 DexDescription
+Fighting skill. A higher[NL]
+number improves hit & crit %.[.][X]
+
+# 0x0485
+Increases dexterity by 3[NL]
+points. Vanishes after use.[.][X]
+
+# 0x0015
+Dexterity increased.[X]
+
+
+# 0x04C3
+Raises dexterity.[.][X]

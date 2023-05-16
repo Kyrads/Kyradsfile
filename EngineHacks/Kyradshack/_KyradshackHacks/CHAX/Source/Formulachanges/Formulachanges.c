@@ -9,7 +9,7 @@ void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* def
     if (IsUnitEffectiveAgainst(&attacker->unit, &defender->unit) == TRUE)
         attack = attacker->battleAttack * 3;
 
-    if (IsItemEffectiveAgainst(attacker->weapon, &defender->unit) == TRUE) {
+    if (IsItemEffectiveAgainst(attacker->weapon, &defender->unit) != 0) {
         attack = attacker->battleAttack;
 
         switch (GetItemIndex(attacker->weapon)) {

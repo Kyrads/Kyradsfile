@@ -41,8 +41,15 @@ IconDisplayList:
 //BYTE 0 // padding 
 //BYTE 0 // Padding 
 
+
+//0x51 //Escape
+
+//Example
+// BYTE Unit ID Class ID; SHORT Flag ID; 		BYTE Chapter ID Icon ID 0 0
+
+BYTE 0xD1 Thief; SHORT 0; 		BYTE 0xFF 0x51 0 0
+//BYTE ONeill Fighter; SHORT 0; 		BYTE 0xFF 0x76 0 0
 /*
-BYTE 1 0; SHORT 0; 		BYTE 0xFF 0xFF 0 0 // Unit ID 1 to always display default icon for unit to defend 
 BYTE 2 0; SHORT 0; 		BYTE 0xFF 0x76 0 0
 BYTE 3 0; SHORT 0; 		BYTE 0xFF 0x77 0 0
 BYTE 4 0; SHORT 0; 		BYTE 0xFF 0x4  0 0
