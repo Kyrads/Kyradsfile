@@ -43,6 +43,9 @@ IconDisplayList:
 
 
 //0x51 //Escape
+//0x10 //Boss
+//0x50 //Miniboss
+//0x11 //Defend
 
 //Example
 // BYTE Unit ID Class ID; SHORT Flag ID; 		BYTE Chapter ID Icon ID 0 0

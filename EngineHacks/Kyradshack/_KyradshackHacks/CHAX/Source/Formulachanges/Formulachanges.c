@@ -1,5 +1,7 @@
 #include "gbafe.h"
 
+
+//Damage Formula
 void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* defender) {
     short attack;
 
@@ -39,4 +41,18 @@ void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* def
 
     if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE)
         attacker->battleAttack = 0;
+}
+
+//Hit Formula
+
+void ComputeBattleUnitHitRate(struct BattleUnit* bu) {
+    bu->battleHitRate = (bu->unit.skl + (bu->unit.skl / 2)) + GetItemHit(bu->weapon) + bu->unit.lck + bu->wTriangleHitBonus;
+    }
+
+//Avoid Formula
+void ComputeBattleUnitAvoidRate(struct BattleUnit* bu) {
+    bu->battleAvoidRate = (bu->battleSpeed + (bu->battleSpeed / 2)) + bu->terrainAvoid + (bu->unit.lck);
+
+    if (bu->battleAvoidRate < 0)
+        bu->battleAvoidRate = 0;
 }
