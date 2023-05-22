@@ -70,7 +70,11 @@
 	#include "ResTerrainWindow/Installer.event"
 
 //Contro
-	#include "StatScreenAlleg/Installer.event"
+	//#include "StatScreenAlleg/Installer.event"
+
+//Sme
+	#include "AnimationForcer/AnimationForcer.event"
+
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info
