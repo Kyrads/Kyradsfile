@@ -57,6 +57,9 @@
 //Vesly
 	#include "SkipChIntro/Installer.event"
 
+// (MMB Credits), LegendOfLoog
+	#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
+
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info
