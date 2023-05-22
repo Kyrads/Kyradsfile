@@ -45,11 +45,18 @@
 //Vesly
 	#include "IconDisplay/Installer.event"
 
-//MKol
-	//#include "DisplayDroppableItem/DisplayDroppableItem.event"
-
+//MKol, Huichellaar, Vesly
+	#include "DisplayObtainableItem/Installer.event" //Note, doesn't display stealables during preps
+													 //Additionally, displays Droppable > Stealable, would like an icon for both	
 //Vesly
 	#include "StealWithFullnv/Installer.event"
+
+//Vesly
+	#include "ExtendWeaponDescBox/Installer.event"
+
+//Vesly
+	#include "SkipChIntro/Installer.event"
+
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info
