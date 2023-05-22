@@ -1,9 +1,13 @@
+
+//A set of edits to the ROM that are too small to justify having their own ASM installers.
+
 //Change Normal mode penalty into a bonus
 //PUSH
 //ORG 0x0180FA
 //BYTE 0xFF 0xF7 0x63 0xFF
 
 // HP bar animation
+// Speeds up HP bar animation
 /* PUSH
 ORG 0x9A50AE
 BYTE 0x1E
@@ -30,12 +34,6 @@ PUSH
 ORG 0x1EA3C
 SHORT WeaponText
 POP
-
-// Target allies or enemies (IER thing? TODO: figure this out. 90% sure this is berserk routine)
-//PUSH
-//ORG 0x261B2
-//SHORT 0x0
-//POP
 
 // make vanilla "gold" item slots not automatically convert to gold when obtained
 // by moving this effect to an item you can never obtain anyway (such as Agneya here)
@@ -291,9 +289,9 @@ POP
 //Defeat EXP
 PUSH
 ORG 0x02C462
-BYTE 15
+BYTE 17
 ORG 0x02C480
-BYTE 15
+BYTE 17
 
 //Base Value EXP
 ORG 0x002c37c
@@ -301,7 +299,7 @@ BYTE 20
 
 //Thief Bonus EXP
 ORG 0x2C3EE
-BYTE 20
+BYTE 15
 
 //Boss Bonus EXP
 ORG 0x2C3FA
@@ -552,9 +550,18 @@ WeaponTriangleEntry(Light,Dark,10,2)
 WeaponTriangleEntry(Dark,Anima,10,2)
 POP
 
-//Accept Staff Healing When Not In Recovery Mode
+//No-Recovery Mode Staff Healing
 //Vesly
 PUSH 
 ORG $5A83A1
 BYTE 80 // Percentage of health to accept staff healing at when not in recovery mode, set to 80% so staffers aren't healing absolute non amounts of HP
 POP 
+
+//Delay in frames after the AI has displayed cursor on target
+PUSH 
+ORG $39EAE 
+BYTE 0x14 // 45 is Vanilla default, 16 for the popup with no anim, 24 is the full anim once
+POP 
+
+
+//https://youtu.be/H8Otgbm--Ek

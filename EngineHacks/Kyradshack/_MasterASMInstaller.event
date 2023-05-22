@@ -60,6 +60,17 @@
 // (MMB Credits), LegendOfLoog
 	#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
 
+//Contro
+	#include "BattleForecastFix/Installer.event"
+
+//Contro
+	#include "ExpByAction/Installer.event"
+
+//Contro
+	#include "ResTerrainWindow/Installer.event"
+
+//Contro
+	#include "StatScreenAlleg/Installer.event"
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info

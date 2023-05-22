@@ -1,0 +1,7 @@
+#define CamOn "EVBIT_T 0x9"
+#define CamOff "EVBIT_F 0x9"
+#define SpawnReinforcements(UnitGroup) "CamOn; LOAD1 0x1 UnitGroup; ENUN; CamOff; STAL 30"
+
+
+//AI Macros
+#define InRangeAI         [0x0,0x0,0x4,0x0]
