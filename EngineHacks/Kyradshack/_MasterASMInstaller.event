@@ -1,48 +1,65 @@
 
 
 //Ganzap
+//Makes brave weapons only have their brave effect when initiating
+//However, still displays when attacking enemies with brave weapons
 	#include "ThreeHousesBraveEffect/braveasminstall.event"
 
 //Huichelaar
+//Fixes a bug with the minimug palette when switching between two characters
 	#include "FE8U_MinimugPalette-2/MinimugPalette.event"
 
 //StanH
+//Allows easy customisation of the game speed settings, used to make heavy classes have slower movement on the Fast setting
+//Edited by Pikmin1211 to make the R button speed up movement.
 	#include "CustomGameSpeed/CustomGameSpeed.event"
 
 //Tequila
-	#include "FE8-Convoy_Partition_and_Item_Combining/Fe8-Convoy_Stuff_EA.event" //soley using this for convoy combine & 200 convoy
+//Used to increase the size of the convoy to 200, and allow for the combining of items in the convoy. Partitioning isn't used.
+	#include "FE8-Convoy_Partition_and_Item_Combining/Fe8-Convoy_Stuff_EA.event"
 
 //Tequilla, Zahlman, Stan, Black Mage, Eliwan, Awful Emblem Team
+//Rework of the text engine, mostly for the use of one and three line text boxes, but has many other useful features.
 	#include "FE8-Text_Engine_Rework/_FE8-Text_Engine_Rework_EA.event"
 
 //Pikmin1211
+//Used to prevent mounted classes from being rescued
 	#include "PreventRescue/Installer.event"
 
 //Leonarth
+//Makes it so that when stopped by an enemy in fog, the unit is still allowed to act.
 	#include "LessAnnoyingFog/LessAnnoyingFogInstaller.event"
 
 //7743
+//Allows speeding up of battle animations via the R button.
 	#include "FastBattleAnimation/Install.event"
 
 //Pikmin1211
+//Changes staves that use Mag/2 range to use Mag/3 range instead.
 	#include "MagBy3/Installer.event"
 
 //HyperGammaSpaces
+//Improves lag on enemy phase, particularly with skillsys and high enemy density.
 	#include "FillAIRangeMapFix/FillAIDangerMap.event"
 
 //AuraWolf
+//Allows you to use L button cycling on Red and Green units
 	#include "UpdatedLButtonCycling/UpdatedLButtonCycling.event"
 
 //Vesly
+//Group AI V2, allows enemy units in groups to have their AI triggered when entering the range of any one of them.
 	#include "GroupAi/Installer.event"
 
 //Vesly
+//Removes Portrait Glitches for units with no portraits.
 	#include "GenericPortraitFixes/Installer.event"
 
 //Vesly
+//Allows a debug menu where you can move a unit anywhere on the map.
 	#include "DebugPlaceUnits/Installer.event"
 
 //Vesly
+//Allows the displaying of icons on units such as boss, defend, raid etc based on character ID, Chapter, Flag etc.
 	#include "IconDisplay/Installer.event"
 
 //MKol, Huichellaar, Vesly
@@ -74,6 +91,15 @@
 
 //Sme
 	#include "AnimationForcer/AnimationForcer.event"
+
+//Sme
+//For giving characters promotions unique to them. 
+//Need to set every character's promotion manually regardless though as the way this hack works will cause a hang for classes with only one promotion.
+	#include "CharBasedPromos/CharBasedPromos.event"
+
+
+//AuraWolf
+	#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
 
 
 

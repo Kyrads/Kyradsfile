@@ -91,11 +91,6 @@ BYTE 0x6E	//StartSpellBG_FLASH ThisMakesTheHPInSpellAnimGoAway
 ORG 0x05EFEA
 BYTE 0x8F	//Break6CLoop	Clean up
 
-//Delay in frames after the AI's displayed targetting cursor
-//PUSH 
-//ORG $39EAE 
-//BYTE 0x24 // 45 is Vanilla default, 16 for the popup with no anim, 24 is the full anim once
-//POP 
 
 //Poison Damage (default 1)
 PUSH
@@ -215,15 +210,6 @@ ORG 0x3FE77
 BYTE 0xD2
 POP
 
-//Press R to speed up movement speed (Disabled due to conflict with CustomGameSpeed)
-//Pikmin1211
-/*PUSH
-ORG 0x794EE
-SHORT 0
-ORG 0x794F4
-SHORT 0x7941
-POP*/
-
 //Prevent Freeze from Unit State 0x33
 //by 7743
 PUSH
@@ -269,7 +255,7 @@ ORG 0x897C4
 SHORT 0x200E 0x5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
 POP
 
-// Unlock Supply/Gold from Ephraim's stupid dumb chapter
+// Unlock Supply/Gold from 5x
 PUSH
 ORG 0x37B95
 BYTE 0xE0
@@ -344,12 +330,13 @@ POP
 
 //Allows swapping of forced characters
 //by AuraWolf
-PUSH
+//Currently using AuraWolf's V2 that allows positions to be locked on a per chapter and per character basis.
+/*PUSH
   ORG 0x33750
     BYTE 0x00 0x20 0x00 0x00
   ORG 0x9543E
     BYTE 0x00 0x20 0x00 0x00
-POP
+POP*/
 
 PUSH
 //Remove Creature Campaign
@@ -561,7 +548,7 @@ POP
 PUSH 
 ORG $39EAE 
 BYTE 0x14 // 45 is Vanilla default, 16 for the popup with no anim, 24 is the full anim once
-POP 
+POP
 
 
 //https://youtu.be/H8Otgbm--Ek
