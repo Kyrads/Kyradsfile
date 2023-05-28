@@ -157,8 +157,8 @@ struct Unit
 
     /* 32 */ u8 supports[UNIT_SUPPORT_MAX_COUNT];
     /* 39 */ s8 supportBits;
-    /* 3A */ u8 _u3A;
-    /* 3B */ u8 _u3B;
+    /* 3A */ u8 mag;
+    /* 3B */ u8 fatigue;
 
     /* 3C */ struct SMSHandle* pMapSpriteHandle;
 

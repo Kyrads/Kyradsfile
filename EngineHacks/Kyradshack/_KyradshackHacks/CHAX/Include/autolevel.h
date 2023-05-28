@@ -1,0 +1,1 @@
+extern int GetStatIncrease(int growth);
