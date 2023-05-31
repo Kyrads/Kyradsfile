@@ -43,6 +43,7 @@ enum
     AI_FLAG_0 = (1 << 0),
     AI_FLAG_1 = (1 << 1),
     AI_FLAG_BERSERKED = (1 << 2),
+    AI_FLAG_3 = (1 << 3),
 };
 
 enum
@@ -51,12 +52,39 @@ enum
     AI_UNIT_FLAG_1 = (1 << 1),
     AI_UNIT_FLAG_2 = (1 << 2),
     AI_UNIT_FLAG_3 = (1 << 3),
+    AI_UNIT_FLAG_4 = (1 << 4),
+    AI_UNIT_FLAG_5 = (1 << 5),
+    AI_UNIT_FLAG_6 = (1 << 6),
 };
 
 enum
 {
     AI_ACTION_NONE = 0, // move only
+    AI_ACTION_COMBAT = 1,
+    AI_ACTION_ESCAPE = 2,
+    AI_ACTION_STEAL = 3,
+    AI_ACTION_PILLAGE = 4,
+    AI_ACTION_STAFF = 5,
+    AI_ACTION_USEITEM = 6,
+    AI_ACTION_REFRESH = 7,
+    AI_ACTION_TALK = 8,
+    AI_ACTION_RIDEBALLISTA = 9,
+    AI_ACTION_EXITBALLISTA = 10,
+    AI_ACTION_DKNIGHTMARE = 11,
+    AI_ACTION_DKSUMMON = 12,
+    AI_ACTION_PICK = 13,
 };
+
+enum
+{
+    AI_COMPARE_GT,
+    AI_COMPARE_GE,
+    AI_COMPARE_EQ,
+    AI_COMPARE_LE,
+    AI_COMPARE_LT,
+    AI_COMPARE_NE,
+};
+
 
 extern struct AiState gAiState;
 extern struct AiDecision gAiDecision;
@@ -71,7 +99,7 @@ extern struct ProcCmd CONST_DATA gProcScr_CpDecide[];
 extern struct ProcCmd CONST_DATA gProcScr_CpPerform[];
 
 void AiClearDecision(void);
-void AiSetDecision(u8 xMove, u8 yMove, u8 actionId, u8 targetId, u8 itemSlot, u8 xTarget, u8 yTarget);
+void AiSetDecision(s16 xMove, s16 yMove, u8 actionId, u8 targetId, u8 itemSlot, u8 xTarget, u8 yTarget);
 void AiUpdateDecision(u8 actionId, u8 targetId, u8 itemSlot, u8 xTarget, u8 yTarget);
 void AiDecideMain(void);
 

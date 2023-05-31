@@ -21,10 +21,19 @@ Dagger[X]
 
 #0x040a DaggerDesc
 A light throwing dagger.[N]
-Pierces Def in melee. Thief only.[X]
+Pierces Def in melee. Thief only.[A][X]
 
 #0x035d BraveSwordName^
 Brave Sword[X]
+
+#0x035e SwiftSwordName^
+Swift Sword[X]
+
+#0x040e SwiftSwordDesc
+Can strike consecutively.[X]
+
+#0x035f KillingEdgeName^
+Killing Edge[X]
 
 #0x03ee GreenGemName^
 Green Gem[X]

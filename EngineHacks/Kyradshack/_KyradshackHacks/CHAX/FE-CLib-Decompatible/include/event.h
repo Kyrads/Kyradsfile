@@ -23,9 +23,12 @@ struct EventEngineProc {
     /* 46 */ // pad
 
     /* 48 */ const void* pUnitLoadData;
-    /* 4C */ u16 unitLoadCount;
-    
+    /* 4C */ s16 unitLoadCount;
+
     /* 4E */ u8  idk4E;
+
+    /* 4F */ u8 _pad_4F[0x54 - 0x4F];
+    /* 54 */ struct Unit *unit;
 };
 
 enum EventExecType {
@@ -67,33 +70,33 @@ typedef u8(*EventFuncType)(struct EventEngineProc*);
 // ??? CallNextQueuedEvent(???);
 void CallEvent(const u16* events, u8 execType);
 struct EventEngineProc* EventEngine_Create(const u16* events, u8 idk);
-// ??? EventEngine_CreateBattle(???);
-int EventEngineExists(void);
-// ??? BattleEventEngineExists(???);
-// ??? DeleteEventEngines(???);
+void EventEngine_CreateBattle(const u16* events);
+s8 EventEngineExists(void);
+int BattleEventEngineExists(void);
+void DeleteEventEngines(void);
 // ??? sub_800D1E4(???);
-// ??? SetEventSlotC(???);
+void SetEventSlotC(unsigned value);
 // ??? sub_800D204(???);
 int sub_800D208(void);
 // ??? CallBattleQuoteEvent(???);
-// ??? CallBattleQuoteEventInBattle(???);
-// ??? CallTileChangeEvent(???);
-// ??? CallChestOpeningEvent(???);
-// ??? CallMapSupportEvent(???);
-// ??? CallSupportViewerEvent(???);
-// ??? CallRetreatPromptEvent(???);
-// ??? CallSuspendPromptEvent(???);
+void CallBattleQuoteEventInBattle(u16 textIndex);
+void CallTileChangeEvent(u16 tileChangeIndex);
+void CallChestOpeningEvent(u16 tileChangeIndex, u16 idr);
+void CallMapSupportEvent(u16 musicIndex, u16 textIndex);
+void CallSupportViewerEvent(u16);
+void CallRetreatPromptEvent(void);
+void CallSuspendPromptEvent(void);
 void CallGameOverEvent(void);
-// ??? sub_800D3E4(???);
+void sub_800D3E4(void);
 // ??? EventEngine_StartSkip(???);
 // ??? sub_800D488(???);
 // ??? SetEventTriggerState(???);
-// ??? GetEventTriggerState(???);
+s8 GetEventTriggerState(u16 triggerId);
 // ??? sub_800D4D4(???);
 // ??? sub_800D524(???);
 // ??? SlotQueuePush(???);
 // ??? SlotQueuePop(???);
-// ??? SetEventSlotCounter(???);
-// ??? GetEventSlotCounter(???);
+void SetEventSlotCounter(unsigned value);
+unsigned GetEventSlotCounter(void);
 
 #endif // GUARD_EVENT_H

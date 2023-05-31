@@ -1,3 +1,11 @@
+ALIGN 4
+gSkillTester:
+POIN SkillTester+1
+
+ALIGN 4
+DisciplineIDLink:
+BYTE DisciplineID
 
 #include "Event/Formulachanges/Formulachanges.lyn.event"
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
+//#include "Event/WEXPChanges/WEXPChanges.lyn.event"

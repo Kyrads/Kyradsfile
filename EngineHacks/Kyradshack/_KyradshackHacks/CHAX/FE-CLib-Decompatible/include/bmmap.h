@@ -22,7 +22,7 @@ void UpdateBmMapDisplay(void);
 void RefreshEntityBmMaps(void);
 char* GetTerrainName(int terrainId);
 int GetTerrainHealAmount(int terrainId);
-int GetTerrainUnk(int terrainId);
+s8 GetTerrainHealsStatus(int terrainId);
 void sub_801A278(void);
 void RevertMapChange(int id);
 
@@ -33,7 +33,7 @@ extern u8** gBmMapMovement;
 extern u8** gBmMapRange;
 extern u8** gBmMapFog;
 extern u8** gBmMapHidden;
-extern u8** gBmMapUnk;
+extern u8** gBmMapOther;
 
 extern u8*   gTilesetTerrainLookup;
 extern u16** gBmMapBaseTiles;

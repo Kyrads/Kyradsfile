@@ -8,4 +8,5 @@
 #define BastardSword 0x5
 #define Greatsword 0x6
 #define Dagger 0x7
+#define SwiftSword 0xc
 #define GreenGem 0xba

@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 #include "gba/gba.h"
-#include "gbafe.h"
 
 #define CONST_DATA __attribute__((section(".data")))
 
@@ -26,5 +25,23 @@
 #define COS(aAngle) (gSinLookup[0x40 + (aAngle&0xFF)])
 
 #define RECT_DISTANCE(aXA, aYA, aXB, aYB) (ABS((aXA) - (aXB)) + ABS((aYA) - (aYB)))
+
+#define LIMIT_AREA(num, min, max)   \
+    if (num > max)                  \
+        num = max;                  \
+    if (num < min)                  \
+        num = min;
+
+#define LIMIT_AREA_(num, min, max)  \
+    if (num < min)                  \
+        num = min;                  \
+    else if (num > max)             \
+        num = max;
+
+#if !MODERN
+#  define STRUCT_PAD(from, to) unsigned char _pad_ ## from[(to) - (from)]
+#else
+#  define STRUCT_PAD(from, to)
+#endif
 
 #endif  // GUARD_GLOBAL_H

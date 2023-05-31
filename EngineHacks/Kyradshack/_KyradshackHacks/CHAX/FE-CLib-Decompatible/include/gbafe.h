@@ -41,7 +41,7 @@ extern "C" {
 #include "hardware.h"
 #include "icon.h"
 #include "m4a.h"
-#include "mapselect.h"
+//#include "mapselect.h"
 #include "mu.h"
 #include "packed_data_block.h"
 #include "portrait_pointer.h"

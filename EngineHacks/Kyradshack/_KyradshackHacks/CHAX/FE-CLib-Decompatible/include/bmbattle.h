@@ -1,6 +1,9 @@
 #ifndef GUARD_BMBATTLE_H
 #define GUARD_BMBATTLE_H
 
+#include "constants/terrains.h"
+#include "bmunit.h"
+
 enum {
     // Battle-related magic constants
 
@@ -47,10 +50,10 @@ struct BattleUnit {
 
     /* 6E */ s8 expGain;
     /* 6F */ s8 statusOut;
-    /* 70 */ u8 levelPrevious;
-    /* 71 */ u8 expPrevious;
+    /* 70 */ s8 levelPrevious;
+    /* 71 */ s8 expPrevious;
 
-    /* 72 */ u8 hpInitial;
+    /* 72 */ s8 hpInitial;
 
     /* 73 */ s8 changeHP;
     /* 74 */ s8 changePow;
@@ -59,7 +62,7 @@ struct BattleUnit {
     /* 77 */ s8 changeDef;
     /* 78 */ s8 changeRes;
     /* 79 */ s8 changeLck;
-    /* 7A */ s8 changeMag;
+    /* 7A */ s8 changeCon;
 
     /* 7B */ s8 wexpMultiplier;
     /* 7C */ s8 nonZeroDamage;
@@ -92,11 +95,11 @@ enum {
     BATTLE_CONFIG_SIMULATE = (1 << 1),
     BATTLE_CONFIG_BIT2 = (1 << 2),
     BATTLE_CONFIG_BALLISTA = (1 << 3),
-    BATTLE_CONFIG_BIT4 = (1 << 4),
+    BATTLE_CONFIG_PROMOTION = (1 << 4),
     BATTLE_CONFIG_ARENA = (1 << 5),
     BATTLE_CONFIG_REFRESH = (1 << 6),
     BATTLE_CONFIG_MAPANIMS = (1 << 7),
-    BATTLE_CONFIG_PROMOTION = (1 << 8),
+    BATTLE_CONFIG_PROMOTION_PREP = (1 << 8),
     BATTLE_CONFIG_DANCERING = (1 << 9),
 };
 
@@ -212,5 +215,7 @@ void SetScriptedBattle(struct BattleHit* hits);
 void UnitLevelUp(struct Unit* unit);
 void BattleHitAdvance(void);
 void BattleHitTerminate(void);
+
+#define BUNIT_IS_OBSTACLE(aBu) (((aBu)->terrainId == TERRAIN_WALL_1B) || ((aBu)->terrainId == TERRAIN_SNAG))
 
 #endif // GUARD_BMBATTLE_H
