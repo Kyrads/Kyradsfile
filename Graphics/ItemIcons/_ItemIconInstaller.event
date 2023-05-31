@@ -5,3 +5,23 @@ PUSH
 ItemIconSlot(0x0) 
 #incbin "DMP/Sword(Kyrads).dmp"
 POP
+
+PUSH
+ItemIconSlot(0x1) 
+#incbin "DMP/Shortsword(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x2) 
+#incbin "DMP/Longsword(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x4) 
+#incbin "DMP/Bastard_Sword(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x5) 
+#incbin "DMP/Greatsword(Kyrads).dmp"
+POP

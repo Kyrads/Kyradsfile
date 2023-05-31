@@ -1,6 +1,21 @@
 # 0x0354 SwordName^
 Sword[X]
 
+#0x0355 ShortswordName^
+Shortsword[X]
+
+#0x0356 LongswordName^
+Longsword[X]
+
+#0x0357 RegalSwordName^
+Regal Sword[X]
+
+#0x0358 BastardSwordName^
+Bastard Sword[X]
+
+#0x0359 GreatswordName^
+Greatsword[X]
+
 # 0x02BF LordName^
 Lord[X]
 

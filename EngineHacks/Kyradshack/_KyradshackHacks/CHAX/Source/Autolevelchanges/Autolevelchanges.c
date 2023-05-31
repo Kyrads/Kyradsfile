@@ -159,12 +159,12 @@ int GetAutoleveledStatIncrease(int growth, int levelCount) {
 		  }
     }
     
-    return GetStatIncrease(statIncreaseTotal);
+    return GetStatIncreaseNPC(statIncreaseTotal);
 
 }
 
 //Designed to remove randomness from the getstatincrease, instead all randomness is a product of the growth totals
-int GetStatIncrease(int growth) {
+int GetStatIncreaseNPC(int growth) {
     int result = 0;
 
     while (growth > 100) {

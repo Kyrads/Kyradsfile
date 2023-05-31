@@ -1,3 +1,9 @@
 // weapons
 
 #define Sword 0x1
+#define Shortsword 0x2
+#undef Longsword
+#define Longsword 0x3
+#define RegalSword 0x4
+#define BastardSword 0x5
+#define Greatsword 0x6

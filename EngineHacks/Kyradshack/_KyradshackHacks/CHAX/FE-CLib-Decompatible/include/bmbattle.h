@@ -59,7 +59,7 @@ struct BattleUnit {
     /* 77 */ s8 changeDef;
     /* 78 */ s8 changeRes;
     /* 79 */ s8 changeLck;
-    /* 7A */ s8 changeCon;
+    /* 7A */ s8 changeMag;
 
     /* 7B */ s8 wexpMultiplier;
     /* 7C */ s8 nonZeroDamage;
