@@ -16,6 +16,23 @@ Bastard Sword[X]
 #0x0359 GreatswordName^
 Greatsword[X]
 
+#0x035a DaggerName^
+Dagger[X]
+
+#0x040a DaggerDesc
+A light throwing dagger.[N]
+Pierces Def in melee. Thief only.[X]
+
+#0x035d BraveSwordName^
+Brave Sword[X]
+
+#0x03ee GreenGemName^
+Green Gem[X]
+
+#0x49d GreenGemDesc
+A common gemstone[N]
+worth 1,000 gold.[X]
+
 # 0x02BF LordName^
 Lord[X]
 

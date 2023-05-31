@@ -40,4 +40,10 @@ BYTE EirikaLord
 BYTE Rogue
 BYTE EndLockArray
 
+DaggerArray:
+BYTE HardClassLock
+BYTE Thief
+BYTE Thief_F
+BYTE EndLockArray
+
 #endif // ADV_WEAPON_LOCKS

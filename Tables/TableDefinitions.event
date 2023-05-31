@@ -53,6 +53,7 @@
   #define EphraimLock 0x00080000
   #define WeaponLock3 0x00100000
   #define WeaponLock4 0x00200000
+  #define DaggerLock 0x02000000
 #endif
 #ifdef _FE7_
   #define EliwoodLock 0x00040000

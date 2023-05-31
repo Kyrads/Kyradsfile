@@ -188,8 +188,9 @@ POP */
     //WORD 0x19ED2550 0x24287828 0x5C2619E4 0xD0012E00 0x47184B01 0x47184B01 0x802C133 0x802C113
 
 // Remove Kill Bonus for WEXP (Causes a crash currently)
-/*PUSH
 //by Alusq
+/*
+PUSH
 ORG $2c142
 BYTE 0x01 0x29 0x0 0xDC 
 POP*/
