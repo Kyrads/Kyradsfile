@@ -61,6 +61,7 @@
 ## Icons
 [HorseIcon] = [0x7B]
 [ArmorIcon] = [0x7C]
+[ArmourIcon] = [ArmorIcon]
 [PegasusIcon] [0x7D]
 [FlierIcon] = [PegasusIcon]
 [DragonIcon] = [0x7F]

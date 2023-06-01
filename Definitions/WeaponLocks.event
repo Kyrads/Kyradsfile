@@ -1,4 +1,0 @@
-#define WeaponLockDefinition(id) "id << 24"
-
-//ExampleDefinition
-//#define EirikaLock WeaponLockDefinition(0x1)

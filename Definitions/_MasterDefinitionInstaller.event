@@ -16,8 +16,6 @@
 
 #include "StatBonuses.event"
 
-#include "WeaponLocks.event"
-
 #include "SongDefinitions.event"
 
 #include "TilesetDefinitions.event"

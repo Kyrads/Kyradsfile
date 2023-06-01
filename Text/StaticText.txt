@@ -1,46 +1,126 @@
 # 0x0354 SwordName^
 Sword[X]
 
+
+
 #0x0355 ShortswordName^
 Shortsword[X]
+
+
 
 #0x0356 LongswordName^
 Longsword[X]
 
+
+
 #0x0357 RegalSwordName^
 Regal Sword[X]
+
+
 
 #0x0358 BastardSwordName^
 Bastard Sword[X]
 
+
+
 #0x0359 GreatswordName^
 Greatsword[X]
+
+
 
 #0x035a DaggerName^
 Dagger[X]
 
-#0x040a DaggerDesc
+
+
+#0x040a DaggerDesc^
 A light throwing dagger.[N]
-Pierces Def in melee. Thief only.[A][X]
+Pierces Def in melee. Thief only.[X]
+
+
+
+#0x035c RapierName^
+Rapier[X]
+
+#0x040c RapierDesc^
+A nimble piercing sword.[N]
+Effective against: [HorseIcon] & [ArmourIcon][X]
+
+
 
 #0x035d BraveSwordName^
 Brave Sword[X]
 
+#0x040d BraveSwordDesc^
+Can strike consecutively.[X]
+
+
 #0x035e SwiftSwordName^
 Swift Sword[X]
 
-#0x040e SwiftSwordDesc
+#0x040e SwiftSwordDesc^
+A lightweight blade designed for finesse.[N]
 Can strike consecutively.[X]
+
+
 
 #0x035f KillingEdgeName^
 Killing Edge[X]
 
+#0x040f KillingEdgeDesc^
+A keen edged blade.[N]
+Improves critical hit rate.[X]
+
+
+#0x0360 ArmourslayerName^
+Armourslayer[X]
+
+#0x0410 ArmourslayerDesc^
+Effective against: [0x7C][X]
+
+
+
+#0x0361 WyrmslayerName^
+Wyrmslayer[X]
+
+#0x0411 WyrmslayerDesc^
+Effective against: [DragonIcon][X]
+
+
+
+#0x0362 LightBrandName^
+Light Brand[X]
+
+#0x0412 LightBrandDesc^
+A sword suffused with magic[N]
+Casts light magic at range. +5 Mag.[X]
+
+
+
+#0x0364 LancreaverName^
+Lancereaver[X]
+
+#0x0414 LancreaverDesc^
+Reverses weapon triangle effects.[X]
+
+
+
+#0x0365 ClaymoreName^
+Claymore[X]
+
+#0x0415 ClaymoreDesc^
+Effective against: [HorseIcon][X]
+
+
+
 #0x03ee GreenGemName^
 Green Gem[X]
 
-#0x49d GreenGemDesc
+#0x49d GreenGemDesc^
 A common gemstone[N]
 worth 1,000 gold.[X]
+
+
 
 # 0x02BF LordName^
 Lord[X]
