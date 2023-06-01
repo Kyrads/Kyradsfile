@@ -96,56 +96,56 @@ void UnitAutolevelCore(struct Unit* unit, u8 classId, int levelCount) {
 //Additionally, designed to increase the likelihood of a stat being bang on average. Slightly hacky solution though.
 //Commented out but a system in place for random chances for highly deviant stats
 int GetAutoleveledStatIncrease(int growth, int levelCount) {
-    int baseChangeGrowthValue;
+    int baseChangegrowthValue;
     int averagePercent;
     int growthValue = growth * levelCount;
 
     if(levelCount <= 5){
-      baseChangeGrowthValue = growthValue/2;
+      baseChangegrowthValue = Div(growthValue,2);
       averagePercent = 20;
     }
     else if(levelCount <= 10){
-      baseChangeGrowthValue = growthValue/3;
+      baseChangegrowthValue = Div(growthValue,3);
       averagePercent = 30;
     }
     else if (levelCount <= 15){
-      baseChangeGrowthValue = growthValue/4;
+      baseChangegrowthValue = Div(growthValue,4);
       averagePercent = 40;
     }
     else if (levelCount <= 20){
-      baseChangeGrowthValue = growthValue/5;
+      baseChangegrowthValue = Div(growthValue,5);
       averagePercent = 45;
     }
     else if (levelCount <= 25){
-      baseChangeGrowthValue = growthValue/6;
+      baseChangegrowthValue = Div(growthValue,6);
       averagePercent = 50;
     }
     else{
-      baseChangeGrowthValue = growthValue/7;
+      baseChangegrowthValue = Div(growthValue,7);
       averagePercent = 55;
     }
 
-    int positiveValue = NextRN_N((growthValue / 2) - (growthValue / 13)); //value A v & value B ^ = greater deviation and vice versa
-    int negativeValue = NextRN_N((growthValue / 3) - (growthValue / 13));
+    int positiveValue = NextRN_N((Div(growthValue,3)) - (Div(growthValue,13))); //value A v & value B ^ = greater deviation and vice versa
+    int negativeValue = NextRN_N((Div(growthValue,3)) - (Div(growthValue,13)));
 
     /*
-    int changeGrowthValue
+    int changegrowthValue
     int randomNumber = NextRN_N(100)
     if(randomNumber <= 30){
-      changeGrowthValue = growthValue/x;
+      changegrowthValue = growthValue/x;
     }
     else if(randomNumber <= 15){
-      changeGrowthValue = growthValue/y;
+      changegrowthValue = growthValue/y;
     }
     else if(randomNumber <= 5){
-      changeGrowthValue = growthValue/z;
+      changegrowthValue = growthValue/z;
     }
     else{
-      changeGrowthValue = baseGrowthValue
+      changegrowthValue = basegrowthValue
     }
     */
-    //baseChangeGrowthValue = growthValue/1;
-    int changeValue = MIN(ABS(positiveValue - negativeValue), baseChangeGrowthValue);
+    //baseChangegrowthValue = growthValue/1;
+    int changeValue = MIN(ABS(positiveValue - negativeValue), baseChangegrowthValue);
     if(negativeValue > positiveValue){
     	changeValue *= -1;
     }
