@@ -542,7 +542,7 @@ POP
 //Vesly
 PUSH 
 ORG $5A83A1
-BYTE 80 // Percentage of health to accept staff healing at when not in recovery mode, set to 80% so staffers aren't healing absolute non amounts of HP
+BYTE 80 // Percentage of health to accept staff healing at when not in recovery mode, set to 80% so //staffers aren't healing absolute non amounts of HP
 POP 
 
 //Delay in frames after the AI has displayed cursor on target

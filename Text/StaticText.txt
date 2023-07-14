@@ -112,6 +112,9 @@ Claymore[X]
 Effective against: [HorseIcon][X]
 
 
+#0x0369 SpearName^
+Spear[X]
+
 
 #0x03ee GreenGemName^
 Green Gem[X]

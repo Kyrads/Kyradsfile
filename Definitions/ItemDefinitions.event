@@ -10,4 +10,6 @@
 #define Dagger 0x7
 #define SwiftSword 0xc
 #define Claymore 0x13
+#undef Spear
+#define Spear 0x14
 #define GreenGem 0xba

@@ -4,4 +4,8 @@
 
 
 //AI Macros
+//All AI have their AI3 set to 0x4 so they will not run to forts except 'vulnAI' for enemies who carry vulneraries.
+//They can still be healed by staffers thanks to a hack by Vesly
+
 #define InRangeAI         [0x0,0x0,0x4,0x0]
+#define InRangeVulnAI     [0x0,0x0,0x0,0x0]
