@@ -23,11 +23,16 @@
 //Weapon Ranks
 #define NoRank 0
 #define ERank 1
-#define DRank 31
-#define CRank 71
-#define BRank 121
-#define ARank 181
-#define SRank 251
+#define ERankPlus 13
+#define DRank 26
+#define DRankPlus 43
+#define CRank 61
+#define CRankPlus 83
+#define BRank 106
+#define BRankPlus 133
+#define ARank 161
+#define ARankPlus 193
+#define SRank 226
 
 //Weapon Ability
 #define IsWeapon 0x00000001

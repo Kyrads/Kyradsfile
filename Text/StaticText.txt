@@ -59,7 +59,6 @@ Can strike consecutively.[X]
 Swift Sword[X]
 
 #0x040e SwiftSwordDesc^
-A lightweight blade designed for finesse.[N]
 Can strike consecutively.[X]
 
 
@@ -68,7 +67,6 @@ Can strike consecutively.[X]
 Killing Edge[X]
 
 #0x040f KillingEdgeDesc^
-A keen edged blade.[N]
 Improves critical hit rate.[X]
 
 
@@ -93,7 +91,7 @@ Light Brand[X]
 
 #0x0412 LightBrandDesc^
 A sword suffused with magic[N]
-Casts light magic at range. +5 Mag.[X]
+Casts light magic at range.[X]
 
 
 
@@ -115,6 +113,27 @@ Effective against: [HorseIcon][X]
 #0x0369 SpearName^
 Spear[X]
 
+#0x036a ShortSpearName^
+Short Spear[X]
+
+#0x036b LanceName^
+Lance[X]
+
+#0x036c RegalLanceName^
+Regal Lance[X]
+
+#0x036e BraveLanceName^
+Brave Lance[X]
+
+#0x041e BraveLanceDesc^
+Can strike consecutively.[X]
+
+#0x036f KillerLanceName^
+Killer Lance[X]
+
+#0x041f KillerLanceDesc^
+Improves critical hit rate.[X]
+
 
 #0x03ee GreenGemName^
 Green Gem[X]
@@ -122,7 +141,6 @@ Green Gem[X]
 #0x49d GreenGemDesc^
 A common gemstone[N]
 worth 1,000 gold.[X]
-
 
 
 # 0x02BF LordName^

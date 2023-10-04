@@ -552,4 +552,44 @@ BYTE 0x14 // 45 is Vanilla default, 16 for the popup with no anim, 24 is the ful
 POP
 
 
+//Weapon Experience Thresholds
+//thanks to Blademaster for the hex locations for ranks
+
+PUSH // Weapon level modifications
+ORG 0x16d66 // D rank WEXP
+BYTE DRank-1
+ORG 0x16d6e // C rank WEXP
+BYTE CRank-1
+ORG 0x16d76 // B rank WEXP
+BYTE BRank-1
+ORG 0x16d7e // A rank WEXP
+BYTE ARank-1
+ORG 0x16d86 // S rank WEXP
+BYTE SRank-1
+ORG 0x16e90 // bar to D rank WEXP
+BYTE DRank-ERank
+ORG 0x16e96 // D rank WEXP
+BYTE DRank-1
+ORG 0x16e9a // bar to C rank WEXP
+BYTE CRank-DRank
+ORG 0x16ea0 // C rank WEXP
+BYTE CRank-1
+ORG 0x16ea4 // bar to B rank WEXP
+BYTE BRank-CRank
+ORG 0x16eaa // B rank WEXP
+BYTE BRank-1
+ORG 0x16eae // bar to A rank WEXP
+BYTE ARank-BRank
+ORG 0x16eb4 // A rank WEXP
+BYTE ARank-1
+ORG 0x16eb8 // bar to S rank WEXP
+BYTE SRank-ARank
+ORG 0x2C150 // removes S-rank limit, credit Tequila
+BYTE 0x11 0xE0
+ORG 0x2c1a2 // Edits A-Rank Limit Number, credit 7743 //Appears not to work correctly
+BYTE ARank
+ORG 0x2c1a6
+BYTE ARank
+POP
+
 //https://youtu.be/H8Otgbm--Ek

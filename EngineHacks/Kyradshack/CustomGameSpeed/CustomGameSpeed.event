@@ -11,11 +11,11 @@
 #ifndef CustomGameSpeedConfig
 	#define CustomGameSpeedConfig
 
-	#define GameSpeedNormalValue       5
+	#define GameSpeedNormalValue       6
 	#define GameSpeedNormalCheckSlow   True
 	#define GameSpeedNormalCheckAPress True
 
-	#define GameSpeedFastValue         6
+	#define GameSpeedFastValue         7
 	#define GameSpeedFastCheckSlow     True
 	#define GameSpeedFastCheckAPress   True
 #endif // CustomGameSpeedConfig

@@ -1,0 +1,35 @@
+## HorseslayerName^
+Horseslayer[X]
+
+## HorseslayerDesc^
+Effective against: [HorseIcon][X]
+
+## JavelinName^
+Javelin[X]
+
+## JavelinDesc^
+Cannot double at range.[X]
+
+## SaunionName^
+Saunion[X]
+
+## SaunionDesc^
+Cannot double at range.[X]
+
+## AxeName^
+Axe[X]
+
+## BattleAxeName^
+Battle Axe[X]
+
+## DevilAxeName^
+Devil Axe[X]
+
+## DevilAxeDesc^
+Has a chance to backfire based on luck.[X]
+
+## HalberdName^
+Halberd[X]
+
+## HalberdDesc
+ [.][X]

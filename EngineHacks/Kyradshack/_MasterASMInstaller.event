@@ -104,7 +104,7 @@
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info
-	#include "Edits.txt"
+	#include "Edits.event"
 
 //CHAX
 	#include "_KyradshackHacks/CHAX/_MasterCHAXInstaller.event"

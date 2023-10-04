@@ -1,12 +1,12 @@
-/*ALIGN 4
+ALIGN 4
 gSkillTester:
-POIN SkillTester+1
+POIN SkillTester
 
 ALIGN 4
 DisciplineIDLink:
 BYTE DisciplineID
-*/
 
+//All of these were made with major help from Pikmin1211
 #include "Event/Formulachanges/Formulachanges.lyn.event"
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
-//#include "Event/WEXPChanges/WEXPChanges.lyn.event"
+#include "Event/WEXPChanges/WEXPChanges.lyn.event"

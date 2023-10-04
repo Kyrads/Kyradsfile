@@ -32,6 +32,28 @@ ItemIconSlot(0x6)
 POP
 
 PUSH
+ItemIconSlot(0x14)
+#incbin "DMP/ShortSpear(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x1b)
+#incbin "DMP/Javelin(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x1f)
+#incbin "DMP/BattleAxe(Kyrads).dmp"
+POP
+
+
+PUSH
+ItemIconSlot(0x8c)
+#incbin "DMP/Halberd(Kyrads).dmp"
+POP
+
+
+PUSH
 ItemIconSlot(0xc8) 
 #incbin "DMP/GreenGem.dmp"
 POP
