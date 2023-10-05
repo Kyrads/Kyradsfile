@@ -22,11 +22,56 @@ Axe[X]
 ## BattleAxeName^
 Battle Axe[X]
 
+## RegalAxeName^
+Regal Axe[X]
+
 ## DevilAxeName^
 Devil Axe[X]
 
 ## DevilAxeDesc^
 Has a chance to backfire based on luck.[X]
+
+## HandAxeName^
+HandAxe[X]
+
+## HammerName^
+Hammer[X]
+
+## HammerDesc^
+Effective against: [ArmorIcon][X]
+
+## BowName^
+Bow[X]
+
+## LongBowName^
+Longbow[X]
+
+## ShortbowName^
+Shortbow[X]
+
+## ShortbowDesc^
+ [X]
+
+## GreatbowName^
+Greatbow[X]
+
+## GreatbowDesc^
+ [X]
+
+## FireName^
+Fire[X]
+
+## ThunderName^
+Thunder[X]
+
+## ElfireName^
+Elfire[X]
+
+## BoltingName^
+Bolting[X]
+
+## FimbulvetrName^
+Fimbulvetr[X]
 
 ## HalberdName^
 Halberd[X]

@@ -46,6 +46,25 @@ ItemIconSlot(0x1f)
 #incbin "DMP/BattleAxe(Kyrads).dmp"
 POP
 
+PUSH
+ItemIconSlot(0x20)
+#incbin "DMP/RegalAxe(George_Reds).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x27)
+#incbin "DMP/HandAxe(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x31)
+#incbin "DMP/Shortbow(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x32)
+#incbin "DMP/Greatbow(Kyrads_Xilirite).dmp"
+POP
 
 PUSH
 ItemIconSlot(0x8c)

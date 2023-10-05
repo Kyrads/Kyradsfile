@@ -20,6 +20,12 @@
 #define Axe 0x1f
 #undef BattleAxe
 #define BattleAxe 0x20
+#define RegalAxe 0x21
+#define Bow 0x2d
+#undef Longbow
+#define Longbow 0x2e
+#define Shortbow 0x33
+#define Greatbow 0x34
 #undef Halberd
 #define Halberd 0x7a
 #define GreenGem 0xba

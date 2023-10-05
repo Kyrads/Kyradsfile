@@ -571,7 +571,7 @@ BYTE DRank-ERank
 ORG 0x16e96 // D rank WEXP
 BYTE DRank-1
 ORG 0x16e9a // bar to C rank WEXP
-BYTE CRank-DRank
+BYTE CRank-DRank+1 //Some jank here with it showing 1 point on D rank
 ORG 0x16ea0 // C rank WEXP
 BYTE CRank-1
 ORG 0x16ea4 // bar to B rank WEXP
