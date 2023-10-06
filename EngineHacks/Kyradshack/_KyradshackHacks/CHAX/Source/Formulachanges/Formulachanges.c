@@ -50,15 +50,19 @@ void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* def
         attacker->battleAttack = 0;
 }
 
-//Hit Formula
+//Hit Formula Skill*2
 
 void ComputeBattleUnitHitRate(struct BattleUnit* bu) {
-    bu->battleHitRate = (bu->unit.skl + (bu->unit.skl / 2)) + GetItemHit(bu->weapon) + bu->unit.lck + bu->wTriangleHitBonus;
+    //bu->battleHitRate = (bu->unit.skl + (bu->unit.skl / 2)) + GetItemHit(bu->weapon) + bu->unit.lck + bu->wTriangleHitBonus; // dex 1.5
+    bu->battleHitRate = (bu->unit.skl *2 ) + GetItemHit(bu->weapon) + bu->unit.lck + bu->wTriangleHitBonus; // dex 2
+    //bu->battleHitRate = ((bu->unit.skl * 2) + (bu->unit.skl / 2)) + GetItemHit(bu->weapon) + bu->unit.lck + bu->wTriangleHitBonus; //dex 2.5
     }
 
-//Avoid Formula
+//Avoid Formula Spd*1.5
 void ComputeBattleUnitAvoidRate(struct BattleUnit* bu) {
-    bu->battleAvoidRate = (bu->battleSpeed + (bu->battleSpeed / 2)) + bu->terrainAvoid + (bu->unit.lck);
+    bu->battleAvoidRate = (bu->battleSpeed + (bu->battleSpeed / 2) + bu->terrainAvoid + (bu->unit.lck)); //spe 1.5
+    //bu->battleAvoidRate = (bu->battleSpeed * 2) + bu->terrainAvoid + (bu->unit.lck); //spe 2
+    //bu->battleAvoidRate = ((bu->battleSpeed * 2) + (bu->battleSpeed / 2) + bu->terrainAvoid + (bu->unit.lck)); //spe 2.5
 
     if (bu->battleAvoidRate < 0)
         bu->battleAvoidRate = 0;

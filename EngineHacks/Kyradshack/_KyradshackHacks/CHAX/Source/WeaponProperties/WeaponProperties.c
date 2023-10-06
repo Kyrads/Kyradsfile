@@ -1,4 +1,4 @@
-extern u8 ThrowablesList[];
+/*extern u8 ThrowablesList[];
 enum 
 { 
 CannotDouble = 0, 
@@ -22,4 +22,4 @@ int ThrowablesProperty(struct BattleUnit* battleUnit){
 		i++;
 	}
 	return NoChange;
-}
+}*/
