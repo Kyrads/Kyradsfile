@@ -530,12 +530,12 @@ POP
 #define WeaponTriangleEntry(AdvWpn,DisWpn,Hit,Atk) "BYTE AdvWpn DisWpn Hit Atk DisWpn AdvWpn (0-Hit) (0-Atk)" 
 PUSH
 ORG 0x59BA90
-WeaponTriangleEntry(Lances,Swords,10,2)
-WeaponTriangleEntry(Axes,Lances,10,2)
-WeaponTriangleEntry(Swords,Axes,10,2)
-WeaponTriangleEntry(Anima,Light,10,2)
-WeaponTriangleEntry(Light,Dark,10,2)
-WeaponTriangleEntry(Dark,Anima,10,2)
+WeaponTriangleEntry(Lances,Swords,10,1)
+WeaponTriangleEntry(Axes,Lances,10,1)
+WeaponTriangleEntry(Swords,Axes,10,1)
+WeaponTriangleEntry(Anima,Light,10,1)
+WeaponTriangleEntry(Light,Dark,10,1)
+WeaponTriangleEntry(Dark,Anima,10,1)
 POP
 
 //No-Recovery Mode Staff Healing
