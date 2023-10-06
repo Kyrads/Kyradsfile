@@ -354,7 +354,7 @@ PUSH; ORG 0xA20164
 POP
 
 prFixedDifficulty:
-    SHORT (0x2200 | 1) // Difficulty: 0 for easy, 1 for normal, 2 for hard
+    SHORT (0x2200 | 2) // Difficulty: 0 for easy, 1 for normal, 2 for hard
     SHORT 0x2300
     SHORT 0x212A
     SHORT 0x5442

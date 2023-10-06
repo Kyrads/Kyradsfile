@@ -121,6 +121,7 @@ BYTE 00 00
 ALIGN 4
 
 GreatKnightSkillList:
+BYTE 1 TrampleID
 BYTE 00 00
 ALIGN 4
 

@@ -40,9 +40,6 @@ void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* def
 	if((GetItemAttributes(attacker->weapon) & IA_MAGIC)){
 		attacker->battleAttack += attacker->unit.mag;	
 	}
-	else if((GetItemAttributes(attacker->weapon) & IA_MAGICDAMAGE)){
-		attacker->battleAttack += attacker->unit.mag;	
-	}
     else
 		attacker->battleAttack += attacker->unit.pow;
 
