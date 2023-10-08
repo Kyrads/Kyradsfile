@@ -1,0 +1,6 @@
+## ShamanName^
+Shaman[X]
+
+## ShamanDesc^
+Practicioners of dark magic[N]
+with great natural affinity.[X]

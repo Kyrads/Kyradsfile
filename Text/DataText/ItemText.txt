@@ -88,11 +88,20 @@ Purge[X]
 ## PurgeDesc^
 Long-range magic attack.[X]
 
+## FluxName^
+Flux[X]
+
 ## DuskName^
 Dusk[X]
 
 ## DuskDesc
  [X]
+
+## NosferatuName^
+Nosferatu[X]
+
+## EclipseName^
+Eclipse[X]
 
 ## HalberdName^
 Halberd[X]

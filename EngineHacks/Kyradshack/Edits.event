@@ -73,6 +73,7 @@ BYTE 30
 POP
 */
 
+
 //15 frame faster Flux animation
 PUSH
 ORG 0x05EF50
@@ -89,6 +90,7 @@ ORG 0x05EFBA
 BYTE 0x6E   //StartSpellBG_FLASH ThisMakesTheHPInSpellAnimGoAway
 ORG 0x05EFEA
 BYTE 0x8F   //Break6CLoop   Clean up
+POP
 
 
 //Poison Damage (default 1)
@@ -228,8 +230,9 @@ ORG 0x73722
 BYTE 0xF0 0x22
 POP
 
-//Removes delay at start of battle
+//Removes delay at start of battle //I actually have no idea if this is doing anything, genuinely
 //by 7743
+PUSH
 ORG 0x9A352A
 BYTE 0x00
 ORG 0x9A3542
@@ -353,6 +356,7 @@ PUSH; ORG 0xA20164
 POP
 
 prFixedDifficulty:
+    ALIGN 4
     SHORT (0x2200 | 2) // Difficulty: 0 for easy, 1 for normal, 2 for hard
     SHORT 0x2300
     SHORT 0x212A

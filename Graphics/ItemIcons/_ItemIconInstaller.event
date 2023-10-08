@@ -67,6 +67,22 @@ ItemIconSlot(0x32)
 POP
 
 PUSH
+ItemIconSlot(0x44)
+#incbin "DMP/Dusk(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x45)
+#incbin "DMP/Nosferatu(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x46)
+#incbin "DMP/Eclipse(Kyrads).dmp"
+POP
+
+
+PUSH
 ItemIconSlot(0x8c)
 #incbin "DMP/Halberd(Kyrads).dmp"
 POP

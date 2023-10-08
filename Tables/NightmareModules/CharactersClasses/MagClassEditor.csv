@@ -44,7 +44,7 @@ Mage Knight,4,40,24,2
 Mage Knight (F),3,40,25,2
 Bishop,4,35,25,2
 Bishop (F),4,35,25,1
-Shaman,2,50,20,0
+Shaman,9,60,20,0
 Shaman (F),3,45,20,0
 Druid,6,55,29,0
 Druid (F),7,55,29,0
@@ -68,7 +68,7 @@ Brigand,0,0,20,0
 Pirate,0,0,20,0
 Berserker,0,0,21,0
 Monk,1,30,20,0
-Priest,1,30,20,0
+Priest,7,50,20,0
 Bard,1,45,20,0
 Recruit (1),0,0,20,0
 Pegasus Knight,1,10,20,0

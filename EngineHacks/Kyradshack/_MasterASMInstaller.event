@@ -66,30 +66,39 @@
 	#include "DisplayObtainableItem/Installer.event" //Note, doesn't display stealables during preps
 													 //Additionally, displays Droppable > Stealable, would like an icon for both	
 //Vesly
+//Allows stealing with full inventory
 	#include "StealWithFullnv/Installer.event"
 
 //Vesly
+//Allows bigger descriptions on weapons
 	#include "ExtendWeaponDescBox/Installer.event"
 
 //Vesly
+//Allows you to skip the intro of chapters specified in the installer
 	#include "SkipChIntro/Installer.event"
 
 // (MMB Credits), LegendOfLoog
+//MMB preset from SoTS
 	#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
 
 //Contro
+//Fixes a graphical bug with the battle forecast
 	#include "BattleForecastFix/Installer.event"
 
 //Contro
+//Allows you to set exp for actions like stealing, summoning etc seperately
 	#include "ExpByAction/Installer.event"
 
 //Contro
+//Shows res on the terrain window, may not end up being relevant we'll see
 	#include "ResTerrainWindow/Installer.event"
 
 //Contro
+//Gives different stat screen colours based on alliegance, currently unused
 	//#include "StatScreenAlleg/Installer.event"
 
 //Sme
+//Allows you to force animations on for certain characters, will use this for bosses
 	#include "AnimationForcer/AnimationForcer.event"
 
 //Sme
@@ -99,8 +108,21 @@
 
 
 //AuraWolf
+//Allows you to toggle on which chapters deployment swapping is allowed and for what units
+//Even allows groups to be swapped amongst themselves but not with others
 	#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
 
+//Contro
+//Makes the show heal amount glow
+	#include "ShowHealAmount/Installer.event"
+
+//TR143
+//Randomises the RNG every frame
+	#include "RNGRandomizer/RNGRandomizerInstaller.event"
+
+//Contro
+//Fixes a bug with Canto
+	#include "CantoBugFix/Installer.event"
 
 
 //A whole bunch of edits by various people, see Edits.txt for more info
