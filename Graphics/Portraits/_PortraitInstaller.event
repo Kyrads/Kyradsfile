@@ -10,3 +10,13 @@ TestMugData:
 #incbin "Dmp/TestPortrait(Kyrads)_palette.dmp"
 #incbin "Dmp/TestPortrait(Kyrads)_minimug.dmp"
 setMugEntry(TestMug, TestMugData, 3, 6, 3, 4)
+
+#define RelicBossMug 0x30
+
+ALIGN 16
+RelicBossMugData:
+#incbin "Dmp/RelicBoss(MournfulRelic)_mug.dmp"
+#incbin "Dmp/RelicBoss(MournfulRelic)_frames.dmp"
+#incbin "Dmp/RelicBoss(MournfulRelic)_palette.dmp"
+#incbin "Dmp/RelicBoss(MournfulRelic)_minimug.dmp"
+setMugEntry(RelicBossMug, RelicBossMugData, 3, 5, 3, 3)

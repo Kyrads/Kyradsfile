@@ -70,8 +70,29 @@ Elfire[X]
 ## BoltingName^
 Bolting[X]
 
+## BoltingDesc^
+Long-range lightning strike.[X]
+
 ## FimbulvetrName^
 Fimbulvetr[X]
+
+## LumenName^
+Lumen[X]
+
+## ShineName^
+Shine[X]
+
+## PurgeName^
+Purge[X]
+
+## PurgeDesc^
+Long-range magic attack.[X]
+
+## DuskName^
+Dusk[X]
+
+## DuskDesc
+ [X]
 
 ## HalberdName^
 Halberd[X]

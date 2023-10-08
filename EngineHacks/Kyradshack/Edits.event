@@ -73,23 +73,22 @@ BYTE 30
 POP
 */
 
-
 //15 frame faster Flux animation
 PUSH
 ORG 0x05EF50
-BYTE 0x02	//StartEfxMistyrainOBJ
+BYTE 0x02   //StartEfxMistyrainOBJ
 ORG 0x05EF5C
-BYTE 0x3A	//MoveBattleCameraOnto
+BYTE 0x3A   //MoveBattleCameraOnto
 ORG 0x05EF72
-BYTE 0x3B	//StartEfxMistyrainOBJ2
+BYTE 0x3B   //StartEfxMistyrainOBJ2
 ORG 0x05EF84
-BYTE 0x4E	//StartEfxMistyrainBG_2
+BYTE 0x4E   //StartEfxMistyrainBG_2
 ORG 0x05EFAA
-BYTE 0x62	//Delete6C [r4, #0x64]
+BYTE 0x62   //Delete6C [r4, #0x64]
 ORG 0x05EFBA
-BYTE 0x6E	//StartSpellBG_FLASH ThisMakesTheHPInSpellAnimGoAway
+BYTE 0x6E   //StartSpellBG_FLASH ThisMakesTheHPInSpellAnimGoAway
 ORG 0x05EFEA
-BYTE 0x8F	//Break6CLoop	Clean up
+BYTE 0x8F   //Break6CLoop   Clean up
 
 
 //Poison Damage (default 1)
@@ -542,7 +541,7 @@ POP
 //Vesly
 PUSH 
 ORG $5A83A1
-BYTE 80 // Percentage of health to accept staff healing at when not in recovery mode, set to 80% so //staffers aren't healing absolute non amounts of HP
+BYTE 80 // Percentage of health to accept staff healing at when not in recovery mode, set to 80% so staffers aren't healing absolute non amounts of HP
 POP 
 
 //Delay in frames after the AI has displayed cursor on target
@@ -592,4 +591,13 @@ ORG 0x2c1a6
 BYTE ARank
 POP
 
-//https://youtu.be/H8Otgbm--Ek
+//Better patch for Intro Skip, Mokha //Broken??
+/*ORG $A39768
+    EVBIT_MODIFY 0x1
+    SKIPWN
+    ENDA
+
+    ORG $09E00
+    SHORT $4770*/
+
+//https://www.youtube.com/shorts/LfSZesGiOkg
