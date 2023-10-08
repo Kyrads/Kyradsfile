@@ -129,4 +129,4 @@
 	#include "Edits.event"
 
 //CHAX
-	#include "_KyradshackHacks/CHAX/_MasterCHAXInstaller.event"
+	#include "_CHAX/_MasterCHAXInstaller.event"
