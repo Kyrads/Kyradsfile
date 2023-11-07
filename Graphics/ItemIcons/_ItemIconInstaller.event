@@ -18,7 +18,7 @@ POP
 
 PUSH
 ItemIconSlot(0x4) 
-#incbin "DMP/Bastard_Sword(Kyrads).dmp"
+#incbin "DMP/BastardSword(Kyrads).dmp"
 POP
 
 PUSH
@@ -81,6 +81,12 @@ ItemIconSlot(0x46)
 #incbin "DMP/Eclipse(Kyrads).dmp"
 POP
 
+PUSH
+ItemIconSlot(0xb3)
+#incbin "DMP/NobleLance(Beansy).dmp"
+POP
+
+
 
 PUSH
 ItemIconSlot(0x8c)
@@ -91,4 +97,9 @@ POP
 PUSH
 ItemIconSlot(0xc8) 
 #incbin "DMP/GreenGem.dmp"
+POP
+
+PUSH
+ItemIconSlot(0xb8) 
+#incbin "DMP/RegalGreataxe(Kyrads).dmp"
 POP

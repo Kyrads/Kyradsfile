@@ -58,6 +58,15 @@ Greatbow[X]
 ## GreatbowDesc^
  [X]
 
+## BallistaName^
+Ballista[X]
+
+## ArbalestName^
+Arbalest[X]
+
+## SiegeBallistaName^
+SiegeBallista[X]
+
 ## FireName^
 Fire[X]
 
@@ -86,7 +95,7 @@ Shine[X]
 Purge[X]
 
 ## PurgeDesc^
-Long-range magic attack.[X]
+Long-range light blast.[X]
 
 ## FluxName^
 Flux[X]
@@ -100,6 +109,24 @@ Dusk[X]
 ## NosferatuName^
 Nosferatu[X]
 
+## NosferatuDesc^
+Drains opponent HP into caster.[X]
+
+## EclipseDesc^
+Long-range dark siege.[X]
+
+## NobleLanceName^
+Noble Lance[X]
+
+## NobleLanceDesc^
+Effective against: [HorseIcon] [ArmorIcon][X]
+
+## KeyName^
+Key[X]
+
+## KeyDesc^
+Opens doors and chests.[X]
+
 ## EclipseName^
 Eclipse[X]
 
@@ -107,4 +134,10 @@ Eclipse[X]
 Halberd[X]
 
 ## HalberdDesc
+ [.][X]
+
+## RegalGreataxeName^
+Regal Greataxe[X]
+
+## RegalGreataxeDesc^
  [.][X]

@@ -26,6 +26,11 @@
 #define Longbow 0x2e
 #define Shortbow 0x33
 #define Greatbow 0x34
+#define Lumen 0x3f
+#define Dusk 0x46
+#define NobleLance 0x78
+#define Key 0x79
 #undef Halberd
 #define Halberd 0x7a
 #define GreenGem 0xba
+#define RegalGreataxe 0x86

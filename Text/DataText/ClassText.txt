@@ -4,3 +4,10 @@ Shaman[X]
 ## ShamanDesc^
 Practicioners of dark magic[N]
 with great natural affinity.[X]
+
+## GendarmeName^
+Gendarme[X]
+
+## GendarmeDesc^
+Heavily armoured riders who[N]
+crush opponents underfoot.[X]
