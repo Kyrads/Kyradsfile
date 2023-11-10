@@ -32,7 +32,7 @@ Devil Axe[X]
 Has a chance to backfire based on luck.[X]
 
 ## HandAxeName^
-HandAxe[X]
+Hand Axe[X]
 
 ## HammerName^
 Hammer[X]

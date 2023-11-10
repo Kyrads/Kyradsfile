@@ -1,2 +1,4 @@
 
 #define KnightLanceStandID 0x6
+
+#define LordLanceStandID 0x1

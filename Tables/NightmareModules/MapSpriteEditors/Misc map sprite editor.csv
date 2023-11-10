@@ -1,7 +1,7 @@
 0x9a2df8,Animation pointer,Another pointer
 None,0x0,0x0
 Ephraim Lord,0x81c33cc,0x81c3d7c
-Eirika Lord,0x81c3ed4,0x81c46cc
+Eirika Lord,IsPointer|LordLanceWalk,0x81c46cc
 Ephraim Master Lord,0x81c4824,0x81c52b4
 Eirika Master Lord,0x81c5414,0x81c5e84
 Cavalier,0x81c5fe4,0x81c692c

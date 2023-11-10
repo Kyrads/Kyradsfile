@@ -1,3 +1,7 @@
+## KnightDesc^
+Heavily armoured knights with heavy[N]
+plate armour providing staunch defence.[X]
+
 ## ShamanName^
 Shaman[X]
 
