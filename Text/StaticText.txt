@@ -158,6 +158,9 @@ Thief[X]
 # 0x02ED SoldierName^
 Soldier[X]
 
+# 0x02f4^
+Freelancer[X]
+
 # 0x02D7 Dummy1^
 Dummy[X]
 
@@ -187,3 +190,6 @@ Dexterity increased.[X]
 
 # 0x04C3
 Raises dexterity.[.][X]
+
+# 0x213^
+Camille[X]

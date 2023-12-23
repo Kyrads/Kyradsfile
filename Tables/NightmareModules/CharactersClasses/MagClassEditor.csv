@@ -4,40 +4,40 @@ Ephraim Lord,1,10,20,0
 Eirika Lord,1,25,20,0
 Ephraim Master Lord,2,10,24,1
 Eirika Master Lord,2,20,25,2
-Cavalier,0,0,20,0
+Cavalier,0,10,15,0
 Cavalier (F),0,0,20,0
-Paladin,2,10,24,2
-Paladin (F),2,10,24,2
-Armour Knight,0,0,20,0
-Armour Knight (F),0,0,20,0
+Paladin,1,10,25,1
+Paladin (F),1,10,25,1
+Armour Knight,0,5,15,0
+Armour Knight (F),0,5,15,0
 General,0,0,22,0
 General (F),0,0,22,0
-Thief,1,5,20,0
+Thief,0,10,15,0
 Manakete,0,0,20,0
-Mercenary,0,0,20,0
-Mercenary (F),0,0,20,0
+Mercenary,0,10,15,0
+Mercenary (F),0,10,15,0
 Hero,0,0,23,0
 Hero (F),0,0,23,0
-Myrmidon,1,15,20,0
-Myrmidon (F),1,15,20,0
+Myrmidon,0,10,15,0
+Myrmidon (F),0,10,15,0
 Swordmaster,2,10,23,1
 Swordmaster (F),2,10,23,1
 Assassin,1,0,22,0
 Assassin (F),1,0,22,0
-Archer,0,0,20,0
-Archer (F),0,0,20,0
+Archer,0,10,15,0
+Archer (F),0,10,15,0
 Sniper,1,10,24,1
 Sniper (F),1,10,24,1
 Ranger,0,0,22,0
 Ranger (F),0,0,22,0
-Wyvern Rider,0,0,20,0
-Wyvern Rider (F),0,0,20,0
+Wyvern Rider,0,5,15,0
+Wyvern Rider (F),0,5,15,0
 Wyvern Lord,0,0,21,0
 Wyvern Lord (F),0,0,21,0
 Wyvern Knight,1,5,24,1
 Wyvern Knight (F),1,5,24,1
 Mage,6,45,20,0
-Mage (F),1,55,20,0
+Mage (F),6,45,20,0
 Sage,5,45,28,1
 Sage (F),4,45,30,1
 Mage Knight,4,40,24,2
@@ -62,31 +62,31 @@ Manakete,2,0,20,0
 Manakete (F),2,0,20,0
 Journeyman (1),0,0,20,0
 Pupil (1),1,55,20,0
-Fighter,0,0,20,0
+Fighter,0,5,15,0
 Warrior,0,0,21,0
-Brigand,0,0,20,0
-Pirate,0,0,20,0
+Raider,0,5,15,0
+Raider (F),0,5,15,0
 Berserker,0,0,21,0
 Monk,1,30,20,0
-Priest,7,50,20,0
+Priest,7,45,20,0
 Bard,1,45,20,0
 Recruit (1),0,0,20,0
-Pegasus Knight,1,10,20,0
+Pegasus Knight,1,10,15,0
 Falcon Knight,3,30,23,3
 Cleric,1,30,20,0
-Troubadour,1,25,20,0
+Troubadour,5,35,20,0
 Valkyrie,4,35,25,2
-Dancer,1,45,20,0
-Soldier,0,0,20,0
+Dancer,0,15,15,0
+Soldier,0,10,15,0
 Necromancer,9,55,30,0
 Fleet,0,0,20,0
 Phantom,0,0,20,0
 Revenant,0,0,20,0
 Entombed,0,0,21,0
-Bonewalker,0,0,20,0
-Bonewalker (Bow),0,0,20,0
-Wight,0,0,21,0
-Wight (Bow),0,0,21,0
+Freelancer,0,5,15,0
+Freelancer (F),0,5,15,0
+Champion,0,0,21,0
+Champion (F),0,0,21,0
 Bael,0,0,20,0
 Elder Bael,0,0,22,0
 Cyclops,0,0,21,0

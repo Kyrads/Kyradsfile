@@ -58,21 +58,27 @@ Tutorial:
 END_MAIN
 
 Units1:
-UNIT Eirika EirikaLord Eirika Level(1,Ally,False) [2,3] 0b 0x0 0x0 0x0 [Spear] [0x0,0x0,0x0,0x0]
-UNIT Gilliam Knight Eirika Level(1,Ally,False) [2,4] 0b 0x0 0x0 0x0 [Sword,Spear,Axe,Longsword] [0x0,0x0,0x0,0x0]
-UNIT 0x2D Thief Eirika Level(1,Ally,False) [2,5] 0b 0x0 0x0 0x0 [Shortsword,Sword,Dagger,Longsword] [0x0,0x0,0x0,0x0]
-UNIT Seth GreatKnight Eirika Level(1,Ally,False) [2,6] 0b 0x0 0x0 0x0 [Shortsword,ShortSpear,RegalAxe] [0x0,0x0,0x0,0x0]
+UNIT Eirika EirikaLord Eirika Level(1,Ally,False) [2,3] 0b 0x0 0x0 0x0 [Spear, Javelin, NobleLance, MasterSeal] [0x0,0x0,0x0,0x0]
+UNIT Gilliam Priest Eirika Level(1,Ally,False) [2,4] 0b 0x0 0x0 0x0 [Heal, Key] [0x0,0x0,0x0,0x0]
+UNIT 0x2D WyvernRider_F Eirika Level(1,Ally,False) [2,5] 0b 0x0 0x0 0x0 [Lance,Vulnerary] [0x0,0x0,0x0,0x0]
+UNIT 0x2E Brigand Eirika Level(1,Ally,False) [3,5] 0b 0x0 0x0 0x0 [Axe, BattleAxe, Hammer, HandAxe] [0x0,0x0,0x0,0x0]
+UNIT 0x2F PegasusKnight Eirika Level(1,Ally,False) [4,5] 0b 0x0 0x0 0x0 [Javelin, Spear, Lance, Halberd] [0x0,0x0,0x0,0x0]
+UNIT 0x30 Shaman Eirika Level(1,Ally,False) [5,5] 0b 0x0 0x0 0x0 [Fire,Thunder,Elfire,Fimbulvetr] [0x0,0x0,0x0,0x0]
+UNIT 0x31 Cavalier Eirika Level(1,Ally,False) [6,5] 0b 0x0 0x0 0x0 [Spear,Lance,Longsword,Claymore] [0x0,0x0,0x0,0x0]
+UNIT Seth GreatKnight Eirika Level(1,Ally,False) [2,6] 0b 0x0 0x0 0x0 [Shortsword, Spear, RegalGreataxe] [0x0,0x0,0x0,0x0]
+UNIT Franz Knight Eirika Level(3,Ally,False) [2,7] 0b 0x0 0x0 0x0 [Sword,ShortSpear,Vulnerary] [0x0,0x0,0x0,0x0]
 UNIT
 
 
 
 EnemyUnits:
-UNIT ONeill Soldier ONeill Level(5,Enemy,False) [12,1] 0x02 [Lance, Javelin, RedGem] NeverMoveAI
+UNIT ONeill Soldier ONeill Level(5,Enemy,False) [12,1] 0x02 [Spear, Javelin, GreenGem] NeverMoveAI
 UNIT 0xDD Knight_A ONeill Level(1,Enemy,True)[15,13] 0x02 [Spear, GoddessIcon, GreenGem] NeverMoveAI
-UNIT 0xD0 PegasusKnight ONeill Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [Spear] GroupOneAI
-UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [Spear,GoddessIcon] GroupOneAI
-UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[3,19] 0b 0x0 0x0 0x0 [Lance] GroupOneAI
-UNIT 0xD0 Fighter ONeill Level(1,Enemy,False)[4,19] 0b 0x0 0x0 0x0 [Axe] GroupOneAI
+UNIT 0xD0 Soldier ONeill Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [Spear] NeverMoveAI
+UNIT 0xD0 Mercenary ONeill Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [Sword,GoddessIcon] NeverMoveAI
+UNIT 0xD0 Fighter ONeill Level(1,Enemy,False)[4,19] 0b 0x0 0x0 0x0 [Axe] NeverMoveAI
+UNIT 0xD0 Mage ONeill Level(1,Enemy,False)[11,10] 0b 0x0 0x0 0x0 [Fire] NeverMoveAI
+UNIT 0xD0 Shaman ONeill Level(1,Enemy,False)[11,12] 0b 0x0 0x0 0x0 [Flux] NeverMoveAI
 UNIT 0xD1 Thief ONeill Level(1,Enemy,False)[18,18] 0b 0x0 0x0 0x0 [Sword] NeverMoveAI
 UNIT Bone Thief ONeill Level(20,Enemy,False)[11,15] 0b 0x0 0x0 0x0 [Sword] InRangeAI
 UNIT Bone Thief ONeill Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Sword] InRangeAI
