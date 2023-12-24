@@ -13,4 +13,6 @@
 #define Champion 0x56
 #define Champion_F 0x57
 
+#define Soldier_F 0x58
+
 #define Cavalier_S 0x7e

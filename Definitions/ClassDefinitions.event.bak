@@ -7,7 +7,9 @@
 #define Thief_F 0xe
 
 #define Freelancer 0x54
+#define Deserter 0x54
 #define Freelancer_F 0x55
+#define Deserter_F 0x55
 #define Champion 0x56
 #define Champion_F 0x57
 
