@@ -1,4 +1,5 @@
-/*extern u8 ThrowablesList[];
+#include "gbafe.h"
+extern u8 ThrowablesList[];
 enum 
 { 
 CannotDouble = 0, 
@@ -22,4 +23,4 @@ int ThrowablesProperty(struct BattleUnit* battleUnit){
 		i++;
 	}
 	return NoChange;
-}*/
+}

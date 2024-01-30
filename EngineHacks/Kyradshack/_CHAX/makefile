@@ -6,7 +6,7 @@ CLib := $(realpath .)/FE-CLib-Decompatible
 clib_Include := $(CLib)/include
 
 # Lyn
-LYN := $(realpath .)/../../../../EventAssembler/Tools/lyn
+LYN := $(realpath .)/../../../EventAssembler/Tools/lyn
 LYN_REFERENCE := $(realpath .)/definitions.o
 
 # DevKit
@@ -52,4 +52,4 @@ $(src)/asm/%.asm: $(src)%.c
 CFILES := $(shell find $(src) -name '*.c')
 LYNFILES := $(patsubst $(src)%.c,$(src_Event)%.lyn.event,$(CFILES))
 
-Hack: $(LYNFILES)
+hack: $(LYNFILES)

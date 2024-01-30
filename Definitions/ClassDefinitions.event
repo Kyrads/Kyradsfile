@@ -1,10 +1,12 @@
 // Player Classes
 
 //redefining knights
-#define Knight_A 0x9
+#define Knight_A 0x9 //Also just Knight
 #define Knight_B 0xa
 
 #define Thief_F 0xe
+
+#define Gendarme 0x35
 
 #define Freelancer 0x54
 #define Deserter 0x54
@@ -16,3 +18,55 @@
 #define Soldier_F 0x58
 
 #define Cavalier_S 0x7e
+
+
+//Statted classes, for personal ref
+	/*
+		Key:
+			(X) = Stats
+			(X)(X) = Stats + Graphics
+			(T) = Terrain Data
+			(G) = Gender
+			(FC) = Fully Complete aka (X)(X)(T)(G)
+			//
+		- Lord (X)(G)
+		- Great Lord
+		- Mercenary (X)
+		- Hero
+		- Myrmidon (X)
+		- Swordmaster
+		- Soldier (X)
+		- Halberdier
+		- Freelancer (X)
+		- Champion
+		- Fighter (X)
+		- Warrior
+		- Raider (X)
+		- Reaver
+		- Archer (X)
+		- Sniper
+		- Thief (X)
+		- Rogue or Assassin
+		- Knight_A (X)
+		- Knight_B (X)
+		- General (X)
+		- Gendarme (X)
+		- Cavalier (X)
+			- Cavalier Triangle(?)
+		- Paladin
+		- Peg (X)
+		- Falcoknight
+		- Wyvern (X)
+		- Dracoknight
+		- Mage (X)
+		- Sage
+		- Scholar (X)
+		- Warlock
+		- Priest (X)
+		- Bishop
+		- Curate
+		- Troubadour (X)
+		- Mage Knight
+		- Civilians (X)(X)(G)
+		- Empress
+	*/

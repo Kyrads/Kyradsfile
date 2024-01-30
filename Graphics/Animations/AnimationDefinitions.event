@@ -40,7 +40,7 @@ EndAnim
 #undef KnightLanceAnim
 #define KnightLanceAnim 0x41 //Replaces Knight Unarmed
 #define KnightAxeAnim 0x42 //Replaces F_Knight Lance
-#define KnightHandaxeAnim 0x49 //Replaced F_Gen Sword
+#define KnightHandaxeAnim 0x49 //Replaces F_Gen Sword
 #undef KnightUnarmedAnim
 #define KnightUnarmedAnim 0x43 //Replaces F_Knight Unarmed
 

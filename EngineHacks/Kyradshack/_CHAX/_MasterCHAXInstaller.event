@@ -10,3 +10,4 @@ BYTE DisciplineID
 #include "Event/Formulachanges/Formulachanges.lyn.event"
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
 #include "Event/WEXPChanges/WEXPChanges.lyn.event"
+#include "Event/WeaponProperties/WeaponProperties.lyn.event"

@@ -1,12 +1,12 @@
 ## KnightDesc^
-Heavily armoured knights with heavy[N]
-plate armour providing staunch defence.[X]
+Heavily armoured knights with plated[N]
+armour providing staunch defence.[X]
 
-## ShamanName^
-Shaman[X]
+## ScholarName^
+Scholar[X]
 
-## ShamanDesc^
-Practicioners of dark magic[N]
+## ScholarDesc^
+Practicioners of the magics[N]
 with great natural affinity.[X]
 
 ## GendarmeName^
