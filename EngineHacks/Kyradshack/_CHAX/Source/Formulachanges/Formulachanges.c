@@ -66,4 +66,13 @@ void ComputeBattleUnitAvoidRate(struct BattleUnit* bu) {
 
     if (bu->battleAvoidRate < 0)
         bu->battleAvoidRate = 0;
+    }
+
+//Temporary support disable
+void UnitLoadSupports(struct Unit* unit) {
+    return;
+}
+
+void ProcessTurnSupportExp(void){
+    return;
 }

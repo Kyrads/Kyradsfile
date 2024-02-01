@@ -3,6 +3,10 @@ gSkillTester:
 POIN SkillTester
 
 ALIGN 4
+gprGotoConGetter:
+POIN prGotoConGetter+1
+
+ALIGN 4
 DisciplineIDLink:
 BYTE DisciplineID
 
@@ -11,3 +15,5 @@ BYTE DisciplineID
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
 #include "Event/WEXPChanges/WEXPChanges.lyn.event"
 #include "Event/WeaponProperties/WeaponProperties.lyn.event"
+#include "Event/ClassBasedAid/ClassBasedAid.lyn.event"
+#include "Event/StaffHeals/StaffHeals.lyn.event"

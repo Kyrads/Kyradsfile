@@ -3,32 +3,35 @@
 
 #include "_Common.event"
 
-pAidModifiers: // Aid
-	POIN prAddUnitFinalConstitution prSubstractOne prAdjustAidIfMounted
-	#ifdef DEBUFFS_MIN_ZERO
-	POIN prMinZero
-	#endif
-WORD 0
+//Old Code
+	/*pAidModifiers: // Aid
+		POIN prAddUnitFinalConstitution prSubstractOne prAdjustAidIfMounted
+		#ifdef DEBUFFS_MIN_ZERO
+		POIN prMinZero
+		#endif
+	WORD 0
 
-prAddUnitFinalConstitution:
-	rAdd(rCallExternal(prConGetter))
+	prAddUnitFinalConstitution:
+		rAdd(rCallExternal(prConGetter))
 
-prSubstractOne:
-	rSubConst(1)
+	prSubstractOne:
+		rSubConst(1)
 
-prAdjustAidIfMounted:
-{
-	rIfUnitHasAttribute(CA_MOUNTEDAID)
-		rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfNotFemale)
+	prAdjustAidIfMounted:
+	{
+		rIfUnitHasAttribute(CA_MOUNTEDAID)
+			rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfNotFemale)
 
-_prNegate:
-	rMinus(rCurrent)
+	_prNegate:
+		rMinus(rCurrent)
 
-_prAddBaseMountedAidBonus:
-	rAddConst(19)
+	_prAddBaseMountedAidBonus:
+		rAddConst(19)
 
-_prAddMoreIfNotFemale: // Stupid mechanic imo, but we're going vanilla so :shrug:
-	rIfUnitHasNotAttribute(CA_FEMALE, rAddConst(5))
-}
+	_prAddMoreIfNotFemale: // Stupid mechanic imo, but we're going vanilla so :shrug:
+		rIfUnitHasNotAttribute(CA_FEMALE, rAddConst(5))
+	}*/
+
+
 
 #endif // MODULAR_GETTER_AID_EVENT

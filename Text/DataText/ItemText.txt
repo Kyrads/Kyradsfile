@@ -115,6 +115,47 @@ Drains opponent HP into caster.[X]
 ## EclipseDesc^
 Long-range dark siege.[X]
 
+## HealName^
+Heal[X]
+
+## HealDesc^
+Restores HP to allies[N]
+in adjacent spaces.[X]
+
+## MendName^
+Mend[X]
+
+## MendDesc^
+Restores moderate HP to[N]
+allies in adjacent spaces.[X]
+
+## MendUseText
+Restores moderate HP.[X]
+
+## PhysicName^
+Physic[X]
+
+## PhysicDesc^
+Restores HP to allies[N]
+at a distance.[X]
+
+## RecoverName^
+Recover[X]
+
+## RecoverDesc^
+Restores great HP to[N]
+allies in adjacent spaces.[X]
+
+## RestoreName^
+Restore[X]
+
+## RestoreDesc^
+Cures allies of status[N]
+ailments. (Sleep, Poison, etc.)[X]
+
+## RestoreUseText^
+Curest status ailments.[X]
+
 ## NobleLanceName^
 Noble Lance[X]
 

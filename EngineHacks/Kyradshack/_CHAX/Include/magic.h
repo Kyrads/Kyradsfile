@@ -12,5 +12,7 @@ struct ClassMagicData {
     /* 03 */ u8 promotionMag; 
 };
 
+int GetUnitMagic(struct Unit* unit);
+
 extern const struct ClassMagicData MagClassTable[];
 extern const struct CharacterMagicData MagCharTable[];

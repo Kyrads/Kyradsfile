@@ -149,7 +149,7 @@ Lord[X]
 # 0x02C1 CavalierName^
 Cavalier[X]
 
-# 0x02C3 KnightName^
+# 0x02C3 KnightName*
 Knight[X]
 
 # 0x02C5 ThiefName^

@@ -32,6 +32,7 @@ extern u8 CancelOutOpposingLeadership;
 
 signed char GetFactionLeadershipCount(u8 faction)
 {
+//Old Code
 	signed char total = 0;
 	Unit *unitArray = gUnitArrayBlue;
 	int maxUnits = MAX_BLUE_UNITS;
@@ -66,6 +67,7 @@ signed char GetFactionLeadershipCount(u8 faction)
 	}
 	
 	return total;
+
 }
 
 /*
@@ -89,18 +91,18 @@ void CalculateHitAvoidBonus(BattleUnit* bunit, signed char leadership)
 {
 	if (UNIT_FACTION(&bunit->unit) == FACTION_BLUE)
 	{
-		bunit->battleHitRate += leadership * AllyStarHitBonus;
-		bunit->battleAvoidRate += leadership * AllyStarAvoidBonus;
+		bunit->battleHitRate += AllyStarHitBonus;
+		bunit->battleAvoidRate += AllyStarAvoidBonus;
 	}
 	else if (UNIT_FACTION(&bunit->unit) == FACTION_RED)
 	{
-		bunit->battleHitRate += leadership * EnemyStarHitBonus;
-		bunit->battleAvoidRate += leadership * NPCStarAvoidBonus;
+		bunit->battleHitRate += EnemyStarHitBonus;
+		bunit->battleAvoidRate += EnemyStarAvoidBonus;
 	}
 	else
 	{
-		bunit->battleHitRate += leadership * NPCStarHitBonus;
-		bunit->battleAvoidRate += leadership * NPCStarAvoidBonus;
+		bunit->battleHitRate += NPCStarHitBonus;
+		bunit->battleAvoidRate += NPCStarAvoidBonus;
 	}
 }
 

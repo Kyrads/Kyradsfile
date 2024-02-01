@@ -27,8 +27,8 @@ stats and skills.[X]
 Lead[X]
 
 ## LeadRText
-Leadership. Grants +5 Hit +3 Avo[N]
-to all ally units per star.[X]
+Leadership. Grants +10 Hit & Avo[N]
+to ally units in leadership + 1 range.[X]
 
 ## AllyStarCountRText
 Total number of leadership stars[N]
