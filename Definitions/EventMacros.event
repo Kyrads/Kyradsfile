@@ -49,69 +49,70 @@
 
 //Undefining all FE8 AI definitions to use my own, but keeping these here for reference
 	//AI1 helpers
-	#undef AttackInRange				0x00
-	#undef AttackInRange80Chance		0x01
-	#undef AttackInRange50Chance		0x02
-	#undef AttackInPlace				0x03
-	#undef AttackInPlace80Chance		0x04
-	#undef AttackInPlace50Chance		0x05
-	#undef NoAI1						0x06
-	#undef DoNotAttackNatasha			0x07
+	#undef AttackInRange//				0x00
+	#undef AttackInRange80Chance//		0x01
+	#undef AttackInRange50Chance//		0x02
+	#undef AttackInPlace//				0x03
+	#undef AttackInPlace80Chance//		0x04
+	#undef AttackInPlace50Chance//		0x05
+	#undef NoAI1//						0x06
+	#undef DoNotAttackNatasha//			0x07
 
-	#undef AttackIfClose				0x0C
-	#undef MoveWithLeader				0x0D
-	#undef HealInjuredAllies			0x0E
-	#undef HealAllies					0x0E //Alias
-	#undef AlternateStavesAndAttackWithoutMoving 0xF
-	#undef ThiefActionThenEscape		0x10
-	#undef OpenDoors					0x11
-	#undef DemonKingAction				0x14
+	#undef AttackIfClose//				0x0C
+	#undef MoveWithLeader//				0x0D
+	#undef HealInjuredAllies//			0x0E
+	#undef HealAllies//					0x0E //Alias
+	#undef AlternateStavesAndAttackWithoutMoving// 0xF
+	#undef ThiefActionThenEscape//		0x10
+	#undef OpenDoors//					0x11
+	#undef DemonKingAction//				0x14
 
 	//AI2 helpers
-	#undef Pursue						0x00
-	#undef NoAI2						0x03
-	#undef DoNotMove					0x03
-	#undef DontMove					0x03
-	#undef BrigandMove					0x04
+	#undef Pursue//						0x00
+	#undef NoAI2//						0x03
+	#undef DoNotMove//					0x03
+	#undef DontMove//					0x03
+	#undef BrigandMove//					0x04
 
-	#undef RossMovementAI				0x0A
+	#undef RossMovementAI//				0x0A
 
 	//AI3 helpers
-	#undef NormalRecovery				0x00
-	#undef DefaultRecovery				0x00
-	#undef LowRecovery					0x01
-	#undef AlmostNoRecovery			0x02
-	#undef CautiousRecovery			0x03
-	#undef NoRecovery					0x04
+	#undef NormalRecovery//				0x00
+	#undef DefaultRecovery//				0x00
+	#undef LowRecovery//					0x01
+	#undef AlmostNoRecovery//			0x02
+	#undef CautiousRecovery//			0x03
+	#undef NoRecovery//					0x04
 
-	#undef Normal						0x00
-	#undef Reckless					0x01
-	#undef WithoutHeed					0x02
-	#undef Cautious					0x03
+	#undef Normal//						0x00
+	#undef Reckless//					0x01
+	#undef WithoutHeed//				0x02
+	#undef Cautious//					0x03
 
 
 	//AI4 helpers
-	#undef DefaultAI4					0x00
-	#undef GuardTile					0x20
+	#undef DefaultAI4//					0x00
+	#undef GuardTile//					0x20
 
 
-	#undef NoAI 				[0x00,0x00,0x00,0x00]
-	#undef PursueWithoutHeedAI			[0x00,0x00,0x04,0x00]	//Depriciated because 4-tuple AI is depriciated.
-	#undef DefaultAI					[0x00,0x00]
-	#undef DoNothing					[0x06,0x03]
-	#undef GuardTileAI					[0x03,0x03]
-	#undef AttackInRangeAI				[0x00,0x03]
-	#undef ChaseOnceApproachedAI		[0x00,0x06]
-	#undef HealUnits					[0x0E,0x03]
-	#undef BrigandAI					[0x06,0x04]
-	#undef StealingThiefAI				[0x10,0x05]
-	#undef LootingThiefAI				[0x06,0x05]
+	#undef NoAI// 				[0x00,0x00,0x00,0x00]
+	#undef PursueWithoutHeedAI//			[0x00,0x00,0x04,0x00]	//Depriciated because 4-tuple AI is depriciated.
+	#undef DefaultAI//					[0x00,0x00]
+	#undef DoNothing//					[0x06,0x03]
+	#undef GuardTileAI//					[0x03,0x03]
+	#undef AttackInRangeAI//				[0x00,0x03]
+	#undef ChaseOnceApproachedAI//		[0x00,0x06]
+	#undef HealUnits//					[0x0E,0x03]
+	#undef BrigandAI//					[0x06,0x04]
+	#undef StealingThiefAI//				[0x10,0x05]
+	#undef LootingThiefAI//				[0x06,0x05]
 	//#undef DelayedBrigandAI			[0x06,0x1F] //Commented out because not confirmed in FE8 yet.
 	//#undef AttackWallAI				[0x00,0x1B]
-	#undef MoveWithLeaderAI			[0x0D,0x03]
-	#undef NeverMoveAI         [0x03,0x03,0x04,0x20]
-	#undef DemonKingAI					[0x14,0x03]
+	#undef MoveWithLeaderAI//			[0x0D,0x03]
+	#undef NeverMoveAI//         [0x03,0x03,0x04,0x20]
+	#undef DemonKingAI//					[0x14,0x03]
 
+#define DefaultAI 			[0x0,0x0,0x0,0x0]
 #define NoAI 				[0x6,0x3,0x0,0x0] //more of a do nothing AI
 #define InRangeAI        	[0x0,0x3,0x24,0x0]
 #define InRangeHealAI     	[0x0,0x3,0x20,0x0]
