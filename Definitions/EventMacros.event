@@ -1,11 +1,142 @@
+//General Event Macros
 #define CamOn "EVBIT_T 0x9"
 #define CamOff "EVBIT_F 0x9"
+#define EraseBackground "CALL $9EE2C4"
+#define EraseBackgroundSlow "FADI 3; CLEAN; STAL 60; FADU 2"
 #define SpawnReinforcements(UnitGroup) "CamOn; LOAD1 0x1 UnitGroup; ENUN; CamOff; STAL 30"
+#define VillageDialogue(Background,TextId,Item) "SetBackground(Background); Text(TextId); CALL $9EE2C4; GiveItem(Item,0xFFFF); NoFade; ENDA"
+#define SetAI(unitid,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI unitid"
+#define GoToPrepScreen2 "CALL $591FD8" //Prep screen without ENDA
+#define GiveItem(Item,Character) "CALL $591F40; SMOV 0x3 Item ; GIVEITEMTO Character"
+#define SilentGiveItem(item,unit) "BYTE 0x40 0x0D unit item; POIN SilentGiveItemFunc|1"
+#define GiveGold(money) "SVAL 3 money; GIVEMONEY Lord"
+#define TakeGold(money) "SVAL 3 money; TAKEMONEY"
+#define CenterTextbox(textid) "CenterTutorialTextBox; TUTORIALTEXTBOXSTART; TEXTSHOW textid; TEXTEND; REMA"
+#define TutorialYesNoText(textid) "CenterTextbox(textid); EVBIT_MODIFY 0"
+#define RemoveAll "REMOVEALL_BLUE; REMOVEALL_GREEN; REMOVEALL_RED"
+#define TextWithMusicChange(textId,SongId) "TEXTSTART; TEXTSHOW textId; TEXTEND; MUSC songId; TEXTCONT; TEXTEND; REMA"
+#define TextWithMusicChange2(textId,songId) "TEXTSTART; TEXTSHOW textId; TEXTEND; MUSS songId; TEXTCONT; TEXTEND; REMA"
+#define TextOpen(TextId) "TEXTSTART; TEXTSHOW TextId; TEXTEND"
+#define TextClose "TEXTCONT; TEXTEND; REMA"
+#define CameraCursor(character) "CAM1 character; STAL 20; FlashCursor(character,60)"
+#define CameraCursor(x,y) "CAM1 [x,y]; STAL 20; FlashCursor(x,y,60)"
+#define CameraCursorFast(character) "CAM1 character; STAL 20; FlashCursor(character,32)"
+#define CameraCursorFast(x,y) "CAM1 [x,y]; STAL 20; FlashCursor(x,y,32)"
+#define FadeOutMusic "MUSCMID 0x7FFF"
+
+//Objective Macros
+#define DefeatBoss "AFEV 3 EndingScene 2"
+#define DefeatAll "AFEV 3 EndingScene 6"
+
+//Unit Loading Macros
+#define LoadEnemies(unitPtr) "LOAD1 0x1 unitPtr; ENUN"
+
+
+//Conditional Macros
+#define FlagIsSet(id,label) "CHECK_EVENTID (id); BEQ (label) 0xc 0x0;"
+#define FlagNotSet(id,label) "CHECK_EVENTID (id); BNE (label) 0xc 0x0;"
+#define IsCharacterAlive(id,label) "CHECK_ALIVE id; BEQ label 0xc 0x0"
+#define IsCharacterNotAlive(id,label) "CHECK_ALIVE id; BNE label 0xc 0x0"
+#define DoesCharacterExist(id,label) "CHECK_EXISTS id; BEQ label 0xc 0x0"
+#define DoesCharacterNotExist(id,label) "CHECK_EXISTS id; BNE label 0xc 0x0"
 
 
 //AI Macros
-//All AI have their AI3 set to 0x4 so they will not run to forts except 'vulnAI' for enemies who carry vulneraries.
+//All AI have their AI3 set to 0x24 so they will not run to forts except 'HealAI' for enemies who carry vulneraries and will have theirs set to 0x20.
 //They can still be healed by staffers thanks to a hack by Vesly
+//Group AI Macros are in the GroupAI hack folder
 
-#define InRangeAI         [0x0,0x0,0x4,0x0]
-#define InRangeVulnAI     [0x0,0x0,0x0,0x0]
+
+//Undefining all FE8 AI definitions to use my own, but keeping these here for reference
+	//AI1 helpers
+	#undef AttackInRange				0x00
+	#undef AttackInRange80Chance		0x01
+	#undef AttackInRange50Chance		0x02
+	#undef AttackInPlace				0x03
+	#undef AttackInPlace80Chance		0x04
+	#undef AttackInPlace50Chance		0x05
+	#undef NoAI1						0x06
+	#undef DoNotAttackNatasha			0x07
+
+	#undef AttackIfClose				0x0C
+	#undef MoveWithLeader				0x0D
+	#undef HealInjuredAllies			0x0E
+	#undef HealAllies					0x0E //Alias
+	#undef AlternateStavesAndAttackWithoutMoving 0xF
+	#undef ThiefActionThenEscape		0x10
+	#undef OpenDoors					0x11
+	#undef DemonKingAction				0x14
+
+	//AI2 helpers
+	#undef Pursue						0x00
+	#undef NoAI2						0x03
+	#undef DoNotMove					0x03
+	#undef DontMove					0x03
+	#undef BrigandMove					0x04
+
+	#undef RossMovementAI				0x0A
+
+	//AI3 helpers
+	#undef NormalRecovery				0x00
+	#undef DefaultRecovery				0x00
+	#undef LowRecovery					0x01
+	#undef AlmostNoRecovery			0x02
+	#undef CautiousRecovery			0x03
+	#undef NoRecovery					0x04
+
+	#undef Normal						0x00
+	#undef Reckless					0x01
+	#undef WithoutHeed					0x02
+	#undef Cautious					0x03
+
+
+	//AI4 helpers
+	#undef DefaultAI4					0x00
+	#undef GuardTile					0x20
+
+
+	#undef NoAI 				[0x00,0x00,0x00,0x00]
+	#undef PursueWithoutHeedAI			[0x00,0x00,0x04,0x00]	//Depriciated because 4-tuple AI is depriciated.
+	#undef DefaultAI					[0x00,0x00]
+	#undef DoNothing					[0x06,0x03]
+	#undef GuardTileAI					[0x03,0x03]
+	#undef AttackInRangeAI				[0x00,0x03]
+	#undef ChaseOnceApproachedAI		[0x00,0x06]
+	#undef HealUnits					[0x0E,0x03]
+	#undef BrigandAI					[0x06,0x04]
+	#undef StealingThiefAI				[0x10,0x05]
+	#undef LootingThiefAI				[0x06,0x05]
+	//#undef DelayedBrigandAI			[0x06,0x1F] //Commented out because not confirmed in FE8 yet.
+	//#undef AttackWallAI				[0x00,0x1B]
+	#undef MoveWithLeaderAI			[0x0D,0x03]
+	#undef NeverMoveAI         [0x03,0x03,0x04,0x20]
+	#undef DemonKingAI					[0x14,0x03]
+
+#define NoAI 				[0x6,0x3,0x0,0x0] //more of a do nothing AI
+#define InRangeAI        	[0x0,0x3,0x24,0x0]
+#define InRangeHealAI     	[0x0,0x3,0x20,0x0]
+#define InTwoAI				[0x0,0x0,0x24,0x0]
+#define InTwoHealAI			[0x0,0x0,0x20,0x0]
+#define StationaryAI		[0x0,0x3,0x24,0x20]
+#define StationaryHealAI	[0x0,0x3,0x20,0x20]
+
+/*
+AI Todo List:
+ChargeAI
+Charge2AI //Charge even when blocked
+WallbreakerAI
+ThiefAI
+BanditAI
+HealerAI
+DoorOpenerAI
+HealerFighterAI
+Wait1TurnAI
+*/
+
+
+
+
+
+
+
+//End
