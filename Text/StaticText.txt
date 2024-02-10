@@ -86,12 +86,11 @@ Effective against: [DragonIcon][X]
 
 
 
-#0x0362 LightBrandName^
-Light Brand[X]
+#0x0362 LevinSwordName^
+Levin Sword[X]
 
-#0x0412 LightBrandDesc^
-A sword suffused with magic[N]
-Casts light magic at range.[X]
+#0x0412 LevinSwordDesc^
+A sword that casts lightning at range.[X]
 
 
 
