@@ -11,13 +11,13 @@ int GetUnitItemHealAmount(struct Unit* unit, int item) {
     break;
 
     case ITEM_STAFF_PHYSIC:
+    case ITEM_STAFF_FORTIFY:
     case ITEM_VULNERARY:
     case ITEM_VULNERARY_2:
         result = 12;
         break;
 
     case ITEM_STAFF_MEND:
-    case ITEM_STAFF_FORTIFY:
         result = 16;
         break;
 

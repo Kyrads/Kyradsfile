@@ -166,8 +166,8 @@ Dummy[X]
 # 0x0323 Dummy2^
 Dummy[X]
 
-# 0x04EC DexStat
-Dex[.][X]
+# 0x04EC SkillStat
+Skl[.][X]
 
 # 0x04EE LuckStat
 Lck[.][X]
@@ -175,20 +175,20 @@ Lck[.][X]
 # 0x04F6
 Mov[.][X]
 
-# 0x0548 DexDescription
+# 0x0548 SklDescription
 Fighting skill. A higher[NL]
 number improves hit & crit %.[.][X]
 
 # 0x0485
-Increases dexterity by 3[NL]
+Increases Skill by 3[NL]
 points. Vanishes after use.[.][X]
 
 # 0x0015
-Dexterity increased.[X]
+Skill increased.[X]
 
 
 # 0x04C3
-Raises dexterity.[.][X]
+Raises Skill.[.][X]
 
 # 0x213^
 Camille[X]
