@@ -124,6 +124,10 @@
 //Fixes a bug with Canto
 	#include "CantoBugFix/Installer.event"
 
+//AuraWolf
+//Allows Viewing of supply even with a full inventory
+	#include "SupplyView/SupplyView.event"
+
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.event"

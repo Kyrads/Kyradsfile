@@ -6,6 +6,11 @@
 
 #define Thief_F 0xe
 
+#define Scholar Shaman
+#define Scholar_F Shaman_F
+#define Sorcerer Druid
+#define Sorcerer_F Druid
+
 #define Gendarme 0x35
 
 #define Freelancer 0x54
