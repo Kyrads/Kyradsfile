@@ -40,7 +40,7 @@ SHORT $7891 $78D2 $0608
 
 //Set Default Options
   ORG $30d8a  //animations type 2
-  SHORT $3306
+  SHORT $4003
   ORG $30da6  //Game/text speed Fast, Autocursor off
   SHORT $22d0
   

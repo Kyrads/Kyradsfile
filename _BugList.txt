@@ -1,0 +1,9 @@
+This text file is purely for documenting purposes
+
+Major Bugs:
+
+Minor Bugs:
+- Gendarme skill list not working
+- Narrowfont letters bugged, T and J swapped between narrowfont versions
+- Supply View 'View' text overwriting hand axe
+- Magic Sword Bugged

@@ -9,6 +9,13 @@ Scholar[X]
 Practicioners of the magics[N]
 with great natural affinity.[X]
 
+## SorcererName^
+Sorcerer[X]
+
+## SorcererDesc^
+Advanced masters of magic with[N]
+an incredible raw prowess.[X]
+
 ## GendarmeName^
 Gendarme[X]
 

@@ -26,6 +26,7 @@
 #define Bow 0x2d
 #undef Longbow
 #define Longbow 0x2e
+#define RegalBow 0x2f
 #define Shortbow 0x33
 #define Greatbow 0x34
 #define Lumen 0x3f

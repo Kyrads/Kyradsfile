@@ -46,6 +46,9 @@ Bow[X]
 ## LongBowName^
 Longbow[X]
 
+## RegalBowName^
+Regal Bow[X]
+
 ## ShortbowName^
 Shortbow[X]
 

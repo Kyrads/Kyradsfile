@@ -17,6 +17,11 @@ ItemIconSlot(0x2)
 POP
 
 PUSH
+ItemIconSlot(0x3) 
+#incbin "DMP/RegalSword(Kyrads).dmp"
+POP
+
+PUSH
 ItemIconSlot(0x4) 
 #incbin "DMP/BastardSword(Kyrads).dmp"
 POP
@@ -31,14 +36,19 @@ ItemIconSlot(0x6)
 #incbin "DMP/Dagger(Kyrads).dmp"
 POP
 
-//PUSH
-//ItemIconSlot(0x0f)
-//#incbin "DMP/LevinSword.dmp"
-//POP
+PUSH
+ItemIconSlot(0x0f)
+#incbin "DMP/LevinSword(Zelix).dmp"
+POP
 
 PUSH
 ItemIconSlot(0x14)
 #incbin "DMP/ShortSpear(Kyrads).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x16)
+#incbin "DMP/RegalLance(Kyrads).dmp"
 POP
 
 PUSH
@@ -62,13 +72,23 @@ ItemIconSlot(0x27)
 POP
 
 PUSH
+ItemIconSlot(0x2C)
+#incbin "DMP/Longbow(Lisandra_Brave).dmp"
+POP
+
+PUSH
+ItemIconSlot(0x2D)
+#incbin "DMP/RegalBow(Kyrads).dmp"
+POP
+
+PUSH
 ItemIconSlot(0x31)
 #incbin "DMP/Shortbow(Kyrads).dmp"
 POP
 
 PUSH
 ItemIconSlot(0x32)
-#incbin "DMP/Greatbow(Kyrads_Xilirite).dmp"
+#incbin "DMP/Greatbow(Snakey-1).dmp"
 POP
 
 PUSH
