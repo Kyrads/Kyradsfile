@@ -6,5 +6,4 @@
 
 #include "SongText.txt"
 
-## WeaponText
-Wepn[X]
+#include "MenuText.txt"

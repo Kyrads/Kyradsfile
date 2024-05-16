@@ -107,6 +107,7 @@ BYTE 00 00
 ALIGN 4
 
 DruidSkillList:
+BYTE 1 MaleficAuraID
 BYTE 00 00
 ALIGN 4
 

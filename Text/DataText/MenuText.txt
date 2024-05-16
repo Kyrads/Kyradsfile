@@ -1,0 +1,13 @@
+## WeaponText
+Wepn[X]
+
+## SupplyViewCommand
+View[X]
+
+## SupplyViewCommandHelpText
+Can freely look into the storage,[N]
+but cannot take anything out due[N]
+to this unit having too many items.[X]
+
+## SupplyConvoyResponse_View
+Take a look.[X]

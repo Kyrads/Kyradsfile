@@ -7,9 +7,9 @@ This assembly makes it so units can always freely look into the Convoy without b
 #include EAstdlib.event
 #include "Extensions/Hack Installation.txt"
 
-#define USE_SUPPLY_VIEW_TEXT
+//#define USE_SUPPLY_VIEW_TEXT
 
-#include "SupplyViewText.event"
+//#include "SupplyViewText.event"
 ALIGN 4
 
 SupplyCommandTakeOrViewLink:

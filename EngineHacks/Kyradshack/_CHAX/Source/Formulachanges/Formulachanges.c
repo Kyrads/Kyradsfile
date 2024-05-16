@@ -69,10 +69,11 @@ void ComputeBattleUnitAvoidRate(struct BattleUnit* bu) {
     }
 
 //Temporary support disable
-void UnitLoadSupports(struct Unit* unit) {
+//Breaks some skill list stuff for some reason?
+/*void UnitLoadSupports(struct Unit* unit) {
     return;
 }
 
 void ProcessTurnSupportExp(void){
     return;
-}
+}*/
