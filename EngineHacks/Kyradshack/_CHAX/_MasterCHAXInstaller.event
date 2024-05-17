@@ -11,7 +11,7 @@ DisciplineIDLink:
 BYTE DisciplineID
 
 //All of these were made with major help from Pikmin1211
-#include "Event/Formulachanges/Formulachanges.lyn.event"
+#include "Event/Formulachanges/Formulachanges.lyn.event" //Formula changes includes EXP changes written by LegendofLoog
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
 #include "Event/WEXPChanges/WEXPChanges.lyn.event"
 #include "Event/WeaponProperties/WeaponProperties.lyn.event"

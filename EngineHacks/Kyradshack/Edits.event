@@ -266,7 +266,7 @@ BYTE 0xE0 0x04
 POP
 
 //Nerfed EXP
-
+/*
 //Defeat EXP
 PUSH
 ORG 0x02C462
@@ -294,6 +294,7 @@ BYTE 0
 ORG 0x002C35E
 BYTE 20
 POP
+*/
 
 //Devil Axe Backfire Chance (Changes it to 30 - Luck, Base 31)
 PUSH

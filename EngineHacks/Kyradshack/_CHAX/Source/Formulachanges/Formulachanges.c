@@ -1,5 +1,6 @@
 #include "gbafe.h"
 
+#include "formulachanges.h"
 
 //Damage Formula
 void ComputeBattleUnitAttack(struct BattleUnit* attacker, struct BattleUnit* defender) {
@@ -76,4 +77,145 @@ void ComputeBattleUnitAvoidRate(struct BattleUnit* bu) {
 
 void ProcessTurnSupportExp(void){
     return;
+}*/
+
+//Exp Changes
+//LegendofLoog
+int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
+    
+    if (CanBattleUnitGainExp(actor, target)){
+
+        // tinked or missed
+        if (!(actor->nonZeroDamage)){
+            return 0;
+        }
+
+        int levelDiff = GetLevelDifference(actor, target);
+        // killed
+        if (target->unit.curHP == 0){       
+            int initialKillExp = 25 + 5 * levelDiff;
+
+            if(initialKillExp <= 5){
+                return 5;
+            }
+            else if (initialKillExp >= 50){
+                return 50;
+            }
+            else{
+                return initialKillExp; //50 kill exp cap
+            }
+        }
+
+        // hit
+        int initialHitExp = 5 + 1 * levelDiff;
+
+            if(initialHitExp <= 1){
+                return 1;
+            }
+            else if(initialHitExp >= 10){
+                return 10;
+            }
+            else{
+                return initialHitExp;
+            }
+
+    }
+
+    return 0;
+}
+
+bool CanBattleUnitGainExp(struct BattleUnit* actor, struct BattleUnit* target){
+
+    // is the unit exp maxed
+    if (!CanBattleUnitGainLevels(actor)){
+        return false;
+    }
+
+    // is the unit alive
+    if (actor->unit.curHP == 0){
+        return false;
+    }
+
+    // does the opponent prevent exp gain
+    if (((target->unit.pCharacterData->attributes) | (target->unit.pClassData->attributes)) & CA_NO_EXP){
+        return false;
+    }
+
+    return true;
+
+}
+
+int GetUnitEffectiveLevel(struct Unit* unit){
+
+    int effectiveLevel = unit->level;
+
+    if (unit->pClassData->attributes & CA_PROMOTED){
+        effectiveLevel += 20;
+    }
+
+    return effectiveLevel;
+
+}
+
+int GetLevelDifference(struct BattleUnit* actor, struct BattleUnit* target){
+
+    int diff = GetUnitEffectiveLevel(&target->unit) - GetUnitEffectiveLevel(&actor->unit);
+    return diff;
+
+}
+
+bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
+    if (battleUnit->unit.exp == 0xFF){
+        return false;
+    }
+
+    if (UNIT_FACTION(&battleUnit->unit) != FACTION_BLUE){
+        return false;
+    }
+
+    return true;
+}
+
+/*int GetBattleUnitStaffExp(struct BattleUnit* actor){
+    if (!CanBattleUnitGainLevels(actor)){
+        return 0;
+    }
+
+    // is the unit alive
+    if (actor->unit.curHP == 0){
+        return 0;
+    }
+    
+    const ItemData* staffData = GetItemData(GetItemIndex(actor->weapon));
+    int staffRank = staffData->weaponRank;
+
+    int exp = 0;
+    if (staffRank == D_WEXP){
+        exp += 15;
+    }
+    else if (staffRank == C_WEXP){
+        exp += 18;
+    }
+    else if (staffRank == B_WEXP){
+        exp += 21;
+    }
+    else if (staffRank == A_WEXP){
+        exp += 24;
+    }
+    else{
+        exp += 30;
+    }
+
+    int levelDiff = GetLevelDifference(actor, &gBattleTarget);
+
+    if (levelDiff < 0){ //if the target is lower level than actor, reduce exp by 2 * level diff
+        exp += levelDiff * 3;
+    }
+   
+    if (exp <= 3){
+        return 3;
+    }
+    else{
+        return exp;
+    }
 }*/

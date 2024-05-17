@@ -1,6 +1,11 @@
 This text file is purely for documenting purposes
 
+No known bugs as of writing! 17/05/24
+
+- Not a bug but a note to self, exp calcs seem to rely on a 'newcalculations.h' from pirproj, maybe ask pik to help me prune that, additionally i might wanna write my own code for other actions ala steal, summon
+
 Major Bugs:
 
 Minor Bugs:
-- Narrowfont letters bugged, T and J swapped between narrowfont versions
+
+- Some wexp glitch or something?
