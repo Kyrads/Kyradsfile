@@ -96,7 +96,7 @@ POP
 //Poison Damage (default 1)
 PUSH
 ORG 0x025a3e
-BYTE 0xA //10 damage
+BYTE 0x8 //8 damage
 ORG 0x025A36
 BYTE 0x0 //0 blur
 POP
@@ -187,14 +187,6 @@ POP */
 //ALIGN 4
 //CheckWexpWeaponTypeHook:
     //WORD 0x19ED2550 0x24287828 0x5C2619E4 0xD0012E00 0x47184B01 0x47184B01 0x802C133 0x802C113
-
-// Remove Kill Bonus for WEXP (Causes a crash currently)
-//by Alusq
-/*
-PUSH
-ORG $2c142
-BYTE 0x01 0x29 0x0 0xDC 
-POP*/
 
 //Prevents Archer palette from being overwritten
 //by 7743
@@ -317,6 +309,7 @@ POP
 
 /*
 //Remove arrow wiggling advancing RN
+//Unused, currently have auto advancing RN
 //by Colorz
 PUSH
 ORG 0x1A774
@@ -533,12 +526,12 @@ POP
 #define WeaponTriangleEntry(AdvWpn,DisWpn,Hit,Atk) "BYTE AdvWpn DisWpn Hit Atk DisWpn AdvWpn (0-Hit) (0-Atk)" 
 PUSH
 ORG 0x59BA90
-WeaponTriangleEntry(Lances,Swords,10,1)
-WeaponTriangleEntry(Axes,Lances,10,1)
-WeaponTriangleEntry(Swords,Axes,10,1)
-WeaponTriangleEntry(Anima,Light,10,1)
-WeaponTriangleEntry(Light,Dark,10,1)
-WeaponTriangleEntry(Dark,Anima,10,1)
+WeaponTriangleEntry(Lances,Swords,10,2)
+WeaponTriangleEntry(Axes,Lances,10,2)
+WeaponTriangleEntry(Swords,Axes,10,2)
+WeaponTriangleEntry(Anima,Light,10,2)
+WeaponTriangleEntry(Light,Dark,10,2)
+WeaponTriangleEntry(Dark,Anima,10,2)
 POP
 
 //No-Recovery Mode Staff Healing
@@ -604,4 +597,4 @@ POP
     ORG $09E00
     SHORT $4770*/
 
-//https://www.youtube.com/shorts/LfSZesGiOkg
+//  https://www.youtube.com/shorts/LfSZesGiOkg
