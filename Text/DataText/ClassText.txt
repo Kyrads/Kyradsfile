@@ -1,24 +1,24 @@
-## KnightDesc^
+## KnightDesc*
 Heavily armoured knights with plated[N]
 armour providing staunch defence.[X]
 
 ## ScholarName^
 Scholar[X]
 
-## ScholarDesc^
+## ScholarDesc*
 Practicioners of the magics[N]
 with great natural affinity.[X]
 
 ## SorcererName^
 Sorcerer[X]
 
-## SorcererDesc^
+## SorcererDesc*
 Advanced masters of magic with[N]
 an incredible raw prowess.[X]
 
 ## GendarmeName^
 Gendarme[X]
 
-## GendarmeDesc^
+## GendarmeDesc*
 Heavily armoured riders who[N]
 crush opponents underfoot.[X]

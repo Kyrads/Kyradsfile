@@ -33,7 +33,7 @@ Dagger[X]
 
 
 
-#0x040a DaggerDesc^
+#0x040a DaggerDesc*
 A light throwing dagger.[N]
 Pierces Def in melee. Thief only.[X]
 
@@ -42,7 +42,7 @@ Pierces Def in melee. Thief only.[X]
 #0x035c RapierName^
 Rapier[X]
 
-#0x040c RapierDesc^
+#0x040c RapierDesc*
 A nimble piercing sword.[N]
 Effective against: [HorseIcon] & [ArmourIcon][X]
 
@@ -51,14 +51,14 @@ Effective against: [HorseIcon] & [ArmourIcon][X]
 #0x035d BraveSwordName^
 Brave Sword[X]
 
-#0x040d BraveSwordDesc^
+#0x040d BraveSwordDesc*
 Can strike consecutively.[X]
 
 
 #0x035e SwiftSwordName^
 Swift Sword[X]
 
-#0x040e SwiftSwordDesc^
+#0x040e SwiftSwordDesc*
 Can strike consecutively.[X]
 
 
@@ -66,14 +66,14 @@ Can strike consecutively.[X]
 #0x035f KillingEdgeName^
 Killing Edge[X]
 
-#0x040f KillingEdgeDesc^
+#0x040f KillingEdgeDesc*
 Improves critical hit rate.[X]
 
 
 #0x0360 ArmourslayerName^
 Armourslayer[X]
 
-#0x0410 ArmourslayerDesc^
+#0x0410 ArmourslayerDesc*
 Effective against: [0x7C][X]
 
 
@@ -81,7 +81,7 @@ Effective against: [0x7C][X]
 #0x0361 WyrmslayerName^
 Wyrmslayer[X]
 
-#0x0411 WyrmslayerDesc^
+#0x0411 WyrmslayerDesc*
 Effective against: [DragonIcon][X]
 
 
@@ -89,7 +89,7 @@ Effective against: [DragonIcon][X]
 #0x0362 LevinSwordName^
 Levin Sword[X]
 
-#0x0412 LevinSwordDesc^
+#0x0412 LevinSwordDesc*
 A sword that casts lightning at range.[X]
 
 
@@ -97,7 +97,7 @@ A sword that casts lightning at range.[X]
 #0x0364 LancreaverName^
 Lancereaver[X]
 
-#0x0414 LancreaverDesc^
+#0x0414 LancreaverDesc*
 Reverses weapon triangle effects.[X]
 
 
@@ -105,7 +105,7 @@ Reverses weapon triangle effects.[X]
 #0x0365 ClaymoreName^
 Claymore[X]
 
-#0x0415 ClaymoreDesc^
+#0x0415 ClaymoreDesc*
 Effective against: [HorseIcon][X]
 
 
@@ -124,20 +124,20 @@ Regal Lance[X]
 #0x036e BraveLanceName^
 Brave Lance[X]
 
-#0x041e BraveLanceDesc^
+#0x041e BraveLanceDesc*
 Can strike consecutively.[X]
 
 #0x036f KillerLanceName^
 Killer Lance[X]
 
-#0x041f KillerLanceDesc^
+#0x041f KillerLanceDesc*
 Improves critical hit rate.[X]
 
 
 #0x03ee GreenGemName^
 Green Gem[X]
 
-#0x49d GreenGemDesc^
+#0x49d GreenGemDesc*
 A common gemstone[N]
 worth 1,000 gold.[X]
 
@@ -179,7 +179,7 @@ Mov[.][X]
 Fighting skill. A higher[NL]
 number improves hit & crit %.[.][X]
 
-# 0x0485
+# 0x0485*
 Increases Skill by 3[NL]
 points. Vanishes after use.[.][X]
 

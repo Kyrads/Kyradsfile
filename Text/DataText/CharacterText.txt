@@ -1,6 +1,6 @@
 ## RelicBossName^
 RelicBoss[X]
 
-## RelicBossDesc^
+## RelicBossDesc*
 A prison guard serving[N]
 the imperial palace.[X]
