@@ -1,6 +1,9 @@
 ## HorseslayerName^
 Horseslayer[X]
 
+## NobleLanceDesc^
+Horseslayer[X]
+
 ## HorseslayerDesc*
 Effective against: [HorseIcon][X]
 
