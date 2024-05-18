@@ -1,8 +1,9 @@
 This text file is purely for documenting purposes
 
-No known bugs as of writing! 17/05/24
 
-- Not a bug but a note to self, exp calcs seem to rely on a 'newcalculations.h' from pirproj, maybe ask pik to help me prune that, additionally i might wanna write my own code for other actions ala steal, summon
+- Not a bug but a note to self, need to do staff, steal and summon exp stuff and possibly modify the battle exp formula
+	- Reintroducing boss exp (?)
+	- Removing the cap (either altogether, vs boss, or t1 vs t2) (?)
 
 Major Bugs:
 

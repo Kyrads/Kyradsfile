@@ -497,6 +497,8 @@ PUSH
 POP
 
 // Prep Shop
+//Invalidated by prep shop each chapter
+/*
 PUSH
   ORG 0x99E64
     POIN PrepScreenShop
@@ -505,6 +507,7 @@ POP
 ALIGN 4
 PrepScreenShop:
 SHLI Sword Vulnerary 0
+*/
 
 //Preps Armoury Store Price Inflation Fix
 //by Aera

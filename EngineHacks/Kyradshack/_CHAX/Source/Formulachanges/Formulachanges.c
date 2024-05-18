@@ -107,13 +107,13 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
         }
 
         // hit
-        int initialHitExp = 5 + 1 * levelDiff;
+        int initialHitExp = 10 + 1 * levelDiff;
 
             if(initialHitExp <= 1){
                 return 1;
             }
-            else if(initialHitExp >= 10){
-                return 10;
+            else if(initialHitExp >= 15){
+                return 15;
             }
             else{
                 return initialHitExp;

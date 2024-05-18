@@ -1,0 +1,6 @@
+#define PrepShopPointer(shop_pointer) "WORD shop_pointer; "
+
+PrepShop_Table:
+PrepShopPointer(PrepShop1|IsPointer) //chapter 1
+PrepShopPointer(0)
+
