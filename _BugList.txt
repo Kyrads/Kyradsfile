@@ -2,8 +2,11 @@ This text file is purely for documenting purposes
 
 
 - Not a bug but a note to self, need to do staff, steal and summon exp stuff and possibly modify the battle exp formula
+	- Number tweaking (change if non 5 mults look ew)
 	- Reintroducing boss exp (?)
 	- Removing the cap (either altogether, vs boss, or t1 vs t2) (?)
+
+- Redo class stats since we epiphanied
 
 Major Bugs:
 

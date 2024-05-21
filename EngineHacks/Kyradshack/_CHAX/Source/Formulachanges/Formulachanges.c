@@ -93,7 +93,7 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
         int levelDiff = GetLevelDifference(actor, target);
         // killed
         if (target->unit.curHP == 0){       
-            int initialKillExp = 25 + 5 * levelDiff;
+            int initialKillExp = 25 + 4 * levelDiff;
 
             if(initialKillExp <= 5){
                 return 5;
@@ -107,7 +107,7 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
         }
 
         // hit
-        int initialHitExp = 10 + 1 * levelDiff;
+        int initialHitExp = 8 + 1 * levelDiff;
 
             if(initialHitExp <= 1){
                 return 1;
