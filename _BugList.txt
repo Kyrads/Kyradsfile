@@ -11,5 +11,4 @@ This text file is purely for documenting purposes
 Major Bugs:
 
 Minor Bugs:
-
-- Some wexp glitch or something?
+- Cannot rescue seems to not be working

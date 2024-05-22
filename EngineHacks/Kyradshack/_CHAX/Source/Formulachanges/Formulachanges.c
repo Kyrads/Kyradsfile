@@ -176,7 +176,7 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
     return true;
 }
 
-/*int GetBattleUnitStaffExp(struct BattleUnit* actor){
+int GetBattleUnitStaffExp(struct BattleUnit* actor){
     if (!CanBattleUnitGainLevels(actor)){
         return 0;
     }
@@ -190,20 +190,23 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
     int staffRank = staffData->weaponRank;
 
     int exp = 0;
-    if (staffRank == D_WEXP){
+    if (staffRank == WPN_EXP_E){
         exp += 15;
     }
-    else if (staffRank == C_WEXP){
+    else if (staffRank == WPN_EXP_D){
         exp += 18;
     }
-    else if (staffRank == B_WEXP){
+    else if (staffRank == WPN_EXP_C){
         exp += 21;
     }
-    else if (staffRank == A_WEXP){
+    else if (staffRank == WPN_EXP_B){
         exp += 24;
     }
-    else{
+    else if (staffRank == WPN_EXP_A){
         exp += 30;
+    }
+    else{
+        exp += 34;
     }
 
     int levelDiff = GetLevelDifference(actor, &gBattleTarget);
@@ -218,4 +221,4 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
     else{
         return exp;
     }
-}*/
+}

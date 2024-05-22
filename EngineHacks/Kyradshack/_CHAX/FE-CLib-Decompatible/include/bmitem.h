@@ -138,11 +138,11 @@ enum {
 
     WPN_EXP_0 = 0,
     WPN_EXP_E = 1,
-    WPN_EXP_D = 31,
-    WPN_EXP_C = 71,
-    WPN_EXP_B = 121,
-    WPN_EXP_A = 181,
-    WPN_EXP_S = 251,
+    WPN_EXP_D = 26,
+    WPN_EXP_C = 61,
+    WPN_EXP_B = 106,
+    WPN_EXP_A = 161,
+    WPN_EXP_S = 226,
 };
 
 #define ITEM_INDEX(aItem) ((aItem) & 0xFF)

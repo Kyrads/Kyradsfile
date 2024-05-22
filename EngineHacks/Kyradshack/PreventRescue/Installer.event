@@ -28,3 +28,15 @@ CannotRescue(0x0)
 
 // Classes that cannot be rescued
 CannotBeRescued(Cavalier)
+CannotBeRescued(Cavalier_F)
+CannotBeRescued(Paladin)
+CannotBeRescued(Paladin_F)
+CannotBeRescued(PegasusKnight)
+CannotBeRescued(FalcoKnight)
+CannotBeRescued(WyvernRider)
+CannotBeRescued(WyvernLord)
+CannotBeRescued(Troubadour)
+CannotBeRescued(MageKnight)
+CannotBeRescued(MageKnight_F)
+CannotBeRescued(Gendarme)
+
