@@ -22,10 +22,6 @@
 //Rework of the text engine, mostly for the use of one and three line text boxes, but has many other useful features.
 	#include "FE8-Text_Engine_Rework/_FE8-Text_Engine_Rework_EA.event"
 
-//Pikmin1211
-//Used to prevent mounted classes from being rescued
-	#include "PreventRescue/Installer.event"
-
 //Leonarth
 //Makes it so that when stopped by an enemy in fog, the unit is still allowed to act.
 	#include "LessAnnoyingFog/LessAnnoyingFogInstaller.event"

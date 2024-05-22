@@ -15,5 +15,5 @@ BYTE DisciplineID
 #include "Event/Autolevelchanges/Autolevelchanges.lyn.event"
 #include "Event/WEXPChanges/WEXPChanges.lyn.event"
 #include "Event/WeaponProperties/WeaponProperties.lyn.event"
-#include "Event/ClassBasedAid/ClassBasedAid.lyn.event"
+#include "Event/ClassBasedAid/ClassBasedAid.lyn.event" //Also prevents mounted units being rescued
 #include "Event/StaffHeals/StaffHeals.lyn.event"

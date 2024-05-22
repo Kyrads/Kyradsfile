@@ -54,6 +54,9 @@ extern "C" {
 #include "uiutils.h"
 #include "unit_icon_data.h"
 #include "unit_icon_pointer.h"
+#include "bmphase.h"
+#include "bmtarget.h"
+#include "uiselecttarget.h"
 
 #define CONST_DATA __attribute__((section(".data")))
 

@@ -11,4 +11,3 @@ This text file is purely for documenting purposes
 Major Bugs:
 
 Minor Bugs:
-- Cannot rescue seems to not be working

@@ -186,7 +186,7 @@ int GetBattleUnitStaffExp(struct BattleUnit* actor){
         return 0;
     }
     
-    const ItemData* staffData = GetItemData(GetItemIndex(actor->weapon));
+    const struct ItemData* staffData = GetItemData(GetItemIndex(actor->weapon));
     int staffRank = staffData->weaponRank;
 
     int exp = 0;
