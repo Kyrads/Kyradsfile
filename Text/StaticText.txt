@@ -133,6 +133,9 @@ Killer Lance[X]
 #0x041f KillerLanceDesc*
 Improves critical hit rate.[X]
 
+#0x042d PoleaxeDesc*
+ [X]
+
 
 #0x03ee GreenGemName^
 Green Gem[X]

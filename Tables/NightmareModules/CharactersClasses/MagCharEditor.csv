@@ -1,9 +1,9 @@
 INLINE MagCharTable,Base Magic,Magic Growth
 None,0,0
-Eirika,0,25
-Camille,2,10
-Gilliam,0,5
-Franz,0,10
+Eirika,0,20
+Camille,2,5
+Madeline,-1,40
+Franz,0,5
 Moulder,3,40
 Vanessa,2,25
 Ross,0,5

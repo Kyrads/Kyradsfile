@@ -28,6 +28,9 @@ Battle Axe[X]
 ## RegalAxeName^
 Regal Axe[X]
 
+## PoleaxeName^
+Poleaxe[X]
+
 ## DevilAxeName^
 Devil Axe[X]
 
@@ -91,8 +94,8 @@ Long-range lightning strike.[X]
 ## FimbulvetrName^
 Fimbulvetr[X]
 
-## LumenName^
-Lumen[X]
+## WindName^
+Wind[X]
 
 ## ShineName^
 Shine[X]
