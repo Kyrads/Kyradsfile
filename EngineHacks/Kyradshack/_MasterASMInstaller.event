@@ -128,6 +128,9 @@
 //Allows setting preps shop inventory individually by chapter
 	#include "prep_shop_each_chapter2/Installer.event"
 
+//Sme
+//Fatigue!
+	#include "Fatigue/Fatigue.event"
 
 //A whole bunch of edits by various people, see Edits.txt for more info
 	#include "Edits.event"

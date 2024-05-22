@@ -99,8 +99,8 @@
   TalkTextIDLink:
   SHORT SS_TalkText
   ALIGN 4
-  SkillsTextIDLink:
-  SHORT SS_SkillsText
+  EndTextIDLink:
+  SHORT SS_EndText
   ALIGN 4
   Display_Growth_Options_Link:
   WORD Growth_Options

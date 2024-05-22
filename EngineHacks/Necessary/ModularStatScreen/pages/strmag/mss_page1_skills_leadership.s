@@ -124,9 +124,13 @@ ldr r0,=TalkTextIDLink
 ldrh r0,[r0]
 draw_talk_text_at 21, 11
 
-ldr r0,=SkillsTextIDLink
+ldr r0,=EndTextIDLink
 ldrh r0, [r0]
-draw_textID_at 21, 13, colour=White @skills
+draw_textID_at 21, 13, colour=Yellow @skills
+ldr r0,=MSSFatigueGetter
+mov r14,r0
+.short 0xF800 @returns # in r0
+draw_number_at 25, 13
 
 Nexty:
 
@@ -246,6 +250,6 @@ bx		r14
 Const2_2028E70:
 .long 0x02028E70
 
-.include "GetTalkee.asm"
+.include "GetTalkee.s"
 
 .ltorg
