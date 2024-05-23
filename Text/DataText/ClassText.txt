@@ -2,6 +2,33 @@
 Heavily armoured knights with plated[N]
 armour providing staunch defence.[X]
 
+## GeneralName^
+General[X]
+
+## MercenaryName^
+Mercenary[X]
+
+## HeroName^
+Hero[X]
+
+## MyrmidonName^
+Myrmidon[X]
+
+## ArcherName^
+Archer[X]
+
+## WyvernRiderName^
+Wyvern Rider[X]
+
+## PegasusKnightName^
+Pegasus Rider[X]
+
+## DracoknightName^
+Dracoknight[X]
+
+## MageName^
+Mage[X]
+
 ## ScholarName^
 Scholar[X]
 

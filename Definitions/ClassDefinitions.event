@@ -6,6 +6,17 @@
 
 #define Thief_F 0xe
 
+#define PegasusKnight_M 0x20
+#define Falcoknight FalcoKnight //Ideally stick to this
+#define FalconKnight FalcoKnight
+#define FalcoKnight_M 0x22
+#define Falcoknight_M 0x22 //Ideally stick to this
+#define FalconKnight_M 0x22
+#define Dracoknight 0x21 //Ideally stick to this
+#define DracoKnight 0x21
+#define DragonKnight 0x21
+
+
 #define Scholar Shaman
 #define Scholar_F Shaman_F
 #define Sorcerer Druid
@@ -31,16 +42,18 @@
 			(X) = Stats
 			(X)(X) = Stats + Graphics
 			(T) = Terrain Data
-			(G) = Gender
-			(FC) = Fully Complete aka (X)(X)(T)(G)
+			(N) = Names + Descriptions + Definitions
+			(G) = Gender Stats
+			(GX) = All Gender Work Complete (Redundant but required for FC)
+			(FC) = Fully Complete aka (X)(X)(T)(N)(GX)
 			//
-		- Lord (X)(G)
+		- Lord (X)(G) //Temp Graphics
 		- Great Lord
 		- Mercenary (X)
 		- Hero
 		- Myrmidon (X)
 		- Swordmaster
-		- Soldier (X)
+		- Soldier (X)(G)
 		- Halberdier
 		- Freelancer (X)
 		- Champion
@@ -59,15 +72,15 @@
 		- Cavalier (X)
 			- Cavalier Triangle(?)
 		- Paladin
-		- Peg (X)
+		- Peg (X)(G)
 		- Falcoknight
 		- Wyvern (X)
 		- Dracoknight
-		- Mage (X)
+		- Mage (X)(G)
 		- Sage
 		- Scholar (X)
-		- Warlock
-		- Priest (X)
+		- Sorcerer (X)
+		- Curate (X)
 		- Bishop
 		- Curate
 		- Troubadour (X)
