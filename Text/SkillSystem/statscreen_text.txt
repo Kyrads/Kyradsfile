@@ -2,15 +2,14 @@
 Talk[X]
 
 ## SS_EndText
-End[X]
+Ftg[X]
 
 ## SS_TalkRText
 Character with whom this unit[N]
 may talk on the battlefield.[X]
 
 ## SS_EndRText
-Endurance. If the unit's endurance[N]
-exceeds its limit they will become fatigued.[X]
+This unit's level of fatigue.[X]
 
 ## SS_SkillsDefaultRText
 No skill description found.[X]

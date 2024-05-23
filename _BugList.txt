@@ -6,7 +6,9 @@ This text file is purely for documenting purposes
 	- Reintroducing boss exp (?)
 	- Removing the cap (either altogether, vs boss, or t1 vs t2) (?)
 
-- Redo class stats since we epiphanied
+- Fatigue needs reworking and s drink/numerical heals implemented
+
+No bugs currently known
 
 Major Bugs:
 

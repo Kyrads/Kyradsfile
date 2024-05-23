@@ -38,3 +38,4 @@
 #define Halberd 0x7a
 #define GreenGem 0xba
 #define RegalGreataxe 0x86
+#define Fatigue1 0x9a
