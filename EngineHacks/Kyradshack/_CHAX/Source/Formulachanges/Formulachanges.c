@@ -222,3 +222,35 @@ int GetBattleUnitStaffExp(struct BattleUnit* actor){
         return exp;
     }
 }
+
+void BattleApplyMiscActionExpGains(void) {
+    if (UNIT_FACTION(&gBattleActor.unit) != FACTION_BLUE)
+        return;
+
+    if (!CanBattleUnitGainLevels(&gBattleActor))
+        return;
+
+    if (gPlaySt.chapterStateBits & PLAY_FLAG_EXTRA_MAP)
+        return;
+
+    switch (gActionData.unitActionType){
+        case UNIT_ACTION_STEAL:
+        gBattleActor.expGain = 20;
+        gBattleActor.unit.exp += 20;
+        break;
+        case UNIT_ACTION_SUMMON:
+        gBattleActor.expGain = 20;
+        gBattleActor.unit.exp += 20;
+        break;
+        case UNIT_ACTION_DANCE:
+        gBattleActor.expGain = 15;
+        gBattleActor.unit.exp += 15;
+        break;
+        default:
+        gBattleActor.expGain = 5;
+        gBattleActor.unit.exp += 5;
+        break;
+    }
+
+    CheckBattleUnitLevelUp(&gBattleActor);
+}

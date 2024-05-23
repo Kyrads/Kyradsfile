@@ -158,6 +158,11 @@ strb r1,[r0]
 mov r0,r4
 bl RefreshPrepScreenDeployAllowance
 
+mov r0,r4
+mov r1,r5
+
+blh UnitDecreaseItemUse
+
 pop {r4-r7}
 ldr        r0,=GoBackLoc
 bx        r0
@@ -213,6 +218,11 @@ strb r2,[r1]
 @refresh prep screen deploy
 mov r0,r4
 bl RefreshPrepScreenDeployAllowance
+
+mov r0,r4
+mov r1,r5
+
+blh UnitDecreaseItemUse
 
 pop {r4-r7}
 ldr        r0,=GoBackLoc

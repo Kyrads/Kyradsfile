@@ -10,7 +10,7 @@ int GetBattleUnitUpdatedWeaponExp(struct BattleUnit* bu) {
     if (bu->unit.curHP == 0)
         return -1;
 
-    if (gPlaySt.chapterStateBits & PLAY_FLAG_7)
+    if (gPlaySt.chapterStateBits & PLAY_FLAG_EXTRA_MAP)
         return -1;
 
     if (gBmSt.gameStateBits & 0x40) // TODO: GAME STATE BITS CONSTANTS

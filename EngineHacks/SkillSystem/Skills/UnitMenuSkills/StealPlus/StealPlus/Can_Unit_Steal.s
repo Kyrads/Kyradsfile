@@ -11,6 +11,7 @@
 .equ StealID, SkillTester+4
 .equ StealPlusID, StealID+4
 .equ AlsoUseCheckVanillaSteal, StealPlusID+4
+.equ CunningID, AlsoUseCheckVanillaSteal+4
 
 push	{r4-r5,r14}
 mov		r4,r0
@@ -26,6 +27,12 @@ mov		r14,r5
 .short	0xF800
 cmp		r0,#0
 bne		RetTrue
+mov   r0,r4
+ldr   r1,CunningID
+mov   r14,r5
+.short  0xF800
+cmp   r0,#0
+bne   RetTrue
 
 ldr		r0,AlsoUseCheckVanillaSteal
 cmp		r0,#0

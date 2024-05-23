@@ -92,6 +92,7 @@ WORD WatchfulID
 	WORD StealID
 	WORD StealPlusID
 	WORD ALSO_USE_VANILLA_STEAL_CHECK
+	WORD CunningID
 	
 #endif
 	

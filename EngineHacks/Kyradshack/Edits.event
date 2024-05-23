@@ -39,21 +39,21 @@ POP
 // by moving this effect to an item you can never obtain anyway (such as Agneya here)
     PUSH
         ORG $115AA
-        BYTE 0xEA
+        BYTE 0x0
         ORG $115AE
-        BYTE 0xEA
+        BYTE 0x0
         ORG $115B6
-        BYTE 0xEA
+        BYTE 0x0
         ORG $115B2
-        BYTE 0xEA
+        BYTE 0x0
         ORG $324DA
-        BYTE 0xEA
+        BYTE 0x0
         ORG $324D2
-        BYTE 0xEA
+        BYTE 0x0
         ORG $324CE
-        BYTE 0xEA
+        BYTE 0x0
         ORG $324D6
-        BYTE 0xEA
+        BYTE 0x0
     POP
 	
 // speed for battle map anim rounds 

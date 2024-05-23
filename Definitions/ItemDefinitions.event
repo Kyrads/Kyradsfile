@@ -39,3 +39,5 @@
 #define GreenGem 0xba
 #define RegalGreataxe 0x86
 #define Fatigue1 0x9a
+#define Fatigue2 0x9b
+#define Fatigue3 0x9c

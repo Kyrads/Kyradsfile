@@ -80,3 +80,5 @@ Multi-Skill Scroll,MultiScrollUsability|IsPointer,MultiScrollPrepUsability|IsPoi
 0x4e,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
 0x4f,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
 0x50,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
+S Drinks,FatigueRestorationUsability|IsPointer,FatigueRestorationPrepUsability|IsPointer,0x802905c,SDrinkEffect|IsPointer,0x0
+Other Fatigue Items,FatigueRestorationUsability|IsPointer,FatigueRestorationPrepUsability|IsPointer,0x802905c,FatigueRestoreEffect|IsPointer,0x0

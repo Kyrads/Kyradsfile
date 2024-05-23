@@ -6,7 +6,7 @@ This text file is purely for documenting purposes
 	- Reintroducing boss exp (?)
 	- Removing the cap (either altogether, vs boss, or t1 vs t2) (?)
 
-- Fatigue needs reworking and s drink/numerical heals implemented
+- Fatigue needs reworking
 
 No bugs currently known
 
