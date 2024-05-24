@@ -15,12 +15,12 @@ BYTE 00 00
 ALIGN 4
 
 EirikaGreatLordSkillList:
-BYTE 1 SupplyID
 BYTE 00 00
 ALIGN 4
 
 CavalierSkillList:
 BYTE 00 00
+ALIGN 4
 
 PaladinSkillList:
 BYTE 00 00
@@ -35,7 +35,7 @@ BYTE 00 00
 ALIGN 4
 
 ThiefSkillList:
-BYTE 1 CunningID
+BYTE 255 CunningID
 BYTE 00 00
 ALIGN 4
 
@@ -52,12 +52,12 @@ BYTE 00 00
 ALIGN 4
 
 SwordmasterSkillList:
+BYTE 255 CritBoostID
 BYTE 00 00
 ALIGN 4
 
 AssassinSkillList:
-BYTE 255 StealID
-BYTE 1 LethalityID
+BYTE 255 CunningID
 BYTE 00 00
 ALIGN 4
 
@@ -95,6 +95,7 @@ BYTE 00 00
 ALIGN 4
 
 MageKnightSkillList:
+BYTE 1 CantoPlusID
 BYTE 00 00
 ALIGN 4
 
@@ -116,8 +117,7 @@ BYTE 00 00
 ALIGN 4
 
 RogueSkillList:
-BYTE 255 StealID
-BYTE 1 LocktouchID
+BYTE 255 CunningID
 BYTE 00 00
 ALIGN 4
 
@@ -147,6 +147,7 @@ BYTE 00 00
 ALIGN 4
 
 BerserkerSkillList:
+BYTE 255 CritBoostID
 BYTE 00 00
 ALIGN 4
 
@@ -171,6 +172,7 @@ BYTE 00 00
 ALIGN 4
 
 TroubadourSkillList:
+BYTE 255 CantoPlusID
 BYTE 00 00
 ALIGN 4
 

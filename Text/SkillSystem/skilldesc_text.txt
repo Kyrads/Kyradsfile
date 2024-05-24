@@ -16,7 +16,7 @@ Pass: Can move through[N]
 enemy units.[X]
 
 ## SD_CantoPlus
-Canto+: Can move again after[N]
+Canto: Can move again after[N]
 attacking and other actions.[X]
 
 ## SD_WaryFighter

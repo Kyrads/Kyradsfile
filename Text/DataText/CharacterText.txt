@@ -1,6 +1,15 @@
-## RelicBossName^
-RelicBoss[X]
+## CamilleDesc*
+Long serving retainer to Lord.[X]
 
-## RelicBossDesc*
+## MadelineName^
+Madeline[X]
+
+## MadelineDesc*
+Bratty mage girl.[X]
+
+## HermanName^
+Herman[X]
+
+## HermanDesc*
 A prison guard serving[N]
 the imperial palace.[X]

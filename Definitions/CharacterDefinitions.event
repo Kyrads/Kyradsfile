@@ -1,6 +1,8 @@
 // Characters
 
 #define Lord 0x1
+#define Camille 0x2
+#define Madeline 0x3
 
 // NPCs
 

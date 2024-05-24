@@ -126,5 +126,5 @@ POP
 
 PUSH
 ItemIconSlot(0xb8) 
-#incbin "DMP/RegalGreataxe(Kyrads).dmp"
+#incbin "DMP/Poleaxe(Kyrads).dmp"
 POP

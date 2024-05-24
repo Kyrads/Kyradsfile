@@ -1,8 +1,8 @@
 INLINE PersonalSkillTable,Skill
 None,0x0
-Eirika,0x0
-Seth,0x0
-Gilliam,0x0
+Eirika,CharmID
+Camille,SaviorID
+Madeline,PerfectionistID
 Franz,0x0
 Moulder,0x0
 Vanessa,0x0

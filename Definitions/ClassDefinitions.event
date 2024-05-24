@@ -20,7 +20,7 @@
 #define Scholar Shaman
 #define Scholar_F Shaman_F
 #define Sorcerer Druid
-#define Sorcerer_F Druid
+#define Sorcerer_F Druid_F
 
 #define Gendarme 0x35
 
@@ -77,9 +77,9 @@
 		- Wyvern (X)
 		- Dracoknight
 		- Mage (X)(G)
-		- Sage
-		- Scholar (X)
-		- Sorcerer (X)
+		- Sage (X)(G)
+		- Scholar (X)(G)
+		- Sorcerer (X)(G)
 		- Curate (X)
 		- Bishop
 		- Curate

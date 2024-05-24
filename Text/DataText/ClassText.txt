@@ -29,6 +29,9 @@ Dracoknight[X]
 ## MageName^
 Mage[X]
 
+## SageName^
+Sage[X]
+
 ## ScholarName^
 Scholar[X]
 

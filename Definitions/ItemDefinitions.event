@@ -23,7 +23,6 @@
 #undef BattleAxe
 #define BattleAxe 0x20
 #define RegalAxe 0x21
-#define Poleaxe 0x22
 #define Bow 0x2d
 #undef Longbow
 #define Longbow 0x2e
@@ -37,7 +36,7 @@
 #define OldHalberd 0x25
 #define Halberd 0x7a
 #define GreenGem 0xba
-#define RegalGreataxe 0x86
+#define Poleaxe 0x86
 #define Fatigue1 0x9a
 #define Fatigue2 0x9b
 #define Fatigue3 0x9c

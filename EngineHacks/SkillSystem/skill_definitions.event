@@ -32,6 +32,7 @@
 #define CharismaID 184
 
 //Charm: Allies within 2 tiles deal +2 damage.
+//Change to within leadership range. Add +10 CAvo.
 //Author Unknown (Initial Commit)
 #define CharmID 189
 
@@ -84,6 +85,7 @@
 #define LilysPoiseID 206
 
 //Malefic Aura: Enemies within 2 tiles receive +2 magic damage.
+//Need to change to +5 damage.
 //Author Unknown (Initial Commit)
 #define MaleficAuraID 207
 
@@ -317,6 +319,7 @@
 #define PassID 54
 
 //Keep Up: At start of turn, if unit is within 3 spaces of an ally with Canto or Canto+, unit gains +2 Mov.
+//Change to if adjacent to a unit with more move, gain +1 move, +2 if the ally has canto.
 //By Sme
 #define KeepUpID 148
 
@@ -447,6 +450,7 @@
 #define KillingMachineID 172
 
 //Crit Boost: +15 critical rate.
+//Need to increase to +20
 //Author Unknown (Initial Commit)
 #define CritUpID 3
 #define CritBoostID CritUpID //Alias
