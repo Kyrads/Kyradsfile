@@ -25,6 +25,8 @@
 //Contains ASMC for setting fatigue
 #include "FatigueASMC.lyn.event"
 
+ALIGN 4
+FatiguedStatPenalty:
 //Contains optional fatigued stat debuffs
 #include "FatiguedStatPenalty.lyn.event"
 

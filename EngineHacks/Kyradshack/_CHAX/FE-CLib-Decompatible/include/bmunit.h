@@ -86,7 +86,7 @@ struct ClassData
     /* 18 */ s8 maxRes;
     /* 19 */ s8 maxCon;
 
-    /* 1A */ s8 classRelativePower;
+    /* 1A */ s8 baseLck;
 
     /* 1B */ s8 growthHP;
     /* 1C */ s8 growthPow;
