@@ -178,6 +178,7 @@ int GetStatIncreaseNPC(int growth) {
     return result;
 }
 
+//Adds luck as a class base stat, though no promotion gain
 void UnitLoadStatsFromChracter(struct Unit* unit, const struct CharacterData* character) {
     int i;
     

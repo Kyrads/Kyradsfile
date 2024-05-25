@@ -3,6 +3,10 @@
 #define Lord 0x1
 #define Camille 0x2
 #define Madeline 0x3
+#define C1Knight 0x4
+#define Spy 0x5
+#define C2Peg 0x6
+#define C2Sold 0x7
 
 // NPCs
 

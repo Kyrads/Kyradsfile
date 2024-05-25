@@ -37,6 +37,4 @@
 #define Halberd 0x7a
 #define GreenGem 0xba
 #define Poleaxe 0x86
-#define Fatigue1 0x9a
-#define Fatigue2 0x9b
-#define Fatigue3 0x9c
+#define SDrink 0x9a
