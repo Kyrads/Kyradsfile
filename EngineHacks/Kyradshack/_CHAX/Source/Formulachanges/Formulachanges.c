@@ -87,7 +87,7 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
 
         // tinked or missed
         if (!(actor->nonZeroDamage)){
-            return 0;
+            return 1;
         }
 
         int levelDiff = GetLevelDifference(actor, target);
