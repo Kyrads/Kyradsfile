@@ -8,8 +8,7 @@ This text file is purely for documenting purposes
 
 - Fatigue needs reworking
 
-No bugs currently known
-
 Major Bugs:
 
 Minor Bugs:
+- Graphical bug on mend use description. Probably unintended to use narrowfont here.
