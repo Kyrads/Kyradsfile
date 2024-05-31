@@ -61,7 +61,7 @@ Units1:
 UNIT Eirika EirikaLord Eirika Level(1,Ally,False) [2,3] 0x0 0x0 0x0 0x0 [Spear, Javelin, NobleLance, Vulnerary] [0x0,0x0,0x0,0x0]
 UNIT Madeline Mage_F Eirika Level(1,Ally,False) [2,4] 0x0 0x0 0x0 0x0 [Fire,Wind,Thunder,Elfire] [0x0,0x0,0x0,0x0]
 UNIT 0x2D Scholar Eirika Level(1,Ally,False) [2,5] 0b 0x0 0x0 0x0 [Fire,Wind,Thunder,Elfire] [0x0,0x0,0x0,0x0]
-UNIT 0x2E Mercenary Eirika Level(1,Ally,False) [3,5] 0x0 0x0 0x0 0x0 [Sword,Longsword,Greatsword] [0x0,0x0,0x0,0x0]
+UNIT 0x2E Thief Eirika Level(1,Ally,False) [3,5] 0x0 0x0 0x0 0x0 [Sword,Longsword,Greatsword] [0x0,0x0,0x0,0x0]
 UNIT 0x2F WyvernRider Eirika Level(1,Ally,False) [4,5] 0x0 0x0 0x0 0x0 [Spear,ShortSpear,Lance,Halberd] [0x0,0x0,0x0,0x0]
 UNIT 0x30 Fighter Eirika Level(1,Ally,False) [5,5] 0x0 0x0 0x0 0x0 [Axe,BattleAxe,Poleaxe,Elixir] [0x0,0x0,0x0,0x0]
 UNIT 0x31 Soldier Eirika Level(1,Ally,False) [6,5] 0x0 0x0 0x0 0x0 [Spear,ShortSpear,Lance,Halberd] [0x0,0x0,0x0,0x0]
@@ -81,36 +81,16 @@ UNIT 0xD0 Archer ONeill Level(1,Enemy,False)[7,17] 0b 0x0 0x0 0x0 [Bow] Stationa
 UNIT 0xD0 Mage ONeill Level(1,Enemy,False)[11,10] 0b 0x0 0x0 0x0 [Fire] StationaryAI
 UNIT 0xD0 Scholar ONeill Level(1,Enemy,False)[11,12] 0b 0x0 0x0 0x0 [Fire] StationaryAI
 UNIT 0xD1 Thief ONeill Level(1,Enemy,False)[18,18] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[10,16] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[12,16] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[11,17] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Sword] InRangeAI
-UNIT 0xD0 Sorcerer ONeill Level(1,Enemy,False)[15,19] 0b 0x0 0x0 0x0 [Elfire] StationaryAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[11,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[11,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT 0xD0 Sorcerer ONeill Level(1,Enemy,False)[15,19] 0b 0x0 0x0 0x0 [Thunder] StationaryAI
 UNIT
-/*UNIT Bone Thief ONeill Level(20,Enemy,False)[0,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[1,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[2,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[3,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[4,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[5,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[6,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[7,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[8,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[9,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[10,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[11,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[12,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[13,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[14,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[15,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[16,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[17,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[18,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Thief ONeill Level(20,Enemy,False)[19,7] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT*/
 
 EXPFarmEvent:
 SpawnReinforcements(ExpFarmUnits)

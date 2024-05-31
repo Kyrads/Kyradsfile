@@ -1,3 +1,6 @@
+## EmptyDesc
+ [X]
+
 #include "CharacterText.txt"
 
 #include "ClassText.txt"
