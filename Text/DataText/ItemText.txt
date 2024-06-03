@@ -1,11 +1,8 @@
 ## HorseslayerName^
 Horseslayer[X]
 
-## NobleLanceDesc*
-Horseslayer[X]
-
 ## HorseslayerDesc*
-Effective against: [HorseIcon][X]
+Effective vs. [Horse][X]
 
 ## JavelinName^
 Javelin[X]
@@ -44,7 +41,7 @@ Hand Axe[X]
 Hammer[X]
 
 ## HammerDesc*
-Effective against: [ArmorIcon][X]
+Effective vs. [ArmorIcon][X]
 
 ## BowName^
 Bow[X]
@@ -168,8 +165,8 @@ Curest status ailments.[X]
 ## NobleLanceName^
 Noble Lance[X]
 
-## NobleLancedesc*
-Effective against: [HorseIcon] [ArmorIcon][X]
+## NobleLanceDesc*
+Effective vs. [HorseIcon] [ArmorIcon][X]
 
 ## KeyName^
 Key[X]

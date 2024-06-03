@@ -35,6 +35,8 @@ ORG 0x1EA3C
 SHORT WeaponText
 POP
 
+// Add one of the above to do for Magc? Maybe?
+
 // make vanilla "gold" item slots not automatically convert to gold when obtained
 // by moving this effect to an item you can never obtain anyway (such as Agneya here)
     PUSH

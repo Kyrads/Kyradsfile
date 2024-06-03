@@ -195,3 +195,6 @@ Raises Skill.[.][X]
 
 # 0x213^
 Camille[X]
+
+# 0x0565
+Magic mastery level.[X]

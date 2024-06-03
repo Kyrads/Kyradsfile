@@ -1,14 +1,21 @@
 This text file is purely for documenting purposes
 
+Immediate To-Do's
 
-- Not a bug but a note to self, need to do staff, steal and summon exp stuff and possibly modify the battle exp formula
-	- Number tweaking (change if non 5 mults look ew)
-	- Reintroducing boss exp (?)
-	- Removing the cap (either altogether, vs boss, or t1 vs t2) (?)
+- Fatigue Rework
 
-- Fatigue needs reworking
+- EXP Tweaks
+	- Boss exp +10 after cap, also for t1 vs promoted, stacks.
+	- Account for t1's 'over' lvl 20, display them as lvl 20 always.
+	- Bosses Reroll 3 times for a level that includes str, spd or def.
+
+- Default Options EssFix Norm Speed, Text Fast, Autocursor On
+
+- Redo my text stuff make it less stinky more consolidated
+
 
 Major Bugs:
+
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
