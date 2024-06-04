@@ -77,6 +77,11 @@
 //MMB preset from SoTS
 	#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
 
+//Zane Avernathy
+//Allows editing of the unit panel window
+//Not set up yet
+	//#include "GORGON-EGG-main/Installer.event"
+
 //Contro
 //Fixes a graphical bug with the battle forecast
 	#include "BattleForecastFix/Installer.event"

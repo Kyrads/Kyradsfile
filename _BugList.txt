@@ -13,6 +13,10 @@ Immediate To-Do's
 
 - Redo my text stuff make it less stinky more consolidated
 
+- Change to Icon Sheet
+
+- -1 HP all
+
 
 Major Bugs:
 
