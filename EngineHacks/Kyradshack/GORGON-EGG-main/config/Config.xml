@@ -1,6 +1,9 @@
 <Config>
 
 	<Module Name = "TilemapVesly"/>
+    <Definition Name="GE_WIDTH" Value="14"/>
+    <Definition Name="GE_HEIGHT" Value="8"/>
+
 	<Module Name = "DrawVertical"/>
 
 	<Module Name="MinimugStandard"/>

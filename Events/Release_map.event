@@ -113,7 +113,7 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
-ENUT 0xAB
+ENUT 0xAB //Toy Box
 ENUT 0xEF //Fixed growths
 LOAD1 0x1 EnemyUnits
 //LOAD1 0x1 BoneSet1
