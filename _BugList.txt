@@ -17,9 +17,9 @@ Immediate To-Do's
 
 
 Major Bugs:
-- Enemies becoming fatigued (Cant seem to replicate???)
 
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
-- Falcoknight caps seem to not be updating?
+
+- Enemies becoming fatigued (Cant seem to replicate???)
