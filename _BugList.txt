@@ -15,10 +15,9 @@ Immediate To-Do's
 
 - Change to Icon Sheet Installer
 
-- -1 HP all
-
 
 Major Bugs:
+- Enemies becoming fatigued (Cant seem to replicate???)
 
 
 Minor Bugs:
