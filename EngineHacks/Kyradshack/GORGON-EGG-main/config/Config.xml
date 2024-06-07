@@ -1,2 +1,69 @@
 <Config>
+
+	<Module Name = "TilemapVesly"/>
+	<Module Name = "DrawVertical"/>
+
+	<Module Name="MinimugStandard"/>
+    	<Definition Name="MINIMUG_X" Value="1"/>
+    	<Definition Name="MINIMUG_Y" Value="2"/>
+
+    <Module Name="NameLeftAligned"/>
+    	<Definition Name="NAME_X" Value="5"/>
+    	<Definition Name="NAME_Y" Value="1"/>
+    	<Definition Name="NAME_WIDTH" Value="7"/>
+    	<Definition Name="NAME_COLOR" Value="TEXT_COLOR_NORMAL"/>
+ 
+  	<Module Name="HPOrStatus"/>
+    	<Definition Name="HPORSTATUS_X" Value="5"/>
+    	<Definition Name="HPORSTATUS_Y" Value="3"/>
+ 
+  	<Module Name="AttackLabelStandard"/>
+    	<Definition Name="ATK_LABEL_X" Value="5"/>
+    	<Definition Name="ATK_LABEL_Y" Value="4"/>
+
+    <Module Name="AttackStandard"/>
+    	<Definition Name="ATK_X" Value="56"/>
+   		<Definition Name="ATK_Y" Value="32"/>
+
+   	<Module Name="AttackSpeedLabelStandard"/>
+    	<Definition Name="AS_LABEL_X" Value="5"/>
+    	<Definition Name="AS_LABEL_Y" Value="5"/>
+
+  	<Module Name="AttackSpeedStandard"/>
+    	<Definition Name="AS_X" Value="56"/>
+    	<Definition Name="AS_Y" Value="40"/>
+
+    <Module Name="ResistanceLabelStandard"/>
+    	<Definition Name="RES_LABEL_X" Value="8"/>
+    	<Definition Name="RES_LABEL_Y" Value="5"/>
+
+     <Module Name="DefenseStandard"/>
+    	<Definition Name="DEF_X" Value="80"/>
+    	<Definition Name="DEF_Y" Value="32"/>
+
+  	<Module Name="DefenseLabelStandard"/>
+    	<Definition Name="DEF_LABEL_X" Value="8"/>
+    	<Definition Name="DEF_LABEL_Y" Value="4"/>
+
+  	<Module Name="ResistanceStandard"/>
+    	<Definition Name="RES_X" Value="80"/>
+    	<Definition Name="RES_Y" Value="40"/>
+
+    <Module Name="AffinityStandard"/>
+    	<Definition Name="AFFINITY_X" Value="96"/>
+    	<Definition Name="AFFINITY_Y" Value="8"/>
+    	<Definition Name="AFFINITY_PAGE" Value="2"/>
+
+   	<Module Name="FullInventoryStandard"/>
+   		<Definition Name="INVENTORY_ICON_X" Value="8"/>
+   		<Definition Name="INVENTORY_ICON_Y" Value="48"/>
+
+   	 <Module Name="LevelLabelStandard"/>
+    	<Definition Name="LEVEL_LABEL_X" Value="1"/>
+    	<Definition Name="LEVEL_LABEL_Y" Value="1"/>
+
+  	<Module Name="LevelStandard"/>
+    	<Definition Name="LEVEL_X" Value="30"/>
+    	<Definition Name="LEVEL_Y" Value="8"/>
+
 </Config>

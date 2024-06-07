@@ -75,12 +75,12 @@
 
 // (MMB Credits), LegendOfLoog
 //MMB preset from SoTS
-	#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
+	//#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
 
 //Zane Avernathy
-//Allows editing of the unit panel window
+//Allows easier editing of the unit panel window
 //Not set up yet
-	//#include "GORGON-EGG-main/Installer.event"
+	#include "GORGON-EGG-main/output/Installer.event"
 
 //Contro
 //Fixes a graphical bug with the battle forecast
