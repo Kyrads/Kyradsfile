@@ -7,7 +7,8 @@
 
 //Huichelaar
 //Fixes a bug with the minimug palette when switching between two characters
-	#include "FE8U_MinimugPalette-2/MinimugPalette.event"
+//Rendered irrelevant by gorgon egg + incompatible
+	//#include "FE8U_MinimugPalette-2/MinimugPalette.event"
 
 //StanH
 //Allows easy customisation of the game speed settings, used to make heavy classes have slower movement on the Fast setting
