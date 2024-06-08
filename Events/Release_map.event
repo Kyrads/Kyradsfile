@@ -67,29 +67,30 @@ UNIT 0x30 Fighter Eirika Level(1,Ally,False) [5,5] 0x0 0x0 0x0 0x0 [Axe,BattleAx
 UNIT 0x31 Falcoknight Eirika Level(1,Ally,False) [6,5] 0x0 0x0 0x0 0x0 [Spear,ShortSpear,Lance,Halberd] [0x0,0x0,0x0,0x0]
 UNIT Camille 0x35 Eirika Level(1,Ally,False) [2,6] 0b 0x0 0x0 0x0 [Shortsword,Spear,Axe,RegalAxe] [0x0,0x0,0x0,0x0]
 UNIT Franz Knight Eirika Level(3,Ally,False) [2,7] 0x0 0x0 0x0 0x0 [Sword,Spear,ShortSpear,MasterSeal] [0x0,0x0,0x0,0x0]
+UNIT Bridgit Fighter_F Eirika Level(9,Ally,False) [2,8] 0b 0x0 0x0 0x0 [BattleAxe,HandAxe,Vulnerary] [0x0,0x0,0x0,0x0]
 UNIT
 
 
 
 EnemyUnits:
-UNIT ONeill Soldier ONeill Level(4,Enemy,False) [12,1] 0x02 [Spear, Javelin, MasterSeal] StationaryAI
-UNIT 0xDD Knight_A ONeill Level(1,Enemy,True)[15,13] 0x02 [Spear, GoddessIcon, GreenGem] StationaryAI
-UNIT 0x89 Soldier ONeill Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [Spear] StationaryAI
-UNIT 0xD0 Mercenary ONeill Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [Sword,GoddessIcon] StationaryAI
-UNIT 0xD0 Fighter ONeill Level(1,Enemy,False)[4,19] 0b 0x0 0x0 0x0 [Axe] StationaryAI
-UNIT 0xD0 Archer ONeill Level(1,Enemy,False)[7,17] 0b 0x0 0x0 0x0 [Bow] StationaryAI
-UNIT 0xD0 Mage ONeill Level(1,Enemy,False)[11,10] 0b 0x0 0x0 0x0 [Fire] StationaryAI
-UNIT 0xD0 Scholar ONeill Level(1,Enemy,False)[11,12] 0b 0x0 0x0 0x0 [Fire] StationaryAI
-UNIT 0xD1 Thief ONeill Level(1,Enemy,False)[18,18] 0b 0x0 0x0 0x0 [Sword] StationaryAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[11,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[11,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT 0xD0 Sorcerer ONeill Level(1,Enemy,False)[15,19] 0b 0x0 0x0 0x0 [Thunder] StationaryAI
+UNIT Herman Soldier Herman Level(4,Enemy,False) [12,1] 0x02 [Spear, Javelin, MasterSeal] StationaryAI
+UNIT 0xDD Knight_A Herman Level(1,Enemy,True)[15,13] 0x02 [Spear, GoddessIcon, GreenGem] StationaryAI
+UNIT 0x89 Soldier Herman Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [Spear] StationaryAI
+UNIT 0xD0 Mercenary Herman Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [Sword,GoddessIcon] StationaryAI
+UNIT 0xD0 Fighter Herman Level(1,Enemy,False)[4,19] 0b 0x0 0x0 0x0 [Axe] StationaryAI
+UNIT 0xD0 Archer Herman Level(1,Enemy,False)[7,17] 0b 0x0 0x0 0x0 [Bow] StationaryAI
+UNIT 0xD0 Mage Herman Level(1,Enemy,False)[11,10] 0b 0x0 0x0 0x0 [Fire] StationaryAI
+UNIT 0xD0 Scholar Herman Level(1,Enemy,False)[11,12] 0b 0x0 0x0 0x0 [Fire] StationaryAI
+UNIT 0xD1 Thief Herman Level(1,Enemy,False)[18,18] 0b 0x0 0x0 0x0 [Sword] StationaryAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[11,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[10,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[12,16] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[11,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT 0xD0 Sorcerer Herman Level(1,Enemy,False)[15,19] 0b 0x0 0x0 0x0 [Thunder] StationaryAI
 UNIT
 
 EXPFarmEvent:
@@ -98,10 +99,10 @@ NoFade
 ENDA
 
 ExpFarmUnits:
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
-UNIT Bone Brigand ONeill Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[10,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[12,15] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[10,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
+UNIT Bone Brigand Herman Level(20,Enemy,False)[12,17] 0b 0x0 0x0 0x0 [Axe] InRangeAI
 UNIT
 
 Traps1:
@@ -116,20 +117,9 @@ BeginningScene:
 ENUT 0xAB //Toy Box
 ENUT 0xEF //Fixed growths
 LOAD1 0x1 EnemyUnits
-//LOAD1 0x1 BoneSet1
 ENUN
 LOAD1 0x0 Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 ENUN
-// FADI 10
-// MOVE 0 Carlyle [7,10]
-// ENUN
-//   StartBattle //scripted fight setup
-//   MissedAttack(0,0) //Seth misses
-//   NormalDamage(1,0) //Valter hits
-//   EndAttack
-// FIG1 Carlyle Aias 0
-// STAL 60
-// FADU 10
 GotoPrepScreen
 
 EndingScene:

@@ -2,3 +2,5 @@
 #define KnightLanceStandID 0x6
 
 #define LordLanceStandID 0x1
+
+#define FighterFStandID 0x69

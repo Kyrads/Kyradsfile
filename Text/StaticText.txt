@@ -136,15 +136,6 @@ Improves critical hit rate.[X]
 #0x042d PoleaxeDesc*
  [X]
 
-
-#0x03ee GreenGemName^
-Green Gem[X]
-
-#0x49d GreenGemDesc*
-A common gemstone[N]
-worth 1,000 gold.[X]
-
-
 # 0x02BF LordName^
 Lord[X]
 

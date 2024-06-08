@@ -11,12 +11,22 @@ TestMugData:
 #incbin "Dmp/TestPortrait(Kyrads)_minimug.dmp"
 setMugEntry(TestMug, TestMugData, 3, 6, 3, 4)
 
-#define RelicBossMug 0x30
+#define BridgitMug 0x14
 
 ALIGN 16
-RelicBossMugData:
-#incbin "Dmp/RelicBoss(MournfulRelic)_mug.dmp"
-#incbin "Dmp/RelicBoss(MournfulRelic)_frames.dmp"
-#incbin "Dmp/RelicBoss(MournfulRelic)_palette.dmp"
-#incbin "Dmp/RelicBoss(MournfulRelic)_minimug.dmp"
-setMugEntry(RelicBossMug, RelicBossMugData, 3, 5, 3, 3)
+BridgitMugData:
+#incbin "Dmp/Bridgit(LaurentLacroix)_mug.dmp"
+#incbin "Dmp/Bridgit(LaurentLacroix)_frames.dmp"
+#incbin "Dmp/Bridgit(LaurentLacroix)_palette.dmp"
+#incbin "Dmp/Bridgit(LaurentLacroix)_minimug.dmp"
+setMugEntry(BridgitMug, BridgitMugData, 3, 5, 3, 3)
+
+#define HermanMug 0x30
+
+ALIGN 16
+HermanMugData:
+#incbin "Dmp/Herman(MournfulRelic)_mug.dmp"
+#incbin "Dmp/Herman(MournfulRelic)_frames.dmp"
+#incbin "Dmp/Herman(MournfulRelic)_palette.dmp"
+#incbin "Dmp/Herman(MournfulRelic)_minimug.dmp"
+setMugEntry(HermanMug, HermanMugData, 3, 5, 3, 3)

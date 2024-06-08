@@ -13,3 +13,10 @@ Herman[X]
 ## HermanDesc*
 A prison guard serving[N]
 the imperial palace.[X]
+
+## BridgitName^
+Bridgit[X]
+
+## BridgitDesc*
+Leader of a group of rebels.[N]
+Mature with age but wild at heart.[X]

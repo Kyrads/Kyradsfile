@@ -52,3 +52,9 @@ Gendarme[X]
 ## GendarmeDesc*
 Heavily armoured riders who[N]
 crush opponents underfoot.[X]
+
+## FighterName^
+Fighter[X]
+
+## FighterDesc*
+Big guy.[X]

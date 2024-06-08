@@ -1,0 +1,10 @@
+PUSH
+ORG $36B4
+POIN ItemIconSheet
+ORG $3788
+POIN ItemIconSheet
+POP
+
+ALIGN 4
+ItemIconSheet:
+#incbin "Dmp/ItemIconSheet.dmp"

@@ -27,12 +27,10 @@
 
 //Lord Animations
 #define LordLanceAnim 0x1
-#define LordUnarmedAnim 0x2
 
 ALIGN 4
 LordAnims:
 	LanceAnim(LordLanceAnim)
-	UnarmedAnim(LordUnarmedAnim)
 EndAnim
 
 //Knight Animations
@@ -41,8 +39,6 @@ EndAnim
 #define KnightLanceAnim 0x41 //Replaces Knight Unarmed
 #define KnightAxeAnim 0x42 //Replaces F_Knight Lance
 #define KnightHandaxeAnim 0x49 //Replaces F_Gen Sword
-#undef KnightUnarmedAnim
-#define KnightUnarmedAnim 0x43 //Replaces F_Knight Unarmed
 
 ALIGN 4
 KnightAnims:
@@ -50,5 +46,14 @@ KnightAnims:
 	LanceAnim(KnightLanceAnim)
 	AxeAnim(KnightAxeAnim)
 	HandAxeAnim(KnightHandaxeAnim)
-	UnarmedAnim(KnightUnarmedAnim)
+EndAnim
+
+//Lord Animations
+#define FighterFAxeAnim 0xB6 //Maelduin Axe
+#define FighterFHandaxeAnim 0xB7 //Maelduin Handaxe
+
+ALIGN 4
+FighterFAnims:
+	AxeAnim(FighterFAxeAnim)
+	HandAxeAnim(FighterFHandaxeAnim)
 EndAnim

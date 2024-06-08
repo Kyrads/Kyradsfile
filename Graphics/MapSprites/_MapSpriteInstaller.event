@@ -13,3 +13,11 @@ KnightLanceStand:
 ALIGN 4
 KnightLanceWalk:
 #incbin "DMP/KnightLanceWalk(Salvaged).dmp"
+
+ALIGN 4
+FighterFStand:
+#incbin "DMP/FighterFStand(Alusq).dmp"
+
+ALIGN 4
+FighterFWalk:
+#incbin "DMP/FighterFWalk(Alusq).dmp"

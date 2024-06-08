@@ -1,14 +1,16 @@
 // Characters
 
-#define Lord 0x1
-#define Camille 0x2
-#define Madeline 0x3
-#define C1Knight 0x4
-#define Spy 0x5
-#define C2Peg 0x6
-#define C2Sold 0x7
+#define Lord 0x01
+#define Camille 0x02
+#define Madeline 0x03
+#define C1Knight 0x04
+#define Spy 0x05
+#define C2Peg 0x06
+#define C2Sold 0x07
+#define Bridgit 0x0F
 
 // NPCs
 
 // Enemies
+#define Herman 0x68
 

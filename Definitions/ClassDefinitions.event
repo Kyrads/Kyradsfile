@@ -33,6 +33,8 @@
 
 #define Soldier_F 0x58
 
+#define Fighter_F 0x7A
+
 #define Cavalier_S 0x7e
 
 

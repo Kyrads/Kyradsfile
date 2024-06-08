@@ -191,3 +191,10 @@ Regal Greataxe[X]
 
 ## MessageFatigueRestored
 Fatigue restored[X]
+
+## GreenGemName^
+Green Gem[X]
+
+## GreenGemDesc*
+A common gemstone[N]
+worth 1,000 gold.[X]
