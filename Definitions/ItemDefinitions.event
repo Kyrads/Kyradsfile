@@ -5,7 +5,7 @@
 #undef Longsword
 #define Longsword 0x3
 #define RegalSword 0x4
-#define BastardSword 0x5
+#define BastardSword 0x5 //Unused
 #define Greatsword 0x6
 #define Dagger 0x7
 #define SwiftSword 0xc
