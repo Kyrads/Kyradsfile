@@ -1,0 +1,13 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;GE_GetWindowPosition:
+POP
+SHORT $B507 $4B03 $2100 $F000 $F805 $B003 $BC02 $4708
+POIN DrawVertical_TilemapDestination
+SHORT $4718 $46C0
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$0;gGetWindowPosition:
+POP
+POIN DrawVertical_TilemapDestination
+BYTE $0 $0 $0 $0

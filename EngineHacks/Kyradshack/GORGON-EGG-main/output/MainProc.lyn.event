@@ -1,0 +1,19 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$0;ProcGE:
+POP
+BYTE $1 $0 $0 $0
+POIN GE_Name
+BYTE $E $0 $0 $0 $0 $0 $0 $0 $2 $0 $0 $0
+POIN GE_Init
+BYTE $B $0 $0 $0 $0 $0 $0 $0 $8 $0 $0 $0 $48 $A5 $59 $8 $3 $0 $0 $0
+POIN GE_Reset
+BYTE $3 $0 $0 $0
+POIN GE_Extend
+BYTE $B $0 $2 $0 $0 $0 $0 $0 $3 $0 $0 $0
+POIN GE_Update
+BYTE $B $0 $3 $0 $0 $0 $0 $0 $3 $0 $0 $0
+POIN GE_Retract
+BYTE $C $0 $0 $0 $0 $0 $0 $0 $B $0 $1 $0 $0 $0 $0 $0 $2 $0 $0 $0
+POIN GE_CheckForUnit
+BYTE $C $0 $2 $0 $0 $0 $0 $0 $0 $0 $0 $0 $0 $0 $0 $0
