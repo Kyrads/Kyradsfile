@@ -237,13 +237,6 @@ PackGameSaveUnit.lop_items:
 	ldr r2, [r1, #0x0C] @ r2 = Unit->state
 	str r2, [r0, #0x28] @ GameSaveUnit->state = Unit->state
 	
-	@FATIGUE
-		
-	mov r4,r1
-	add r4,#0x3B
-	mov r5,r0
-	add r5,#0x2C
-	
 	ldrb r2, [r4]
 	strb r2, [r5]
 	
@@ -424,16 +417,6 @@ UnpackGameSaveUnit.lop_items:
 
 	ldr r2, [r5, #0x28] @ r2 = GameSaveUnit->state
 	str r2, [r4, #0x0C] @ Unit->state = GameSaveUnit->state
-	
-	@FATIGUE
-	
-	add r5,#0x2C
-	add r4,#0x3B
-	ldrb r2, [r5] @r2 = GameSaveUnit->fatigue
-	strb r2, [r4] @Unit->fatigue = GameSaveUnit->fatigue
-	sub r5,#0x2C
-	sub r4,#0x3B
-
 
 	@ MISC
 
