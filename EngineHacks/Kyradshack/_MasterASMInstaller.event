@@ -88,10 +88,6 @@
 	#include "BattleForecastFix/Installer.event"
 
 //Contro
-//Allows you to set exp for actions like stealing, summoning etc seperately
-	#include "ExpByAction/Installer.event"
-
-//Contro
 //Shows res on the terrain window, may not end up being relevant we'll see
 	#include "ResTerrainWindow/Installer.event"
 
