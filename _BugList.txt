@@ -21,5 +21,3 @@ Major Bugs:
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
-
-- Enemies becoming fatigued (Cant seem to replicate???)

@@ -9,15 +9,35 @@ mov r5, r1 @unit
 mov r0,r5
 add r0,#0x3B
 ldrb r0,[r0]
-@check max HP
-ldrb r1,[r5,#0x12]
+@calculate endurance
+ldrb r1,[r5,#0x12] @getting hp, base con and bonus con
+ldrb r2,[r5,#0x1A]
+ldr r3,[r5,#0x04]
+ldrb r3,[r3,#0x11]
+add r2,r3 @getting total con
+lsr r1,r1,#1 @halving hp
+add r1,r2 @adding halved hp to con
 
-@see if fatigue > max HP 
+
+
+@see if fatigue > endurance
 cmp r0,r1
 blt GoBack
 
+@see if fatigue > 2*endurance
+lsl r1,r1,#1
+cmp r0,r1
+blt DebuffA
+
 @if so, we debuff stat by 1/2
 lsr r4,r4,#1
+b GoBack
+
+DebuffA:
+@if so, we debuff stat by 1/4
+mov r0,r4
+lsr r0,r0,#2
+sub r4,r0
 
 GoBack:
 mov r0, r4
