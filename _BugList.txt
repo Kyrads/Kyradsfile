@@ -3,6 +3,9 @@ This text file is purely for documenting purposes
 Immediate To-Do's
 
 - Fatigue Rework
+	- Exp Changes
+	- Ftg Gain Changes
+	- Fatigue Restore Changes
 
 - EXP Tweaks
 	- Boss exp +10 after cap, also for t1 vs promoted, stacks.

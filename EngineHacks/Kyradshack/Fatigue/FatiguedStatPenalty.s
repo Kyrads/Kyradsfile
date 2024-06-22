@@ -39,6 +39,7 @@ b GoBack
 DebuffA:
 @if so, we debuff stat by 1/4
 mov r0,r4
+add r0,#3
 lsr r0,r0,#2
 sub r4,r0
 
