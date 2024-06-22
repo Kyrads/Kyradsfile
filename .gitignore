@@ -32,6 +32,7 @@ $RECYCLE.BIN/
 *.ss8
 *.ss9
 *.sym
+*.sna
 /*.png
 !Tools/sym/*.sym
 

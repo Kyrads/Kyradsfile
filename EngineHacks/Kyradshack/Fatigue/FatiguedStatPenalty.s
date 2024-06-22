@@ -10,13 +10,18 @@ mov r0,r5
 add r0,#0x3B
 ldrb r0,[r0]
 @calculate endurance
-ldrb r1,[r5,#0x12] @getting hp, base con and bonus con
-ldrb r2,[r5,#0x1A]
-ldr r3,[r5,#0x04]
-ldrb r3,[r3,#0x11]
-add r2,r3 @getting total con
+ldrb r1,[r5,#0x12] @HP
 lsr r1,r1,#1 @halving hp
-add r1,r2 @adding halved hp to con
+ldr r2,[r5,#0x04]
+ldrb r2,[r2,#0x11] @class con
+add r1,r2 @add class con to HP/2
+ldr r2,[r5,#0x00]
+add r2,#0x13 @char con
+mov r3,#0
+ldsb r2,[r2,r3]
+add r1,r2
+ldrb r2,[r5,#0x1A] @bonus con
+add r1,r2 @final endurance
 
 
 
