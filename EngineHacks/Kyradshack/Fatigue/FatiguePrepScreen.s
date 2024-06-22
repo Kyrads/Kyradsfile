@@ -31,21 +31,34 @@ DenyDeploy:
 mov r0,r4
 add r0,#0x12 @max hp
 ldrb r0,[r0]
+lsr r0,r0,#1 @half hp
+
+mov r1,r4
+add r1,#0x04 @go to class data
+ldr r1,[r1]
+add r1,#0x11 @class con
+ldrb r1,[r1]
+add r0,r1 @add class con to hp/2
+
+mov r1,r4
+add r1,#0x00 @go to char data
+ldr r1,[r1]
+add r1,#0x13 @char con
+mov r2,#0
+ldsb r1,[r1,r2]
+add r0,r1 @add char con to hp/2 + class con
+
 mov r1,r4
 add r1,#0x1A @con bonus
 ldrb r1,[r1]
-mov r2,r4
-add r2,#0x04 @go to class data
-ldr r2,[r2]
-add r2,#0x11 @base con
-ldrb r2,[r2]
-add r1,r2 @total con
-lsr r0,r0,#1 @half hp
-add r0,r1 @half hp + con aka endurance
+add r0,r1 @add con bonus to hp/2 + unit con aka final endurance
+
 lsl r0,r0,#1 @double endurance
+
 mov r1,r4
 add r1,#0x3B @fatigue
 ldrb r1,[r1]
+
 cmp r0,r1
 blt CannotDeploy
 

@@ -23,16 +23,14 @@ add r1,r2
 ldrb r2,[r5,#0x1A] @bonus con
 add r1,r2 @final endurance
 
-
-
 @see if fatigue > endurance
 cmp r0,r1
-blt GoBack
+ble GoBack
 
 @see if fatigue > 2*endurance
 lsl r1,r1,#1
 cmp r0,r1
-blt DebuffA
+ble DebuffA
 
 @if so, we debuff stat by 1/2
 lsr r4,r4,#1
