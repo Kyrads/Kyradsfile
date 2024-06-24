@@ -94,6 +94,13 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
         // killed
         if (target->unit.curHP == 0){       
             int initialKillExp = 25 + 4 * levelDiff;
+            int fatigueState = GetFatigueLevel(unit);
+            if(fatigueState = 1){
+                initialKillExp = initialKillExp / 2;
+            }
+            else if(fatigueState = 2){
+               initialKillExp = initialKillExp / 4; 
+            }
 
             if(initialKillExp <= 5){
                 return 5;
@@ -108,6 +115,13 @@ int GetBattleUnitExpGain(struct BattleUnit* actor, struct BattleUnit* target){
 
         // hit
         int initialHitExp = 8 + 1 * levelDiff;
+        int fatigueState = GetFatigueLevel(unit);
+            if(fatigueState = 1){
+                initialHitExp = initialHitExp / 2;
+            }
+            else if(fatigueState = 2){
+               initialHitExp = initialHitExp / 4; 
+            }
 
             if(initialHitExp <= 1){
                 return 1;
@@ -176,6 +190,25 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
     return true;
 }
 
+int GetEndurance(struct Unit* unit){
+    int endurance = (unit->maxHP / 2) + (UNIT_CON(unit));
+    return endurance;
+}
+
+int GetFatigueLevel(struct Unit* unit){
+    int endurance = GetEndurance(unit);
+    if(unit->fatigue <= endurance){
+        return 0;
+    }
+    else if(unit->fatigue <= endurance*2){
+        return 1;
+    }
+    else{
+        return 2;
+    }
+
+}
+
 int GetBattleUnitStaffExp(struct BattleUnit* actor){
     if (!CanBattleUnitGainLevels(actor)){
         return 0;
@@ -214,6 +247,15 @@ int GetBattleUnitStaffExp(struct BattleUnit* actor){
     if (levelDiff < 0){ //if the target is lower level than actor, reduce exp by 2 * level diff
         exp += levelDiff * 3;
     }
+    int fatigueState = GetFatigueLevel(unit);
+
+    if(fatigueState = 1){
+        exp = exp / 2;
+    }
+    else if(fatigueState = 2){
+        exp = exp / 4; 
+    }
+
    
     if (exp <= 3){
         return 3;

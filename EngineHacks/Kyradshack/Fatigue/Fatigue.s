@@ -96,6 +96,24 @@ bne CheckDefender
 IncrementAttackerFatigue:
 mov r1,#0x3B @somewhat externalized for ease of editing if need be
 ldrb r0,[r4,r1]
+@calculate endurance
+ldrb r2,[r4,#0x12] @HP
+lsr r2,r2,#1 @halving hp
+ldr r3,[r4,#0x04]
+ldrb r3,[r3,#0x11] @class con
+add r2,r3 @add class con to HP/2
+ldr r3,[r4,#0x00]
+add r3,#0x13 @char con
+mov r7,#0
+ldsb r3,[r3,r7]
+add r2,r3
+ldrb r3,[r4,#0x1A] @bonus con
+add r2,r3 @final endurance
+@see if fatigue > endurance
+cmp r0,r2
+ble IncrementAttackerFatigueA
+add r0,#1
+IncrementAttackerFatigueA:
 add r0,#1
 strb r0,[r4,r1]
 
