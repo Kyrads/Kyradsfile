@@ -556,6 +556,8 @@ POP
 
 //Weapon Experience Thresholds
 //thanks to Blademaster for the hex locations for ranks
+//When updating ranks it needs to be updated in:
+//TableDefinitions.event, Fatigue.s & bmitem.h
 
 PUSH // Weapon level modifications
 ORG 0x16d66 // D rank WEXP

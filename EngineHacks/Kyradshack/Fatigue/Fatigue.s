@@ -158,23 +158,28 @@ add r0,r1 @r0=item table entry
 ldrb r0,[r0,#0x1C] @get weapon level
 mov r1,#0 @our final modifier for fatigue
 
-ASRankCheck:
-cmp r0,#181
+SRankCheck:
+cmp r0,#226
+blt ARankCheck
+add r1,#1
+
+ARankCheck:
+cmp r0,#161
 blt BRankCheck
 add r1,#1
 
 BRankCheck:
-cmp r0,#121
+cmp r0,#106
 blt CRankCheck
 add r1,#1
 
 CRankCheck:
-cmp r0,#71
+cmp r0,#61
 blt DRankCheck
 add r1,#1
 
 DRankCheck:
-cmp r0,#31
+cmp r0,#26
 blt ApplyFatigueModifier
 add r1,#1
 
