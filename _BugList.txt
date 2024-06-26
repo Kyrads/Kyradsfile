@@ -25,3 +25,4 @@ Major Bugs:
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
+- Droppable/Stealable Graphic appears when silencing a unit.

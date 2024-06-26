@@ -35,6 +35,6 @@
 #undef Halberd
 #define OldHalberd 0x25
 #define Halberd 0x7a
-#define GreenGem 0xba
+#define GreenGem 0xbb
 #define Poleaxe 0x86
 #define SDrink 0x9a
