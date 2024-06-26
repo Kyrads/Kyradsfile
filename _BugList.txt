@@ -3,9 +3,9 @@ This text file is purely for documenting purposes
 Immediate To-Do's
 
 - Fatigue Rework
-	- Exp Changes
-	- Ftg Gain Changes
-	- Fatigue Restore Changes
+	- Exp Changes (Done, Needs Fixing/Testing)
+	- Ftg Gain Changes (WIP)
+	- Fatigue Restore Changes (WIP)
 	- Stat Screen Integration
 
 - EXP Tweaks
