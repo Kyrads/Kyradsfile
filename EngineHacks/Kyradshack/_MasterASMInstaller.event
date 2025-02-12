@@ -53,13 +53,18 @@
 
 //Vesly
 //Allows a debug menu where you can move a unit anywhere on the map.
-	#include "DebugPlaceUnits/Installer.event"
+	//#include "DebugPlaceUnits/Installer.event"
+
+//Vesly
+//A debug menu for development
+	#include "VeslyDebugger/Installer.event"
 
 //Vesly
 //Allows the displaying of icons on units such as boss, defend, raid etc based on character ID, Chapter, Flag etc.
 	#include "IconDisplay/Installer.event"
 
 //MKol, Huichellaar, Vesly
+//Stealable/Droppable Icon by Scraiza
 	#include "DisplayObtainableItem/Installer.event" //Note, doesn't display stealables during preps
 													 //Additionally, displays Droppable > Stealable, would like an icon for both	
 //Vesly
@@ -80,7 +85,6 @@
 
 //Zane Avernathy
 //Allows easier editing of the unit panel window
-//Not set up yet
 	#include "GORGON-EGG-main/output/Installer.event"
 
 //Contro
@@ -132,9 +136,10 @@
 
 //Sme
 //Fatigue!
+//Changes by Kyrads/Pikmin1211
 	#include "Fatigue/Fatigue.event"
 
-//A whole bunch of edits by various people, see Edits.txt for more info
+//A whole bunch of edits by various people, see Edits.event for more info
 	#include "Edits.event"
 
 //CHAX

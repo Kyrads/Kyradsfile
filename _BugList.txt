@@ -4,9 +4,13 @@ Immediate To-Do's
 
 - Fatigue Rework
 	- Exp Changes (Done, Needs Fixing/Testing)
+	- Fatigue Debuffs (Done)
+	- Implement Endurance Getter to ASM
 	- Ftg Gain Changes (WIP)
 	- Fatigue Restore Changes (WIP)
 	- Stat Screen Integration
+	- Increase Summon Fatigue Cost
+
 
 - EXP Tweaks
 	- Boss exp +10 after cap, also for t1 vs promoted, stacks.
@@ -21,7 +25,8 @@ Immediate To-Do's
 
 
 Major Bugs:
-
+- S Rank is Bugged, Rank Caps at 225, if above it goes down
+(May be related to WEXPChanges.c)
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
