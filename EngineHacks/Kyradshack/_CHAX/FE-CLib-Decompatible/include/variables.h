@@ -5,6 +5,7 @@
 #include "types.h"
 #include "global.h"
 #include "proc.h"
+#include "hardware.h"
 
 // extern ??? gAnims
 // extern ??? gUnknown_02000280

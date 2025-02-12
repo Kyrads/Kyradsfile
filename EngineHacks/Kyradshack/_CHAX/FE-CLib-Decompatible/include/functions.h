@@ -1847,7 +1847,7 @@ bool SomeTalkProcExists(ProcPtr);
 // ??? sub_808FFE8(???);
 // ??? sub_808FFFC(???);
 // ??? sub_8090014(???);
-void sub_80900EC(int*, struct TextHandle*, int, int, int, int, ProcPtr);
+//void sub_80900EC(int*, struct TextHandle*, int, int, int, int, ProcPtr);
 // ??? sub_809014C(???);
 // ??? sub_80901BC(???);
 // ??? sub_8090238(???);

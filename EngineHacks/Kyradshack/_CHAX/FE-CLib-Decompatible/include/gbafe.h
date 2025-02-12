@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-// #include "global.h"
+#include "global.h"
 
 #include "gba/gba.h"
 
@@ -57,8 +57,7 @@ extern "C" {
 #include "bmphase.h"
 #include "bmtarget.h"
 #include "uiselecttarget.h"
-
-#define CONST_DATA __attribute__((section(".data")))
+#include "bmmind.h"
 
 #include "types.h"
 #include "variables.h"
