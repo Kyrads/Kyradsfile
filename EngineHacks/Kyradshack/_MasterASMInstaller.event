@@ -57,7 +57,7 @@
 
 //Vesly
 //A debug menu for development
-	#include "VeslyDebugger/Installer.event"
+	#include "Debugger/Installer.event"
 
 //Vesly
 //Allows the displaying of icons on units such as boss, defend, raid etc based on character ID, Chapter, Flag etc.
