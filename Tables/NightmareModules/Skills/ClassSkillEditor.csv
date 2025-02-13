@@ -48,7 +48,7 @@ INLINE ClassSkillTable,Skill
 0x2E Shaman (F),SwapID
 0x2F Druid,SwapID
 0x30 Druid (F),SwapID
-0x31 Summoner,SwapID
+0x31 Summoner,SummonID
 0x32 Summoner (F),SwapID
 0x33 Rogue,PivotID
 0x34 Gorgon Egg,0x0

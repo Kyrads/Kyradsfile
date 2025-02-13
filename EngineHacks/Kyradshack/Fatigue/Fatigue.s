@@ -1,6 +1,11 @@
 .thumb
 .align
 
+.macro blh to, reg=r3
+    ldr \reg, =\to
+    mov lr, \reg
+    .short 0xF800
+.endm
 
 @function prototypes
 .global PostCombatIncrementFatigue
@@ -89,7 +94,7 @@ beq IncrementAttackerFatigue
 cmp r0,#6 @Steal
 beq IncrementAttackerFatigue
 cmp r0,#7 @Summon
-beq IncrementAttackerFatigue
+beq IncrementSummonFatigue
 cmp r0,#8 @DK Summon (because why not)
 bne CheckDefender
 
@@ -130,9 +135,43 @@ bne Return
 
 IncrementDefenderFatigue:
 mov r1,#0x3B
-ldrb r0,[r5,r1]
+ldrb r1,[r5,r1]
+mov r0,r5
+push {r1}
+@calculate endurance
+blh GetEndurance
+pop {r1}
+mov r2,r0
+mov r0,r1
+@see if fatigue > endurance
+cmp r0,r2
+ble IncrementDefenderFatigueA
 add r0,#1
+IncrementDefenderFatigueA:
+add r0,#1
+mov r1,#0x3B
 strb r0,[r5,r1]
+
+b Return
+
+IncrementSummonFatigue:
+mov r1,#0x3B
+ldrb r1,[r4,r1]
+mov r0,r4
+push {r1}
+@calculate endurance
+blh GetEndurance
+pop {r1}
+mov r2,r0
+mov r0,r1
+@see if fatigue > endurance
+cmp r0,r2
+ble IncrementSummonFatigueA
+add r0,#4
+IncrementSummonFatigueA:
+add r0,#4
+mov r1,#0x3B
+strb r0,[r4,r1]
 
 Return:
 pop {r4-r7}
@@ -206,9 +245,20 @@ add r1,#1
 ApplyFatigueModifier:
 mov r2,r4
 add r2,#0x3B
-ldrb r0,[r2]
-add r0,r1
-strb r0,[r2]
+ldrb r2,[r2]
+push {r1,r2}
+blh GetEndurance
+pop {r1,r2}
+@see if fatigue > endurance
+cmp r2,r0
+ble IncrementStafferFatigueA
+add r2,r1
+IncrementStafferFatigueA:
+add r2,r1
+mov r1,r4
+add r1,#0x3B
+strb r2,[r1]
+
 
 EndStaffFatigue:
 

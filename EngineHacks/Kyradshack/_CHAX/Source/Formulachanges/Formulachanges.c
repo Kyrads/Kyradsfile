@@ -191,16 +191,16 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
 }
 
 int GetEndurance(struct Unit* unit){
-    int endurance = (unit->maxHP / 2) + (UNIT_CON(unit));
+    int endurance = (unit->maxHP << 1) + (UNIT_CON(unit));
     return endurance;
 }
 
 int GetFatigueLevel(struct Unit* unit){
     int endurance = GetEndurance(unit);
-    if(unit->fatigue <= endurance){
+    if(unit->fatigue < endurance){
         return 0;
     }
-    else if(unit->fatigue <= endurance*2){
+    else if(unit->fatigue < endurance*2){
         return 1;
     }
     else{
@@ -275,18 +275,50 @@ void BattleApplyMiscActionExpGains(void) {
     if (gPlaySt.chapterStateBits & PLAY_FLAG_EXTRA_MAP)
         return;
 
+int fatigueState = GetFatigueLevel(&gBattleActor.unit);
+
     switch (gActionData.unitActionType){
         case UNIT_ACTION_STEAL:
-        gBattleActor.expGain = 20;
-        gBattleActor.unit.exp += 20;
+        if(fatigueState == 1){
+            gBattleActor.expGain = 10;
+            gBattleActor.unit.exp += 10;
+        }
+        else if(fatigueState == 2){
+            gBattleActor.expGain = 5;
+            gBattleActor.unit.exp += 5; 
+        }
+        else{
+            gBattleActor.expGain = 20;
+            gBattleActor.unit.exp += 20;
+        }
         break;
         case UNIT_ACTION_SUMMON:
-        gBattleActor.expGain = 20;
-        gBattleActor.unit.exp += 20;
+        if(fatigueState == 1){
+            gBattleActor.expGain = 10;
+            gBattleActor.unit.exp += 10;
+        }
+        else if(fatigueState == 2){
+            gBattleActor.expGain = 5;
+            gBattleActor.unit.exp += 5; 
+        }
+        else{
+            gBattleActor.expGain = 20;
+            gBattleActor.unit.exp += 20;
+        }
         break;
         case UNIT_ACTION_DANCE:
-        gBattleActor.expGain = 15;
-        gBattleActor.unit.exp += 15;
+        if(fatigueState == 1){
+            gBattleActor.expGain = 10;
+            gBattleActor.unit.exp += 10;
+        }
+        else if(fatigueState == 2){
+            gBattleActor.expGain = 5;
+            gBattleActor.unit.exp += 5; 
+        }
+        else{
+            gBattleActor.expGain = 20;
+            gBattleActor.unit.exp += 20;
+        }
         break;
         default:
         gBattleActor.expGain = 5;
