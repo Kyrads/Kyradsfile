@@ -13,6 +13,7 @@
 
     //CSV tables
     #include "Tables/TableInstaller.event"
+    #include "Tables/ManualTableInstaller.event"
     MESSAGE Used table space ends at currentOffset
 
     //Graphics

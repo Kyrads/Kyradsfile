@@ -3,13 +3,14 @@ This text file is purely for documenting purposes
 Immediate To-Do's
 
 - Fatigue Rework
-	- Exp Changes (Done)
+	- Exp Changes (Done (Bugged))
 	- Fatigue Debuffs (Done)
 	- Implement Endurance Getter to ASM (Done)
 	- Ftg Gain Changes (Done)
-	- Fatigue Restore Changes (WIP)
+	- Fatigue Restore Changes
 	- Stat Screen Integration
 	- Increase Summon Fatigue Cost (Done)
+	- Rescue, Mov Skill & Poison Fatigue
 
 
 - EXP Tweaks
