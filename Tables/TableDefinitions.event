@@ -181,6 +181,17 @@
 #define SickStatusID 9
 #define PetrifyStatusID 13
 
+//Terrain info
+#define GroundAvoid 0x880C479
+#define GroundDefence 0x880C4BA
+#define GroundResistance 0x880C4FB
+#define FlierAvoid 0x880C53C
+#define FlierDefence 0x880C57D
+#define FlierResistance 0x880C5BE
+
+
+
+
 //for setting what status effect 
 //status staves will give 
 #define ItemStatus(StatusID,Duration) "StatusID | (Duration << 4)"
