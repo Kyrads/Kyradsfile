@@ -73,7 +73,7 @@ UNIT
 
 
 EnemyUnits:
-UNIT Herman Soldier Herman Level(4,Enemy,False) [12,1] 0x02 [Spear, Javelin, MasterSeal] StationaryAI
+UNIT Herman Soldier Herman Level(4,Enemy,False) [12,1] 0x02 [Vulnerary, Vulnerary, Vulnerary, Vulnerary] StationaryAI
 UNIT 0xDD Knight_A Herman Level(3,Enemy,True)[15,13] 0x02 [Spear, GoddessIcon, GreenGem] StationaryAI
 UNIT 0x89 Soldier Herman Level(1,Enemy,False)[3,15] 0b 0x0 0x0 0x0 [Spear] StationaryAI
 UNIT 0xD0 Mercenary Herman Level(1,Enemy,False)[2,19] 0b 0x0 0x0 0x0 [Sword,GoddessIcon] StationaryAI

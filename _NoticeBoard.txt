@@ -3,7 +3,7 @@ This text file is purely for documenting purposes
 Immediate To-Do's
 
 - Fatigue Rework
-	- Exp Changes (Done (Bugged))
+	- Exp Changes (Done)
 	- Fatigue Debuffs (Done)
 	- Implement Endurance Getter to ASM (Done)
 	- Ftg Gain Changes (Done)

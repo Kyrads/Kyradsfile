@@ -191,7 +191,7 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
 }
 
 int GetEndurance(struct Unit* unit){
-    int endurance = (unit->maxHP << 1) + (UNIT_CON(unit));
+    int endurance = (unit->maxHP / 2) + (UNIT_CON(unit));
     return endurance;
 }
 
