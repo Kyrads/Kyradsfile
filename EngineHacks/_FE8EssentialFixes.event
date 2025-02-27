@@ -39,10 +39,12 @@ SHORT $7891 $78D2 $0608
         SHORT $E003 // b 0x08031658
 
 //Set Default Options
-  ORG $30d8a  //animations type 1
+//Replaced with C function
+  /*ORG $30d8a  //animations type 1
   SHORT $4003
   ORG $30da6  //Game/text speed Fast, Autocursor off
-  SHORT $22d0
+  SHORT $11d0 
+  */
   
 //Allow Visit from any tile (this is broken atm, also allows visits to destroyed villages)
 //  PUSH

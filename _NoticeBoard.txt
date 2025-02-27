@@ -18,17 +18,14 @@ Immediate To-Do's
 	- Account for t1's 'over' lvl 20, display them as lvl 20 always.
 	- Bosses Reroll 3 times for a level that includes str, spd or def.
 
-- Default Options EssFix Norm Speed, Text Fast, Autocursor On
-
 - Redo my text stuff make it less stinky more consolidated
 
 - Change to Icon Sheet Installer
 
 
 Major Bugs:
-- S Rank is Bugged, Rank Caps at 225, if above it goes down
-(May be related to WEXPChanges.c)
 
 Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
 - Droppable/Stealable Graphic appears when silencing a unit.
+- S Rank doesnt go epic green
