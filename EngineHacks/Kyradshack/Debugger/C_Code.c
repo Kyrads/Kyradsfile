@@ -26,6 +26,7 @@ typedef struct
     s8 id; // used by our custom menus
     s8 digit;
     u8 godMode;
+    u8 autoplay;
     u8 page;
     s8 mainID; // by the main debugger menu
     u16 lastFlag;
@@ -136,6 +137,7 @@ void CopyProcVariables(DebuggerProc * dst, DebuggerProc * src)
     dst->page = src->page;
     dst->lastFlag = src->lastFlag;
     dst->gold = src->gold;
+    dst->autoplay = src->autoplay;
     for (int i = 0; i < tmpSize; ++i)
     {
         dst->tmp[i] = src->tmp[i];
@@ -231,6 +233,22 @@ void GameControl_CallEraseSaveEventWithKeyCombo(ProcPtr aproc)
     // 8 = resume
     //
 }
+void BackPressSFX(void)
+{
+    int id;
+#ifdef FE8
+    id = 0x6B;
+    m4aSongNumStart(id);
+#endif
+}
+void ConfirmPressSFX(void)
+{
+    int id;
+#ifdef FE8
+    id = 0x6A;
+    PlaySoundEffect(id);
+#endif
+}
 
 extern int NumberOfPages;
 void RestartDebuggerMenu(DebuggerProc * proc);
@@ -243,7 +261,7 @@ int ArenaAction(DebuggerProc * proc);
 int LevelupAction(DebuggerProc * proc);
 int UnitActionFunc(DebuggerProc * proc);
 void CallPlayerPhase_FinishAction(DebuggerProc * proc);
-void ClearActiveUnitStuff(DebuggerProc * proc);
+int ClearActiveUnitStuff(DebuggerProc * proc);
 void PlayerPhase_FinishActionNoCanto(ProcPtr proc);
 void CallPlayerPhase_FinishAction(DebuggerProc * proc);
 int PlayerPhase_PrepareActionBasic(DebuggerProc * proc);
@@ -276,6 +294,9 @@ void EditWExpInit(DebuggerProc * proc);
 void EditWExpIdle(DebuggerProc * proc);
 void EditSupportsInit(DebuggerProc * proc);
 void EditSupportsIdle(DebuggerProc * proc);
+void DebuggerListInit(DebuggerProc * proc);
+void DebuggerListIdle(DebuggerProc * proc);
+void ClearSomeGfx(DebuggerProc * proc);
 u8 CanActiveUnitPromote(void);
 
 #define InitProcLabel 0
@@ -298,7 +319,9 @@ u8 CanActiveUnitPromote(void);
 #define ChStateLabel 15
 #define WExpLabel 16
 #define SupportLabel 17
-#define LoopLabel 18
+#define SupplyLabel 18
+#define ListLabel 19
+#define LoopLabel 20
 #define EndLabel 99
 
 #define ActionID_Promo 1
@@ -330,6 +353,7 @@ const struct ProcCmd DebuggerProcCmd[] = {
     PROC_WHILE(DoesBMXFADEExist),
     PROC_CALL(SetAllUnitNotBackSprite),
     PROC_CALL(RefreshUnitSprites),
+    PROC_CALL_2(ClearActiveUnitStuff), // in case we didn't refresh units before restarting
     PROC_CALL(RestartDebuggerMenu),
     PROC_LABEL(LoopLabel), // Loop indefinitely
     PROC_REPEAT(LoopDebuggerProc),
@@ -424,11 +448,227 @@ const struct ProcCmd DebuggerProcCmd[] = {
     PROC_REPEAT(EditSupportsIdle),
     PROC_GOTO(EndLabel),
 
+    PROC_LABEL(SupplyLabel), // Supply
+    PROC_GOTO(EndLabel),
+
+    PROC_LABEL(ListLabel), // List
+    // PROC_CALL(LockGame),
+    PROC_CALL(DebuggerListInit),
+    PROC_SLEEP(1),
+    PROC_CALL(ClearSomeGfx),
+    // PROC_REPEAT(DebuggerListIdle),
+    // PROC_CALL(UnlockGame),
+    PROC_GOTO(EndLabel),
+
     PROC_LABEL(EndLabel),
-    PROC_CALL(ClearActiveUnitStuff),
+    PROC_CALL_2(ClearActiveUnitStuff),
     PROC_CALL(SaveProcVarsToIdler),
     PROC_END,
 };
+
+extern void SetBlendConfig(u16 effect, u8 coeffA, u8 coeffB, u8 blendY);
+extern u16 Pal_SpinningArrow[];
+struct PrepItemSuppyText
+{
+    /* 00 */ struct Font font;
+    /* 18 */ struct Text th[18];
+};
+
+int ShouldAIControlRemainingUnits(void)
+{
+    DebuggerProc * proc;
+    proc = Proc_Find(DebuggerProcCmdIdler);
+    if (!proc)
+    {
+        return false;
+    }
+    if (proc->autoplay)
+    {
+        return true;
+    }
+    return false;
+}
+
+void AiPhaseBerserkInit(struct Proc * proc)
+{
+    int i;
+
+    gAiState.flags = AI_FLAG_BERSERKED;
+    if (ShouldAIControlRemainingUnits())
+    {
+        gAiState.flags = AI_FLAG_0; // do not attack allies
+    }
+    gAiState.unk7E = -1;
+
+    for (i = 0; i < 8; ++i)
+        gAiState.unk86[i] = 0; // cmd_result
+
+    gAiState.specialItemFlags = gAiItemConfigTable[gPlaySt.chapterIndex];
+
+    UpdateAllPhaseHealingAIStatus();
+    SetupUnitInventoryAIFlags();
+
+    Proc_StartBlocking(gProcScr_BerserkCpOrder, proc);
+}
+
+void CpOrderBerserkInit(ProcPtr proc)
+{
+    int i, aiNum = 0;
+
+    u32 faction = gPlaySt.faction;
+    int AIControl = ShouldAIControlRemainingUnits();
+
+    int factionUnitCountLut[3] = { 62, 20, 50 }; // TODO: named constant for those
+
+    for (i = 0; i < factionUnitCountLut[faction >> 6]; ++i)
+    {
+        struct Unit * unit = GetUnit(faction + i + 1);
+
+        if (!unit->pCharacterData)
+            continue;
+
+        if (!AIControl) // all units act this way, even if not berserked
+        {
+            if (unit->statusIndex != UNIT_STATUS_BERSERK)
+            {
+                continue;
+            }
+        }
+
+        if (unit->state & (US_HIDDEN | US_UNSELECTABLE | US_DEAD | US_RESCUED | US_HAS_MOVED_AI))
+            continue;
+
+        gAiState.units[aiNum++] = faction + i + 1;
+    }
+
+    if (aiNum != 0)
+    {
+        gAiState.units[aiNum] = 0;
+        gAiState.unitIt = gAiState.units;
+
+        AiDecideMainFunc = AiDecideMain;
+
+        Proc_StartBlocking(gProcScr_CpDecide, proc);
+    }
+}
+
+extern struct PrepItemSuppyText PrepItemSuppyTexts;
+#define _PrepItemSuppyTexts ((struct Unknown02013648 *)&PrepItemSuppyTexts)
+
+// extern void RefreshBMapGraphics(void); // 80292dd 802E368
+void ClearSomeGfx(DebuggerProc * proc)
+{
+    BG_Fill(gBG0TilemapBuffer, 0);
+    BG_Fill(gBG1TilemapBuffer, 0);
+    BG_Fill(gBG2TilemapBuffer, 0);
+    BG_Fill(gBG3TilemapBuffer, 0);
+
+    BG_EnableSyncByMask(BG0_SYNC_BIT | BG1_SYNC_BIT | BG2_SYNC_BIT | BG3_SYNC_BIT);
+    SetupBackgrounds(0);
+    BMapDispResume();
+    RefreshBMapGraphics();
+}
+
+void Debugger_PrepItemList_Init(struct PrepItemListProc * proc)
+{
+    int i;
+
+    proc->unk_36 = 0;
+    proc->unk_34 = 0xff;
+    proc->currentPage = 0;
+
+    proc->scrollAmount = 4;
+    proc->unitInvIdx = 0;
+
+    for (i = 0; i < 9; i++)
+    {
+        proc->idxPerPage[i] = 0;
+        proc->yOffsetPerPage[i] = 0;
+    }
+
+    return;
+}
+
+void Debugger_PrepItemList_OnEnd(struct PrepItemListProc * proc)
+{
+
+    EndAllProcChildren(proc);
+    EndFaceById(0);
+    EndMuralBackground_();
+
+    return;
+}
+
+struct ProcCmd const DebuggerProcScr_PrepItemListScreen[] = {
+    PROC_SLEEP(0),
+    PROC_CALL(BMapDispSuspend),
+    PROC_CALL(Debugger_PrepItemList_Init),
+    PROC_LABEL(0),
+    PROC_CALL(StartFastFadeToBlack),
+    PROC_REPEAT(WaitForFade),
+    PROC_CALL(PrepItemList_InitGfx),
+
+    // fallthrough
+
+    PROC_LABEL(1),
+    PROC_CALL(sub_809F5F4),
+
+    // fallthrough
+
+    PROC_LABEL(2),
+    PROC_REPEAT(PrepItemList_Loop_MainKeyHandler),
+
+    // fallthrough
+
+    PROC_LABEL(6),
+    PROC_CALL_ARG(NewFadeOut, 16),
+    PROC_WHILE(FadeOutExists),
+
+    PROC_CALL(Debugger_PrepItemList_OnEnd),
+    PROC_CALL(PrepItemList_StartTradeScreen),
+    PROC_SLEEP(0),
+
+    PROC_GOTO(0),
+
+    PROC_LABEL(7),
+    PROC_CALL(PrepItemList_SwitchToUnitInventory),
+    PROC_REPEAT(PrepItemList_Loop_UnitInvKeyHandler),
+
+    PROC_GOTO(1),
+
+    PROC_LABEL(3),
+    PROC_REPEAT(PrepItemList_SwitchPageLeft),
+
+    // fallthrough
+
+    PROC_LABEL(4),
+    PROC_REPEAT(PrepItemList_SwitchPageRight),
+
+    // fallthrough
+
+    PROC_LABEL(8),
+    PROC_CALL_ARG(NewFadeOut, 16),
+    PROC_WHILE(FadeOutExists),
+
+    // fallthrough
+
+    PROC_LABEL(9),
+    PROC_CALL(Debugger_PrepItemList_OnEnd),
+
+    PROC_END,
+};
+
+void DebuggerListInit(DebuggerProc * parent)
+{
+    MU_EndAll();
+
+    struct PrepItemListProc * proc = Proc_StartBlocking(DebuggerProcScr_PrepItemListScreen, parent);
+    proc->unit = gActiveUnit;
+}
+void DebuggerListIdle(DebuggerProc * proc)
+{
+    return;
+}
 
 // const char* UnitStats
 #define NumberOfOptions 9
@@ -552,6 +792,44 @@ void FixCursorOverflow(void)
         gActiveUnitMoveOrigin.x = y;
         gActiveUnit->yPos = y;
     }
+}
+
+int IsCoordinateValid(int x, int y)
+{
+    if (x < 0)
+    {
+        return false;
+    }
+    if (y < 0)
+    {
+        return false;
+    }
+    if (x >= gBmMapSize.x)
+    {
+        return false;
+    }
+    if (y >= gBmMapSize.y)
+    {
+        return false;
+    }
+    return true;
+}
+
+s8 EnsureCameraOntoPositionIfValid(ProcPtr proc, int x, int y)
+{
+    if (!IsCoordinateValid(x, y))
+    {
+        return 0;
+    }
+    return EnsureCameraOntoPosition(proc, x, y);
+}
+void SetCursorMapPositionIfValid(int x, int y)
+{
+    if (!IsCoordinateValid(x, y))
+    {
+        return;
+    }
+    SetCursorMapPosition(x, y);
 }
 
 void SomeMenuInit(DebuggerProc * proc)
@@ -706,17 +984,17 @@ void EditStatsIdle(DebuggerProc * proc)
 
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save stats
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update stats and continue
         SaveStats(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if (proc->editing)
     {
@@ -944,19 +1222,19 @@ void EditWExpIdle(DebuggerProc * proc)
 
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save WExp
         ClearTilesetRow(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update WExp and continue
         SaveWExp(proc);
         ClearTilesetRow(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if (proc->editing)
     {
@@ -1145,17 +1423,17 @@ void EditSupportsIdle(DebuggerProc * proc)
 
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save Supports
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update Supports and continue
         SaveSupports(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if (proc->editing)
     {
@@ -1362,12 +1640,12 @@ void SaveState(DebuggerProc * proc)
 
 void StateIdle(DebuggerProc * proc)
 {
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if ((keys & START_BUTTON) || (keys & B_BUTTON))
     { // press B or Start to update state and continue
 
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     }
     u32 id = proc->id;
     if ((keys & A_BUTTON))
@@ -1527,17 +1805,17 @@ void EditItemsIdle(DebuggerProc * proc)
 {
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save stats
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update stats and continue
         SaveItems(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if (proc->editing)
     {
@@ -1974,11 +2252,11 @@ void ChStateIdle(DebuggerProc * proc)
 {
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save ch state
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update ch state and continue
@@ -1986,7 +2264,7 @@ void ChStateIdle(DebuggerProc * proc)
         if (proc->id != 6)
         {
             Proc_Goto(proc, RestartLabel);
-            m4aSongNumStart(0x6B);
+            BackPressSFX();
         }
         else
         { // flags
@@ -2157,15 +2435,74 @@ void ChStateIdle(DebuggerProc * proc)
     }
 }
 
-#define NumberOfMisc 7
-#define MiscNameWidth 8
+#define NumberOfMisc 8
+#define MiscNameWidth 6
 
+void AdjustWEXPForClass(struct Unit * unit, int classID)
+{
+    if (unit->pClassData->number == classID)
+    {
+        return;
+    }
+    const struct ClassData * table = GetClassData(classID);
+    unit->pClassData = table;
+    int classRank;
+    int charRank;
+    for (int i = 0; i < 8; ++i)
+    {
+        classRank = table->baseRanks[i];
+        if (!classRank) // new class has no rank
+        {
+            // if (unit->pCharacterData->baseRanks[i] >= unit->ranks[i])
+            // {
+            // unit->ranks[i] = unit->pCharacterData->baseRanks[i]; // set to character wexp if higher than current
+            // }
+            // else
+            // {
+            unit->ranks[i] = 0; // zero out wexp
+            // }
+        }
+        else if (classRank > unit->ranks[i])
+        {
+            unit->ranks[i] = classRank;
+            charRank = unit->pCharacterData->baseRanks[i];
+            if (charRank > unit->ranks[i])
+            {
+                unit->ranks[i] = charRank;
+            }
+        }
+    }
+}
+
+struct Unit * GetFreeUnitByFaction(int faction)
+{
+    int i = faction, last = faction + 0x40;
+    if (!i)
+        i = 1;
+
+    for (; i < last; ++i)
+    {
+        struct Unit * unit = GetUnit(i);
+
+        if (unit->pCharacterData == NULL)
+            return unit;
+    }
+
+    return NULL;
+}
+
+void UnitBeginActionInit(struct Unit * unit);
+// void memcpy(const void * src, void * dst, int size);
+#include <string.h>                        // for memcpy
+extern void ClearUnit(struct Unit * unit); // 17508 17394
 void SaveMisc(DebuggerProc * proc)
 {
 
     struct Unit * unit = proc->unit;
+
     unit->pCharacterData = GetCharacterData(proc->tmp[0]);
-    unit->pClassData = GetClassData(proc->tmp[1]);
+    AdjustWEXPForClass(unit, proc->tmp[1]);
+
     unit->level = proc->tmp[2];
     unit->exp = proc->tmp[3] & 0xFF;
     unit->conBonus = proc->tmp[4];
@@ -2178,6 +2515,23 @@ void SaveMisc(DebuggerProc * proc)
     if (unit->statusIndex)
     {
         unit->statusDuration = 5;
+    }
+    if (proc->tmp[7] != (unit->index & 0xC0))
+    {
+        struct Unit * newUnit = GetFreeUnitByFaction(proc->tmp[7] << 6);
+        if (!newUnit)
+        {
+            return;
+        }
+        int deploymentID = newUnit->index;
+        memcpy((void *)newUnit, (void *)unit, sizeof(struct Unit));
+        ClearUnit(unit);
+
+        newUnit->index = deploymentID; // copy unit into a free slot in unit struct ram
+
+        UnitBeginActionInit(newUnit);
+        proc->unit = newUnit;
+        // PlayerPhase_FinishActionNoCanto(proc);
     }
 }
 
@@ -2198,10 +2552,11 @@ void EditMiscInit(DebuggerProc * proc)
     proc->tmp[4] = unit->conBonus;
     proc->tmp[5] = unit->movBonus;
     proc->tmp[6] = unit->statusIndex;
+    proc->tmp[7] = (unit->index & 0xC0) >> 6;
 
-    int x = NUMBER_X - MiscNameWidth - 1;
+    int x = NUMBER_X - MiscNameWidth - 2;
     int y = Y_HAND - 1;
-    int w = MiscNameWidth + (START_X - NUMBER_X) + 3;
+    int w = MiscNameWidth + (START_X - NUMBER_X) + 4;
     int h = (NumberOfMisc * 2) + 2;
 
     DrawUiFrame(
@@ -2210,7 +2565,7 @@ void EditMiscInit(DebuggerProc * proc)
 
     struct Text * th = gStatScreen.text;
 
-    for (int i = 0; i < NumberOfMisc; ++i)
+    for (int i = 0; i <= NumberOfMisc; ++i)
     {
         InitText(&th[i], MiscNameWidth);
     }
@@ -2230,7 +2585,7 @@ void RedrawMiscMenu(DebuggerProc * proc)
     // struct Unit* unit = proc->unit;
     struct Text * th = gStatScreen.text;
     int i = 0;
-    for (i = 0; i < NumberOfMisc; ++i)
+    for (i = 0; i <= NumberOfMisc; ++i)
     {
         ClearText(&th[i]);
     }
@@ -2260,16 +2615,40 @@ void RedrawMiscMenu(DebuggerProc * proc)
         Text_DrawString(&th[i], GetStringFromIndexSafe(sStatusNameTextIdLookup[proc->tmp[6]]));
         i++;
     }
+    Text_DrawString(&th[i], "Allegiance");
+    // i++;
 
-    int x = NUMBER_X - (MiscNameWidth);
+    int x = NUMBER_X - (MiscNameWidth)-1;
+
+    if (proc->tmp[7] == 0)
+    {
+
+        Text_DrawString(&th[8], "  Player");
+    }
+    else if (proc->tmp[7] == 1)
+    {
+        Text_DrawString(&th[8], "  NPC");
+    }
+    else if (proc->tmp[7] == 2)
+    {
+        Text_DrawString(&th[8], "  Enemy");
+    }
+    PutText(&th[8], gBG0TilemapBuffer + TILEMAP_INDEX(START_X - 3, Y_HAND + (i * 2)));
+
     for (i = 0; i < NumberOfMisc; ++i)
     {
         PutText(&th[i], gBG0TilemapBuffer + TILEMAP_INDEX(x, Y_HAND + (i * 2)));
     }
+
     for (i = 0; i < NumberOfMisc; ++i)
     {
         //
-        if (i < 2)
+        if (i == 7)
+        {
+            continue;
+        }
+
+        else if (i < 2)
         {
             PutNumberHex(
                 gBG0TilemapBuffer + TILEMAP_INDEX(START_X, Y_HAND + (i * 2)), TEXT_COLOR_SYSTEM_GOLD, proc->tmp[i]);
@@ -2330,6 +2709,11 @@ int GetMiscMin(int id)
             result = 0;
             break;
         } // status
+        case 7:
+        {
+            result = 0;
+            break;
+        }
         default:
     }
     return result;
@@ -2425,6 +2809,11 @@ int GetMiscMax(int id)
             result = 15;
             break;
         } // status
+        case 7:
+        {
+            result = 2;
+            break;
+        }
         default:
     }
     return result;
@@ -2434,18 +2823,19 @@ void EditMiscIdle(DebuggerProc * proc)
 {
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save stats
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update stats and continue
         SaveMisc(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
+
     if (proc->editing)
     {
         DisplayVertUiHand(CursorLocationTable[proc->digit].x, (Y_HAND + (proc->id * 2)) * 8);
@@ -2525,16 +2915,44 @@ void EditMiscIdle(DebuggerProc * proc)
     }
     else
     {
-        DisplayUiHand(CursorLocationTable[0].x - ((MiscNameWidth + 2) * 8), (Y_HAND + (proc->id * 2)) * 8);
-        if (keys & DPAD_RIGHT)
+        DisplayUiHand(CursorLocationTable[0].x - ((MiscNameWidth + 3) * 8), (Y_HAND + (proc->id * 2)) * 8);
+        if (proc->id == (NumberOfMisc - 1))
         {
-            proc->digit = 1;
-            proc->editing = true;
+            int val = proc->tmp[proc->id];
+            if (keys & DPAD_RIGHT)
+            {
+                val++;
+            }
+            else if (keys & DPAD_LEFT)
+            {
+                val--;
+            }
+            if (val < 0)
+            {
+                val = 2;
+            }
+            if (val > 2)
+            {
+                val = 0;
+            }
+            if (val != proc->tmp[proc->id])
+            {
+                proc->tmp[proc->id] = val;
+                RedrawMiscMenu(proc);
+            }
         }
-        if (keys & DPAD_LEFT)
+        else
         {
-            proc->digit = 0;
-            proc->editing = true;
+            if (keys & DPAD_RIGHT)
+            {
+                proc->digit = 1;
+                proc->editing = true;
+            }
+            if (keys & DPAD_LEFT)
+            {
+                proc->digit = 0;
+                proc->editing = true;
+            }
         }
 
         if (keys & DPAD_UP)
@@ -2563,7 +2981,6 @@ void EditMiscIdle(DebuggerProc * proc)
 #define LoadNameWidth 12
 
 extern struct Unit * LoadUnit(const struct UnitDefinition * uDef); // 17788 17598
-extern void ClearUnit(struct Unit * unit);                         // 17508 17394
 static void InitUnitDef(struct UnitDefinition * uDef, struct Unit * unit, const struct CharacterData * data)
 {
 
@@ -3062,17 +3479,17 @@ void LoadUnitsIdle(DebuggerProc * proc)
 {
     // DisplayVertUiHand(CursorLocationTable[proc->digit].x,
     // CursorLocationTable[proc->digit].y); // 6 is the tile of the downwards hand
-    u16 keys = sKeyStatusBuffer.repeatedKeys;
+    u16 keys = gKeyStatusPtr->repeatedKeys;
     if (keys & B_BUTTON)
     { // press B to not save stats
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if ((keys & START_BUTTON) || (keys & A_BUTTON))
     { // press A or Start to update stats and continue
         SaveLoadUnits(proc);
         Proc_Goto(proc, RestartLabel);
-        m4aSongNumStart(0x6B);
+        BackPressSFX();
     };
     if (proc->editing)
     {
@@ -3252,9 +3669,8 @@ void ChooseTileIdle(DebuggerProc * proc)
         gActionData.xMove = gActiveUnitMoveOrigin.x;
         gActionData.yMove = gActiveUnitMoveOrigin.y;
         PlayerPhase_ApplyUnitMovementWithoutMenu(proc);
-        ClearActiveUnitStuff(proc);
         ClearTilesetRow(proc);
-        PlaySoundEffect(0x6B);
+        BackPressSFX();
         Proc_Goto(proc, RestartLabel);
     }
     if (keys & DPAD_LEFT)
@@ -3349,19 +3765,19 @@ void EditMapIdle(DebuggerProc * proc)
         RenderBmMap();
         ProcPtr terrainDispProc = Proc_Find(gProcScr_TerrainDisplay);
         Proc_Goto(terrainDispProc, 0); // new terrain
-        // PlaySoundEffect(0x6A);
+        // ConfirmPressSFX();
         return;
     }
 
     if (gKeyStatusPtr->newKeys & B_BUTTON)
     {
-        PlaySoundEffect(0x6A);
+        ConfirmPressSFX();
         Proc_Goto(proc, ChooseTileLabel);
         return;
     }
     if (gKeyStatusPtr->newKeys & (R_BUTTON | START_BUTTON))
     {
-        PlaySoundEffect(0x6A);
+        ConfirmPressSFX();
         Proc_Goto(proc, ChooseTileLabel);
         return;
     }
@@ -3378,7 +3794,6 @@ void PickupUnitIdle(DebuggerProc * proc)
         gActiveUnitMoveOrigin.x = gBmSt.playerCursor.x;
         gActiveUnitMoveOrigin.y = gBmSt.playerCursor.y;
         PlayerPhase_ApplyUnitMovementWithoutMenu(proc);
-        ClearActiveUnitStuff(proc);
         PlaySoundEffect(0x6B);
         Proc_Goto(proc, RestartLabel);
         return;
@@ -3389,7 +3804,6 @@ void PickupUnitIdle(DebuggerProc * proc)
         gActionData.xMove = gActiveUnitMoveOrigin.x;
         gActionData.yMove = gActiveUnitMoveOrigin.y;
         PlayerPhase_ApplyUnitMovementWithoutMenu(proc);
-        ClearActiveUnitStuff(proc);
         PlaySoundEffect(0x6B);
         Proc_Goto(proc, RestartLabel);
         return;
@@ -3399,19 +3813,22 @@ void PickupUnitIdle(DebuggerProc * proc)
         IsUnitSpriteHoverEnabledAt(gBmSt.playerCursor.x, gBmSt.playerCursor.y) ? 3 : 0);
 }
 
-void ClearActiveUnitStuff(DebuggerProc * proc)
+int ClearActiveUnitStuff(DebuggerProc * proc)
 {
     MU_EndAll();
     if (gActiveUnit)
     {
-        // if (UNIT_FACTION(gActiveUnit) == gPlaySt.faction) { // if turn of the
-        // actor, refresh EndAllMus();
-        gActiveUnit->state &= ~(US_HIDDEN | US_UNSELECTABLE | US_CANTOING);
-        //}
+        if (!(gActiveUnit->state & (US_DEAD | US_NOT_DEPLOYED | US_BIT16)))
+        {
+            // if (UNIT_FACTION(gActiveUnit) == gPlaySt.faction) { // if turn of the
+            // actor, refresh EndAllMus();
+            gActiveUnit->state &= ~(US_HIDDEN | US_UNSELECTABLE | US_CANTOING);
+            //}
+        }
     }
-
-    EnsureCameraOntoPosition(proc, gActiveUnitMoveOrigin.x, gActiveUnitMoveOrigin.y);
-    SetCursorMapPosition(gActiveUnitMoveOrigin.x, gActiveUnitMoveOrigin.y);
+    s8 cameraReturn = EnsureCameraOntoPositionIfValid(proc, gActiveUnitMoveOrigin.x, gActiveUnitMoveOrigin.y);
+    cameraReturn ^= 1;
+    SetCursorMapPositionIfValid(gActiveUnitMoveOrigin.x, gActiveUnitMoveOrigin.y);
     gBmSt.gameStateBits &= ~BM_FLAG_3;
 
     HideMoveRangeGraphics();
@@ -3419,10 +3836,7 @@ void ClearActiveUnitStuff(DebuggerProc * proc)
     RefreshEntityBmMaps();
     RefreshUnitSprites();
     RenderBmMap();
-
-    // PlaySoundEffect(0x6B);
-
-    // Proc_Goto(proc, 9);
+    return cameraReturn;
 }
 
 void PlayerPhase_ApplyUnitMovementWithoutMenu(DebuggerProc * proc)
@@ -3438,7 +3852,7 @@ int PlayerPhase_PrepareActionBasic(DebuggerProc * proc)
     s8 cameraReturn;
     SetupUnitFunc();
 
-    cameraReturn = EnsureCameraOntoPosition(
+    cameraReturn = EnsureCameraOntoPositionIfValid(
         proc, GetUnit(gActionData.subjectIndex)->xPos, GetUnit(gActionData.subjectIndex)->yPos);
     cameraReturn ^= 1;
     // if ((gActionData.unitActionType != UNIT_ACTION_WAIT) &&
@@ -3762,6 +4176,41 @@ u8 EditSupportNow(struct MenuProc * menu, struct MenuItemProc * menuItem)
     Proc_Goto(proc, SupportLabel);
     return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_CLEAR;
 }
+u8 SupplyNow(struct MenuProc * menu, struct MenuItemProc * menuItem)
+{
+    DebuggerProc * proc;
+    proc = Proc_Find(DebuggerProcCmd);
+    Proc_Goto(proc, SupplyLabel);
+    // gActionData.unitActionType = UNIT_ACTION_TRADED_1D;
+    StartBmSupply(gActiveUnit, NULL);
+    return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_CLEAR;
+}
+u8 ListNow(struct MenuProc * menu, struct MenuItemProc * menuItem)
+{
+    DebuggerProc * proc;
+    proc = Proc_Find(DebuggerProcCmd);
+    Proc_Goto(proc, ListLabel);
+    return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_CLEAR;
+}
+u8 AiControlRemainingUnitsNow(struct MenuProc * menu, struct MenuItemProc * menuItem)
+{
+    DebuggerProc * proc;
+    proc = Proc_Find(DebuggerProcCmd);
+    proc->actionID = 0;
+    Proc_Goto(proc, RestartLabel); // 0xb7
+    DebuggerProc * procIdler = Proc_Find(DebuggerProcCmdIdler);
+    if (procIdler->autoplay)
+    {
+        procIdler->autoplay = false;
+        proc->autoplay = false;
+    }
+    else
+    {
+        procIdler->autoplay = true;
+        proc->autoplay = true;
+    }
+    return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_CLEAR;
+}
 
 int ShouldStartDebugger(void)
 {
@@ -3936,6 +4385,25 @@ int ControlAiDrawText(struct MenuProc * menu, struct MenuItemProc * menuItem)
     return 0;
 }
 
+int AiControlRemainingUnitsDrawText(struct MenuProc * menu, struct MenuItemProc * menuItem)
+{
+    if (menuItem->availability == MENU_DISABLED)
+    {
+        Text_SetColor(&menuItem->text, 1);
+    }
+    DebuggerProc * procIdler = Proc_Find(DebuggerProcCmdIdler);
+    if (procIdler->autoplay)
+    {
+        Text_DrawString(&menuItem->text, " Autoplay on");
+    }
+    else
+    {
+        Text_DrawString(&menuItem->text, GetDebuggerMenuText(procIdler, menuItem->itemNumber));
+    }
+    PutText(&menuItem->text, BG_GetMapBuffer(menu->frontBg) + TILEMAP_INDEX(menuItem->xTile, menuItem->yTile));
+    return 0;
+}
+
 void PageMenuItemDrawSprites(struct MenuProc * menu)
 {
     DebuggerProc * proc;
@@ -3961,7 +4429,6 @@ int PageMenuItemDraw(struct MenuProc * menu, struct MenuItemProc * menuItem)
     DebuggerProc * procIdler = Proc_Find(DebuggerProcCmdIdler);
     Text_DrawString(&menuItem->text, GetDebuggerMenuText(procIdler, menuItem->itemNumber));
     PutText(&menuItem->text, BG_GetMapBuffer(menu->frontBg) + TILEMAP_INDEX(menuItem->xTile, menuItem->yTile));
-    // PageMenuItemDrawSprites(menuItem);
     return 0;
 }
 
@@ -4214,6 +4681,7 @@ void InitProc(DebuggerProc * proc)
     proc->editing = false;
     proc->actionID = 0;
     proc->godMode = 0;
+    proc->autoplay = 0;
     proc->lastFlag = 1;
     proc->tileID = 1;
     proc->id = 0;
@@ -4262,7 +4730,6 @@ void BmMain_StartPhase(ProcPtr proc)
 
 void RestartDebuggerMenu(DebuggerProc * proc)
 {
-    ClearActiveUnitStuff(proc);      // in case we didn't refresh units before restarting
     struct Unit * unit = proc->unit; // GetUnit(gBmMapUnit[gBmSt.playerCursor.y][gBmSt.playerCursor.x]);
     if (!unit)
     {
@@ -4330,12 +4797,8 @@ void RestartDebuggerMenu(DebuggerProc * proc)
         }
     }
 
-    // UnpackUiFramePalette(3);
+    // page number graphic ?
     Decompress(gUnknown_08A02274, (void *)(VRAM + 0x10000 + 0x240 * 0x20));
-
-    // RefreshBMapGraphics(); // should not happen on the same frame as starting a
-    // menu, or black boxes occur
-    //  perhaps they both use the generic buffer
 }
 
 void LoopDebuggerProc(DebuggerProc * proc)
@@ -4377,7 +4840,7 @@ void PlayerPhase_FinishActionNoCanto(ProcPtr proc)
         RenderBmMap();
     }
 
-    SetCursorMapPosition(gActiveUnit->xPos, gActiveUnit->yPos);
+    SetCursorMapPositionIfValid(gActiveUnit->xPos, gActiveUnit->yPos);
 
     gPlaySt.xCursor = gBmSt.playerCursor.x;
     gPlaySt.yCursor = gBmSt.playerCursor.y;
@@ -4797,4 +5260,31 @@ void PutNumberHex(u16 * tm, int color, int number)
 
         tm--;
     }
+}
+
+void efxDarkGradoOBJ02piece_Loop(struct ProcEfxOBJ * proc) // fix Gleipnir crash
+{
+    proc->unk48 += proc->unk44;
+
+    if (GetAnimPosition(proc->anim) == 0)
+    {
+        proc->anim2->xPosition = proc->unk32 - (proc->unk48 >> 8);
+    }
+    else
+    {
+        proc->anim2->xPosition = (proc->unk48 >> 8) + proc->unk32;
+    }
+
+    proc->anim2->yPosition = (proc->unk48 >> 8) + proc->unk3A;
+
+    proc->timer++;
+
+    if ((proc->timer == proc->terminator) || (proc->timer > 30))
+    {
+        gEfxBgSemaphore--;
+        AnimDelete(proc->anim2);
+        Proc_Break(proc);
+    }
+
+    return;
 }
