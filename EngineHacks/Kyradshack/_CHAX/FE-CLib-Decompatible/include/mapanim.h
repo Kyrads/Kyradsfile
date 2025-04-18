@@ -263,4 +263,6 @@ void ManimLevelUp_EndLevelUpText(struct ManimLevelUpProc * proc);
 void ManimLevelUp_RestoreBgm(struct ManimLevelUpProc * proc);
 void ManimLevelUp_Clear(struct ManimLevelUpProc * proc);
 
+void BeginMapAnimForPoisonDmg();
+
 #endif  // GUARD_MAPANIM_H

@@ -191,22 +191,19 @@ bool CanBattleUnitGainLevels(struct BattleUnit* battleUnit) {
 }
 
 int GetEndurance(struct Unit* unit){
-    int endurance = (unit->maxHP / 2) + (UNIT_CON(unit));
+    int endurance = (unit->maxHP >> 1) + (UNIT_CON(unit));
     return endurance;
 }
 
 int GetFatigueLevel(struct Unit* unit){
     int endurance = GetEndurance(unit);
-    if(unit->fatigue < endurance){
-        return 0;
+    if (unit->fatigue < endurance){
+      return 0;
     }
-    else if(unit->fatigue < endurance*2){
-        return 1;
+    if (endurance*2 < unit->fatigue){
+      return 2;
     }
-    else{
-        return 2;
-    }
-
+    return 1;
 }
 
 int GetBattleUnitStaffExp(struct BattleUnit* actor){

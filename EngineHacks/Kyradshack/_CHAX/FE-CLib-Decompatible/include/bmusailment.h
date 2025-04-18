@@ -2,7 +2,7 @@
 #define GUARD_BMUSAILMENT_H
 
 void ApplyHazardHealing(ProcPtr, struct Unit*, int, int);
-// ??? RenderMapForFogFadeIfUnitDied(???);
+void RenderMapForFogFadeIfUnitDied(struct Unit*);
 // ??? BeginUnitHealAnim(???);
 // ??? BeginUnitPoisonDamageAnim(???);
 // ??? BeginGorgonEggHatchDamageAnim(???);

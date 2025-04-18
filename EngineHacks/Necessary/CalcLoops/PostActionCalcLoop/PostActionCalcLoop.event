@@ -4,6 +4,7 @@
 #include "PostActionCalcLoop.lyn.event"
 PostActionCalcFunctions: // Parameters: r0 = character struct. Immediately after "Turn ended" bit in the turn status bitfield is set.
 POIN LungeUpdate
+POIN MiscIncrementFatigue
 #ifdef STAIRS_ASM
 	POIN FixWait2
 #endif // STAIRS_ASM

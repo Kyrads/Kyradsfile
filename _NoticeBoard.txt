@@ -10,7 +10,7 @@ Immediate To-Do's
 	- Fatigue Restore Changes
 	- Stat Screen Integration
 	- Increase Summon Fatigue Cost (Done)
-	- Rescue, Mov Skill & Poison Fatigue
+	- Rescue, Mov Skill & Poison Fatigue (Done)
 
 
 - EXP Tweaks
@@ -29,3 +29,5 @@ Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
 - Droppable/Stealable Graphic appears when silencing a unit.
 - S Rank doesnt go epic green
+- Summon (and possibly other actions) giving too much exp in fatigue state 1 when a 1HP unit so the logic is probably bad.
+- Poison damage seems wrong

@@ -62,6 +62,8 @@ extern "C" {
 #include "types.h"
 #include "variables.h"
 #include "functions.h"
+#include "mapanim.h"
+#include "bmusailment.h"
 
 // helper macros
 
