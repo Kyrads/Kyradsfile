@@ -98,8 +98,6 @@ prSwarpCommand_Availability:
 
 // checking for same allegiance
 prPivot_TargetLegality:
-prReposition_TargetLegality:
-prSwap_TargetLegality:
 prSwarp_TargetLegality:
 	rGetWrapper // value defaults to 0 (False)
 		rWithSubject
@@ -107,11 +105,21 @@ prSwarp_TargetLegality:
 				rIfUnitsAreAllied
 					rConstant(True)
 
+prReposition_TargetLegality:
+prSwap_TargetLegality:
+	rGetWrapper // value defaults to 0 (False)
+		rIfUnitHasNotAttribute(CA_MOUNTEDAID)
+			rWithSubject
+				rForActiveUnit
+					rIfUnitsAreAllied
+							rConstant(True)
+
 prShove_TargetLegality:
 prSmite_TargetLegality:
     rGetWrapper // Defaults to 0
         rIfUnitHasNotGuardAI
-            rConstant(True)
+            rIfUnitHasNotAttribute(CA_MOUNTEDAID)
+            	rConstant(True)
 		
 // class lists, if enabled
 #ifndef HEROES_MOVEMENT_SKILL_REQUIRED
