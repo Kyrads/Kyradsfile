@@ -17,7 +17,7 @@
 
 //Tequila
 //Used to increase the size of the convoy to 200, and allow for the combining of items in the convoy. Partitioning isn't used.
-	#include "FE8-Convoy_Partition_and_Item_Combining/Fe8-Convoy_Stuff_EA.event"
+	#include "FE8-Convoy_Partition_and_Item_Combining/FE8-Convoy_Stuff_EA.event"
 
 //Tequilla, Zahlman, Stan, Black Mage, Eliwan, Awful Emblem Team
 //Rework of the text engine, mostly for the use of one and three line text boxes, but has many other useful features.
@@ -45,7 +45,7 @@
 
 //Vesly
 //Group AI V2, allows enemy units in groups to have their AI triggered when entering the range of any one of them.
-	#include "GroupAi/Installer.event"
+	#include "GroupAI/Installer.event"
 
 //Vesly
 //Removes Portrait Glitches for units with no portraits.

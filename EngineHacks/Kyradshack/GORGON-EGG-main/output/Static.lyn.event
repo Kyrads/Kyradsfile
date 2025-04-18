@@ -13,13 +13,13 @@ PUSH
 ORG CURRENTOFFSET+$0;gStaticFunctions:
 POP
 POIN AffinityStandard_Static
-POIN FullInventoryStandard_Static
-POIN TilemapVesly_Static
-POIN ResistanceLabelStandard_Static
+POIN NameLeftAligned_Static
 POIN DefenseLabelStandard_Static
+POIN MinimugStandard_Static
 POIN AttackLabelStandard_Static
+POIN ResistanceLabelStandard_Static
+POIN FullInventoryStandard_Static
 POIN AttackSpeedLabelStandard_Static
 POIN LevelLabelStandard_Static
-POIN MinimugStandard_Static
-POIN NameLeftAligned_Static
+POIN TilemapVesly_Static
 BYTE $0 $0 $0 $0

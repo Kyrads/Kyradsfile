@@ -2,7 +2,7 @@
 ERROR "You're not assembling to an FE8 ROM!"
 #endif
 
-#include EAStdlib.event
+#include EAstdlib.event
 #include "Extensions/Hack Installation.txt"
 
 #define StealableItemCache 0x203B1F0

@@ -69,44 +69,44 @@ extern u16 gAffinityWeaponRankPalette[];
 #define LEVEL_Y 8
 
 void AffinityStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void FullInventoryStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void TilemapVesly_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void ResistanceLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void NameLeftAligned_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void DefenseLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void MinimugStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void AttackLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void ResistanceLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void FullInventoryStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void AttackSpeedLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void LevelLabelStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void MinimugStandard_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void NameLeftAligned_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void TilemapVesly_Static(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 #define STATIC_CALLS \
   AffinityStandard_Static, \
-  FullInventoryStandard_Static, \
-  TilemapVesly_Static, \
-  ResistanceLabelStandard_Static, \
+  NameLeftAligned_Static, \
   DefenseLabelStandard_Static, \
+  MinimugStandard_Static, \
   AttackLabelStandard_Static, \
+  ResistanceLabelStandard_Static, \
+  FullInventoryStandard_Static, \
   AttackSpeedLabelStandard_Static, \
   LevelLabelStandard_Static, \
-  MinimugStandard_Static, \
-  NameLeftAligned_Static, \
+  TilemapVesly_Static, \
   NULL
 
-void AffinityStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void DefenseStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void AttackSpeedStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
-void AttackStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void ResistanceStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void HPOrStatus_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void AttackStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void FullInventoryStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void AffinityStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
+void AttackSpeedStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 void LevelStandard_Dynamic(struct PlayerInterfaceProc* proc, struct UnitDataProc* udp);
 #define DYNAMIC_CALLS \
-  AffinityStandard_Dynamic, \
   DefenseStandard_Dynamic, \
-  AttackSpeedStandard_Dynamic, \
-  AttackStandard_Dynamic, \
   ResistanceStandard_Dynamic, \
   HPOrStatus_Dynamic, \
+  AttackStandard_Dynamic, \
   FullInventoryStandard_Dynamic, \
+  AffinityStandard_Dynamic, \
+  AttackSpeedStandard_Dynamic, \
   LevelStandard_Dynamic, \
   NULL
 
@@ -129,15 +129,15 @@ void DrawVertical_Retract(struct PlayerInterfaceProc* proc);
   DrawVertical_Retract, \
   NULL
 
-void ResistanceLabelStandard_Init(struct PlayerInterfaceProc* proc);
-void DefenseLabelStandard_Init(struct PlayerInterfaceProc* proc);
-void LevelLabelStandard_Init(struct PlayerInterfaceProc* proc);
 void AttackLabelStandard_Init(struct PlayerInterfaceProc* proc);
+void ResistanceLabelStandard_Init(struct PlayerInterfaceProc* proc);
 void AttackSpeedLabelStandard_Init(struct PlayerInterfaceProc* proc);
+void LevelLabelStandard_Init(struct PlayerInterfaceProc* proc);
+void DefenseLabelStandard_Init(struct PlayerInterfaceProc* proc);
 #define INIT_CALLS \
-  ResistanceLabelStandard_Init, \
-  DefenseLabelStandard_Init, \
-  LevelLabelStandard_Init, \
   AttackLabelStandard_Init, \
+  ResistanceLabelStandard_Init, \
   AttackSpeedLabelStandard_Init, \
+  LevelLabelStandard_Init, \
+  DefenseLabelStandard_Init, \
   NULL

@@ -5,7 +5,7 @@
 	ERROR This isn't FE8
 #endif
 
-#include EAStdlib.event
+#include EAstdlib.event
 #include "Extensions/Hack Installation.txt"
 #include "Extensions/6CDefinitions.txt"
 
