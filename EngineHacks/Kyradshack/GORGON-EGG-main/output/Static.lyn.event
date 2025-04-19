@@ -1,0 +1,25 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;GE_Static:
+POP
+SHORT $B573 $2600 $D $4 $490C $4A0D $4B0D $A801 $9601 $F000 $F81F $4B0C $28 $F000 $F81B $1DA3 $87DE $4E0A $4B0A $29 $20 $3604 $F000 $F812 $6833 $2B00 $D1F7 $BC73 $BC01 $4700
+BYTE $2C $3D $0 $2 $80 $0 $0 $1 $75 $16 $D $8
+POIN ResetUnitDataProc
+POIN CURRENTOFFSET+12
+POIN TilemapVesly_Static
+SHORT $4718 $46C0
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$0;gStaticFunctions:
+POP
+POIN TilemapVesly_Static
+POIN AttackLabelStandard_Static
+POIN DefenseLabelStandard_Static
+POIN MinimugStandard_Static
+POIN LevelLabelStandard_Static
+POIN NameLeftAligned_Static
+POIN ResistanceLabelStandard_Static
+POIN AffinityStandard_Static
+POIN FullInventoryStandard_Static
+POIN AttackSpeedLabelStandard_Static
+BYTE $0 $0 $0 $0

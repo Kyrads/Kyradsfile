@@ -1,0 +1,20 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;GE_Init:
+POP
+SHORT $3 $B570 $22FF $4 $3357 $701A $21 $4B09 $4809 $F000 $F817 $4D09 $4B09 $20 $3504 $F000 $F811 $682B $2B00 $D1F8 $65A3 $3456 $7023 $BC70 $BC01 $4700
+BYTE $7D $2C $0 $8
+POIN ProcUnitData
+POIN CURRENTOFFSET+12
+POIN ResistanceLabelStandard_Init
+SHORT $4718 $46C0
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$0;gInitFunctions:
+POP
+POIN ResistanceLabelStandard_Init
+POIN DefenseLabelStandard_Init
+POIN LevelLabelStandard_Init
+POIN AttackLabelStandard_Init
+POIN AttackSpeedLabelStandard_Init
+BYTE $0 $0 $0 $0

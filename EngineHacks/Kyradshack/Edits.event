@@ -98,7 +98,7 @@ POP
 //Poison Damage (default 1)
 PUSH
 ORG 0x025a3e
-BYTE 0x8 //8 damage
+BYTE 0x5 //5 damage
 ORG 0x025A36
 BYTE 0x0 //0 blur
 POP
