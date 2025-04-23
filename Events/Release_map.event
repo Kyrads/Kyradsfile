@@ -120,12 +120,17 @@ LOAD1 0x1 EnemyUnits
 ENUN
 LOAD1 0x0 Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 ENUN
-GotoPrepScreen
+NoFade
+ENDA
 
 EndingScene:
-ASMC 0x85C71 0x381F5 0x37CF9 //show records screen
+MNC2 0
+NoFade
+ENDA
+
+/*ASMC 0x85C71 0x381F5 0x37CF9 //show records screen
 STAL 120
 EVBIT_F 0x2
 MNTS 0x1 //return to title screen
 NoFade
-ENDA
+ENDA*/

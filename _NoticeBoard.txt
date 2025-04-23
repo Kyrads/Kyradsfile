@@ -7,7 +7,7 @@ Immediate To-Do's
 	- Fatigue Debuffs (Done)
 	- Implement Endurance Getter to ASM (Done)
 	- Ftg Gain Changes (Done)
-	- Fatigue Restore Changes
+	- Fatigue Restore Changes (Done)
 	- Stat Screen Integration
 	- Increase Summon Fatigue Cost (Done)
 	- Rescue, Mov Skill & Poison Fatigue (Done)
@@ -29,5 +29,4 @@ Minor Bugs:
 - Graphical bug on mend use description. Probably unintended to use narrowfont here.
 - Droppable/Stealable Graphic appears when silencing a unit.
 - S Rank doesnt go epic green
-- Summon (and possibly other actions) giving too much exp in fatigue state 1 when a 1HP unit so the logic is probably bad.
-- Poison damage seems wrong
+- Summon (and possibly other actions) giving too much exp in fatigue state when a 1HP unit so the logic somewhere in my CHAX is probably bad.

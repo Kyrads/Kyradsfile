@@ -1,6 +1,12 @@
 .thumb
 .align
 
+.macro blh to, reg=r3
+    ldr \reg, =\to
+    mov lr, \reg
+    .short 0xF800
+.endm
+
 
 .global DenyDeploymentIfFatigued
 .type DenyDeploymentIfFatigued, %function
@@ -22,9 +28,18 @@ and r0,r1
 cmp r0,#0
 beq DenyDeploy
 mov r0,r4
-add r0,#0x3B
+@calculate endurance
+blh GetEndurance
+mov r1,#0x3B
+ldrb r1,[r4,r1]
+sub r1,r0
+mov r0,#0
+cmp r1,r0
+bgt SetFatigue
 mov r1,#0
-strb r1,[r0]
+SetFatigue:
+mov r0,#0x3B
+strb r1,[r4,r0]
 
 DenyDeploy:
 @get fatigue and max hp

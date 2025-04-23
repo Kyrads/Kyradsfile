@@ -79,8 +79,9 @@
 //Allows you to skip the intro of chapters specified in the installer
 	#include "SkipChIntro/Installer.event"
 
-// (MMB Credits), LegendOfLoog
+//(MMB Credits), LegendOfLoog
 //MMB preset from SoTS
+//No longer needed thanks to Gorgon Egg, kept for posterity
 	//#include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilBearers.event"
 
 //Zane Avernathy
@@ -145,3 +146,6 @@
 
 //CHAX
 	#include "_CHAX/_MasterCHAXInstaller.event"
+
+//Note: Give credit to either loog, pik or mint for shove
+//not affecting mounted units.
