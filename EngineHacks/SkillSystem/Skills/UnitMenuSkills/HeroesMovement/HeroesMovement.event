@@ -100,18 +100,20 @@ prSwarpCommand_Availability:
 prPivot_TargetLegality:
 prSwarp_TargetLegality:
 	rGetWrapper // value defaults to 0 (False)
-		rWithSubject
-			rForActiveUnit
-				rIfUnitsAreAllied
+	rIfUnitHasNotGuardAI
+		//rWithSubject
+			//rForActiveUnit
+				//rIfUnitsAreAllied
 					rConstant(True)
 
 prReposition_TargetLegality:
 prSwap_TargetLegality:
 	rGetWrapper // value defaults to 0 (False)
 		rIfUnitHasNotAttribute(CA_MOUNTEDAID)
-			rWithSubject
-				rForActiveUnit
-					rIfUnitsAreAllied
+		rIfUnitHasNotGuardAI
+			//rWithSubject
+				//rForActiveUnit
+					//rIfUnitsAreAllied
 							rConstant(True)
 
 prShove_TargetLegality:
