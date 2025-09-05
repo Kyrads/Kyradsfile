@@ -53,6 +53,7 @@
 
 //Vesly
 //Allows a debug menu where you can move a unit anywhere on the map.
+//Made irrelevant by Vesly Debugger
 	//#include "DebugPlaceUnits/Installer.event"
 
 //Vesly
